@@ -156,6 +156,7 @@ if (mainContent) {
         'experience',
         'skills',
         'projects',
+        'measurement-showcase',
         'blogs',
         'awards',
         'journeys',
@@ -527,9 +528,127 @@ function prepareMotionReveal(elements, options = {}) {
 prepareMotionReveal(document.querySelectorAll('.research__intro, .research__pill'), { motion: 'from-left', step: 90 })
 prepareMotionReveal(document.querySelectorAll('.research__card'), { motion: 'zoom', step: 120 })
 prepareMotionReveal(document.querySelectorAll('.project__card'), { motion: 'rise', step: 95 })
+prepareMotionReveal(document.querySelectorAll('.mws__copy, .mws__panel'), { motion: 'rise', step: 90 })
 prepareMotionReveal(document.querySelectorAll('.pub__item[data-topic]'), { motion: 'from-right', step: 55, maxDelay: 300 })
 prepareMotionReveal(document.querySelectorAll('.skills__group'), { motion: 'rise', step: 85 })
 prepareMotionReveal(document.querySelectorAll('.journeys__intro, .journeys__map'), { motion: 'rise', step: 90 })
+
+/*===== MEASUREMENT WORKFLOW MASS-SPRING ANIMATION =====*/
+const measurementSpringSvg = document.querySelector('.mws__mass-svg')
+
+if (measurementSpringSvg) {
+    const springPaths = Array.from(measurementSpringSvg.querySelectorAll('.mws__spring-coil'))
+    const massGroups = [
+        measurementSpringSvg.querySelector('.mws__mass--one'),
+        measurementSpringSvg.querySelector('.mws__mass--two'),
+        measurementSpringSvg.querySelector('.mws__mass--three'),
+        measurementSpringSvg.querySelector('.mws__mass--four')
+    ].filter(Boolean)
+
+    measurementSpringSvg.querySelectorAll('animate, animateTransform').forEach(anim => anim.remove())
+
+    const springY = 138
+    const springAmplitude = 18
+    const massTravel = [-14, 12, -10, 13]
+
+    function springPath(start, end) {
+        const length = Math.max(end - start, 24)
+        const lead = Math.min(6, Math.max(3, length * 0.1))
+        const innerStart = start + lead
+        const innerEnd = end - lead
+        const segment = (innerEnd - innerStart) / 6
+        const points = Array.from({ length: 7 }, (_, index) => innerStart + index * segment)
+        const n = value => Number(value.toFixed(1))
+        let d = `M ${n(start)} ${springY} L ${n(points[0])} ${springY} C ${n(points[0] + segment * 0.35)} ${springY - springAmplitude} ${n(points[1] - segment * 0.35)} ${springY - springAmplitude} ${n(points[1])} ${springY}`
+
+        ;[1, -1, 1, -1, 1].forEach((sign, index) => {
+            const pointIndex = index + 2
+            d += ` S ${n(points[pointIndex] - segment * 0.35)} ${springY + springAmplitude * sign} ${n(points[pointIndex])} ${springY}`
+        })
+
+        return `${d} L ${n(end)} ${springY}`
+    }
+
+    function renderMassSpring(progress) {
+        const dx = massTravel.map(travel => travel * progress)
+        massGroups.forEach((mass, index) => {
+            mass.setAttribute('transform', `translate(${dx[index].toFixed(2)} 0)`)
+        })
+
+        const spans = [
+            [50, 115 + dx[0]],
+            [177 + dx[0], 235 + dx[1]],
+            [297 + dx[1], 355 + dx[2]],
+            [417 + dx[2], 475 + dx[3]],
+            [537 + dx[3], 585]
+        ]
+
+        springPaths.forEach((spring, index) => {
+            const [start, end] = spans[index]
+            spring.setAttribute('d', springPath(start, end))
+        })
+    }
+
+    renderMassSpring(0)
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const duration = 2800
+        const startTime = performance.now()
+
+        function animateMassSpring(now) {
+            const progress = (1 - Math.cos(((now - startTime) / duration) * Math.PI * 2)) / 2
+            renderMassSpring(progress)
+            window.requestAnimationFrame(animateMassSpring)
+        }
+
+        window.requestAnimationFrame(animateMassSpring)
+    }
+}
+
+/*===== MEASUREMENT WORKFLOW LIVE TELEMETRY =====*/
+const measurementTelemetry = {
+    progress: document.querySelector('.mws__run-progress'),
+    percent: document.querySelector('.mws__run-percent'),
+    sweep: document.querySelector('.mws__sweep-range'),
+    peak: document.querySelector('.mws__peak-frequency'),
+    points: document.querySelector('.mws__active-points')
+}
+
+function setMeasurementTelemetryText(el, value) {
+    if (!el || el.textContent === value) return
+    el.textContent = value
+}
+
+const measurementTelemetryFrames = [
+    { percent: 58, sweep: '24-100 Hz', peak: '54 Hz', points: '3' },
+    { percent: 66, sweep: '30-120 Hz', peak: '60 Hz', points: '3' },
+    { percent: 74, sweep: '36-135 Hz', peak: '66 Hz', points: '4' },
+    { percent: 82, sweep: '40-150 Hz', peak: '70 Hz', points: '4' },
+    { percent: 68, sweep: '32-125 Hz', peak: '62 Hz', points: '4' }
+]
+
+function renderMeasurementTelemetry(frame) {
+    if (measurementTelemetry.progress) {
+        measurementTelemetry.progress.style.width = `${frame.percent}%`
+    }
+
+    setMeasurementTelemetryText(measurementTelemetry.percent, `${frame.percent}%`)
+    setMeasurementTelemetryText(measurementTelemetry.sweep, frame.sweep)
+    setMeasurementTelemetryText(measurementTelemetry.peak, frame.peak)
+    setMeasurementTelemetryText(measurementTelemetry.points, frame.points)
+}
+
+if (Object.values(measurementTelemetry).some(Boolean)) {
+    let telemetryFrameIndex = 1
+    renderMeasurementTelemetry(measurementTelemetryFrames[telemetryFrameIndex])
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        window.setInterval(() => {
+            telemetryFrameIndex = (telemetryFrameIndex + 1) % measurementTelemetryFrames.length
+            renderMeasurementTelemetry(measurementTelemetryFrames[telemetryFrameIndex])
+        }, 1100)
+    }
+}
 
 /*===== TIMELINE STAGGER =====*/
 document.querySelectorAll('.timeline').forEach(tl => {

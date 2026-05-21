@@ -61,6 +61,7 @@
                             <li><a href="#experience"   class="nav__link nav__dropdown-link">Experience</a></li>
                             <li><a href="#skills"       class="nav__link nav__dropdown-link">Skills</a></li>
                             <li><a href="#projects"     class="nav__link nav__dropdown-link">Projects</a></li>
+                            <li><a href="#measurement-showcase" class="nav__link nav__dropdown-link">Showcase</a></li>
                             <li><a href="#blogs"        class="nav__link nav__dropdown-link">Blogs</a></li>
                             <li><a href="#awards"       class="nav__link nav__dropdown-link">Awards</a></li>
                             <li><a href="#journeys"     class="nav__link nav__dropdown-link">Journeys</a></li>
@@ -812,6 +813,217 @@
                             </div>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== MEASUREMENT WORKFLOW SHOWCASE ====================-->
+        <section class="measurement-showcase section" id="measurement-showcase">
+            <div class="section__bg-icons" aria-hidden="true">
+                <i class="uil uil-monitor-heart-rate section__bg-icon section__bg-icon--tl"></i>
+                <i class="uil uil-chart-line section__bg-icon section__bg-icon--tr"></i>
+                <i class="uil uil-sliders-v-alt section__bg-icon section__bg-icon--br"></i>
+            </div>
+            <div class="container">
+                <h2 class="section__title">Measurement WorkFlow</h2>
+                <span class="section__subtitle">App developed by Kazi Tahsin Mahmood for experimental vibration workflows</span>
+
+                <div class="mws__hero">
+                    <div class="mws__copy">
+                        <span class="mws__eyebrow">Measurement app case study</span>
+                        <h3>A coordinated app for setup, capture, and analysis.</h3>
+                        <p>
+                            I developed Measurement WorkFlow as an app concept for vibration experiments: coordinate
+                            excitation hardware, capture LDV/SLDV responses, and move from time traces to
+                            frequency-domain analysis in a single repeatable workflow.
+                        </p>
+                        <div class="mws__tags" aria-label="Showcase capabilities">
+                            <span>Signal generator</span>
+                            <span>LDV / SLDV</span>
+                            <span>FFT response</span>
+                            <span>Mass-spring dynamics</span>
+                        </div>
+                    </div>
+
+                    <div class="mws__panel mws__panel--chain" aria-label="Measurement chain animation">
+                        <div class="mws__panel-head">
+                            <span>Measurement chain</span>
+                            <span class="mws__status"><span></span>online</span>
+                        </div>
+                        <svg class="mws__chain-svg" viewBox="0 0 760 330" role="img" aria-labelledby="mws-chain-title">
+                            <title id="mws-chain-title">Signal generator, amplifier, shaker, mechanical system, LDV, and software workflow</title>
+                            <path id="mws-chain-path" class="mws__chain-path" d="M76 88 C148 54 216 120 290 88 C370 52 448 124 528 90 C608 58 674 82 712 88" />
+                            <circle class="mws__chain-dot" r="7">
+                                <animateMotion dur="4.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.42 0 0.58 1">
+                                    <mpath href="#mws-chain-path" />
+                                </animateMotion>
+                            </circle>
+                            <g class="mws__chain-bus">
+                                <path d="M91 200 V214 M207 200 V214 M323 200 V214 M439 200 V214 M555 200 V214 M671 200 V214"></path>
+                                <path d="M91 214 H671"></path>
+                            </g>
+                            <g class="mws__chain-nodes">
+                                <g transform="translate(42 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M30 31 H41 L47 18 L55 49 L62 35 H70"></path>
+                                    <text x="49" y="74">Signal</text>
+                                </g>
+                                <g transform="translate(158 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M32 39 C32 25 42 18 49 18 C56 18 66 25 66 39 M49 39 L57 29"></path>
+                                    <text x="49" y="74">Amplifier</text>
+                                </g>
+                                <g transform="translate(274 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M52 18 L37 42 H49 L45 54 L63 31 H51 Z"></path>
+                                    <text x="49" y="74">Shaker</text>
+                                </g>
+                                <g transform="translate(390 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M32 23 L49 16 L66 23 L49 30 Z M32 35 L49 42 L66 35 M32 47 L49 54 L66 47"></path>
+                                    <text x="49" y="74">Mech. sys</text>
+                                </g>
+                                <g transform="translate(506 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M27 27 C34 34 41 20 48 27 S62 34 69 27 M27 40 C34 47 41 33 48 40 S62 47 69 40"></path>
+                                    <text x="49" y="74">LDV / SLDV</text>
+                                </g>
+                                <g class="mws__chain-node--active" transform="translate(622 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M34 22 H64 V45 H34 Z M43 55 H55 M49 45 V55"></path>
+                                    <text x="49" y="74">Software</text>
+                                </g>
+                            </g>
+                            <g class="mws__app-preview">
+                                <rect class="mws__app-frame" x="54" y="226" width="652" height="78" rx="14"></rect>
+                                <rect class="mws__app-topbar" x="54" y="226" width="652" height="26" rx="14"></rect>
+                                <text class="mws__app-title" x="78" y="244">Measurement WorkFlow app</text>
+                                <circle cx="654" cy="239" r="4"></circle>
+                                <text class="mws__app-online" x="668" y="243">live</text>
+                                <rect class="mws__app-tile" x="76" y="263" width="128" height="24" rx="7"></rect>
+                                <text x="92" y="280">experiment setup</text>
+                                <rect class="mws__app-plot" x="224" y="263" width="210" height="24" rx="7"></rect>
+                                <path class="mws__mini-wave" d="M240 277 C258 264 276 288 294 274 S330 262 348 275 S386 289 410 268"></path>
+                                <rect class="mws__app-tile" x="454" y="263" width="92" height="24" rx="7"></rect>
+                                <text x="472" y="280">FFT</text>
+                                <rect class="mws__app-tile" x="566" y="263" width="112" height="24" rx="7"></rect>
+                                <text x="584" y="280">export ready</text>
+                            </g>
+                        </svg>
+                        <div class="mws__chain-detail">
+                            <span><strong>01</strong> excitation command</span>
+                            <span><strong>02</strong> LDV response capture</span>
+                            <span><strong>03</strong> FFT and phase export</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mws__grid">
+                    <div class="mws__panel mws__panel--control">
+                        <div class="mws__panel-head">
+                            <span>Run sequence</span>
+                            <span class="mws__pill mws__run-percent">68%</span>
+                        </div>
+                        <div class="mws__progress" aria-hidden="true"><span class="mws__run-progress"></span></div>
+                        <div class="mws__steps">
+                            <span><i class="uil uil-folder-open"></i> Experiment folder</span>
+                            <span><i class="uil uil-signal-alt-3"></i> <span class="mws__sweep-range">30-120 Hz</span> sweep</span>
+                            <span><i class="uil uil-pulse"></i> Response capture</span>
+                        </div>
+                    </div>
+
+                    <div class="mws__panel mws__panel--response" aria-label="Horizontally coupled mass-spring response animation">
+                        <div class="mws__panel-head">
+                            <span>Response points</span>
+                            <span class="mws__pill">M1-M4</span>
+                        </div>
+                        <svg class="mws__mass-svg" viewBox="0 0 620 270" role="img" aria-labelledby="mws-mass-title">
+                            <title id="mws-mass-title">Horizontally coupled masses with coiled springs compressing and extending between response points</title>
+                            <line class="mws__ldv-line" x1="62" y1="54" x2="562" y2="54"></line>
+                            <text class="mws__ldv-label" x="34" y="42">LDV</text>
+                            <line class="mws__track mws__track--top" x1="82" y1="96" x2="558" y2="96"></line>
+                            <line class="mws__track" x1="48" y1="190" x2="590" y2="190"></line>
+
+                            <g class="mws__wall" transform="translate(50 92)">
+                                <line x1="0" y1="0" x2="0" y2="104"></line>
+                                <path d="M0 8 L-12 20 M0 28 L-12 40 M0 48 L-12 60 M0 68 L-12 80 M0 88 L-12 100"></path>
+                            </g>
+                            <g class="mws__wall" transform="translate(585 92)">
+                                <line x1="0" y1="0" x2="0" y2="104"></line>
+                                <path d="M0 8 L12 20 M0 28 L12 40 M0 48 L12 60 M0 68 L12 80 M0 88 L12 100"></path>
+                            </g>
+
+                            <path class="mws__spring-coil" d="M 50 138 L 56 138 C 59.1 120 61.7 120 64.8 138 S 70.6 156 73.7 138 S 79.4 120 82.5 138 S 88.2 156 91.3 138 S 97.1 120 100.2 138 S 105.9 156 109 138 L 115 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 50 138 L 56 138 C 59.1 120 61.7 120 64.8 138 S 70.6 156 73.7 138 S 79.4 120 82.5 138 S 88.2 156 91.3 138 S 97.1 120 100.2 138 S 105.9 156 109 138 L 115 138;M 50 138 L 55.1 138 C 57.5 120 59.5 120 61.9 138 S 66.3 156 68.7 138 S 73.1 120 75.5 138 S 79.9 156 82.3 138 S 86.7 120 89.1 138 S 93.5 156 95.9 138 L 101 138;M 50 138 L 56 138 C 59.1 120 61.7 120 64.8 138 S 70.6 156 73.7 138 S 79.4 120 82.5 138 S 88.2 156 91.3 138 S 97.1 120 100.2 138 S 105.9 156 109 138 L 115 138"></animate>
+                            </path>
+                            <path class="mws__spring-coil" d="M 177 138 L 182.8 138 C 185.5 120 187.8 120 190.5 138 S 195.6 156 198.3 138 S 203.3 120 206 138 S 211 156 213.7 138 S 218.8 120 221.5 138 S 226.5 156 229.2 138 L 235 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 177 138 L 182.8 138 C 185.5 120 187.8 120 190.5 138 S 195.6 156 198.3 138 S 203.3 120 206 138 S 211 156 213.7 138 S 218.8 120 221.5 138 S 226.5 156 229.2 138 L 235 138;M 163 138 L 169 138 C 173.2 120 176.8 120 181 138 S 188.8 156 193 138 S 200.8 120 205 138 S 212.8 156 217 138 S 224.8 120 229 138 S 236.8 156 241 138 L 247 138;M 177 138 L 182.8 138 C 185.5 120 187.8 120 190.5 138 S 195.6 156 198.3 138 S 203.3 120 206 138 S 211 156 213.7 138 S 218.8 120 221.5 138 S 226.5 156 229.2 138 L 235 138"></animate>
+                            </path>
+                            <path class="mws__spring-coil" d="M 297 138 L 302.8 138 C 305.5 120 307.8 120 310.5 138 S 315.6 156 318.3 138 S 323.3 120 326 138 S 331 156 333.7 138 S 338.8 120 341.5 138 S 346.5 156 349.2 138 L 355 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 297 138 L 302.8 138 C 305.5 120 307.8 120 310.5 138 S 315.6 156 318.3 138 S 323.3 120 326 138 S 331 156 333.7 138 S 338.8 120 341.5 138 S 346.5 156 349.2 138 L 355 138;M 309 138 L 312.6 138 C 314.3 120 315.7 120 317.4 138 S 320.5 156 322.2 138 S 325.3 120 327 138 S 330.1 156 331.8 138 S 334.9 120 336.6 138 S 339.7 156 341.4 138 L 345 138;M 297 138 L 302.8 138 C 305.5 120 307.8 120 310.5 138 S 315.6 156 318.3 138 S 323.3 120 326 138 S 331 156 333.7 138 S 338.8 120 341.5 138 S 346.5 156 349.2 138 L 355 138"></animate>
+                            </path>
+                            <path class="mws__spring-coil" d="M 417 138 L 422.8 138 C 425.5 120 427.8 120 430.5 138 S 435.6 156 438.3 138 S 443.3 120 446 138 S 451 156 453.7 138 S 458.8 120 461.5 138 S 466.5 156 469.2 138 L 475 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 417 138 L 422.8 138 C 425.5 120 427.8 120 430.5 138 S 435.6 156 438.3 138 S 443.3 120 446 138 S 451 156 453.7 138 S 458.8 120 461.5 138 S 466.5 156 469.2 138 L 475 138;M 407 138 L 413 138 C 417 120 420.5 120 424.5 138 S 432 156 436 138 S 443.5 120 447.5 138 S 455 156 459 138 S 466.5 120 470.5 138 S 478 156 482 138 L 488 138;M 417 138 L 422.8 138 C 425.5 120 427.8 120 430.5 138 S 435.6 156 438.3 138 S 443.3 120 446 138 S 451 156 453.7 138 S 458.8 120 461.5 138 S 466.5 156 469.2 138 L 475 138"></animate>
+                            </path>
+                            <path class="mws__spring-coil" d="M 537 138 L 541.8 138 C 544 120 546 120 548.2 138 S 552.4 156 554.6 138 S 558.8 120 561 138 S 565.2 156 567.4 138 S 571.6 120 573.8 138 S 578 156 580.2 138 L 585 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 537 138 L 541.8 138 C 544 120 546 120 548.2 138 S 552.4 156 554.6 138 S 558.8 120 561 138 S 565.2 156 567.4 138 S 571.6 120 573.8 138 S 578 156 580.2 138 L 585 138;M 550 138 L 553.5 138 C 555.1 120 556.5 120 558.2 138 S 561.2 156 562.8 138 S 565.9 120 567.5 138 S 570.5 156 572.2 138 S 575.2 120 576.8 138 S 579.9 156 581.5 138 L 585 138;M 537 138 L 541.8 138 C 544 120 546 120 548.2 138 S 552.4 156 554.6 138 S 558.8 120 561 138 S 565.2 156 567.4 138 S 571.6 120 573.8 138 S 578 156 580.2 138 L 585 138"></animate>
+                            </path>
+
+                            <g class="mws__mass mws__mass--one">
+                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;-14 0;0 0"></animateTransform>
+                                <circle cx="146" cy="54" r="6"></circle>
+                                <rect x="115" y="106" width="62" height="64" rx="8"></rect>
+                                <path class="mws__mass-wave" d="M128 138 H137 L142 124 L150 153 L156 137 H164"></path>
+                                <line x1="124" y1="204" x2="168" y2="204"></line>
+                            </g>
+                            <g class="mws__mass mws__mass--two">
+                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;12 0;0 0"></animateTransform>
+                                <circle cx="266" cy="54" r="6"></circle>
+                                <rect x="235" y="106" width="62" height="64" rx="8"></rect>
+                                <path class="mws__mass-wave" d="M248 138 H257 L262 124 L270 153 L276 137 H284"></path>
+                                <line x1="244" y1="204" x2="288" y2="204"></line>
+                            </g>
+                            <g class="mws__mass mws__mass--three">
+                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;-10 0;0 0"></animateTransform>
+                                <circle cx="386" cy="54" r="6"></circle>
+                                <rect x="355" y="106" width="62" height="64" rx="8"></rect>
+                                <path class="mws__mass-wave" d="M368 138 H377 L382 124 L390 153 L396 137 H404"></path>
+                                <line x1="364" y1="204" x2="408" y2="204"></line>
+                            </g>
+                            <g class="mws__mass mws__mass--four">
+                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;13 0;0 0"></animateTransform>
+                                <circle cx="506" cy="54" r="6"></circle>
+                                <rect x="475" y="106" width="62" height="64" rx="8"></rect>
+                                <path class="mws__mass-wave" d="M488 138 H497 L502 124 L510 153 L516 137 H524"></path>
+                                <line x1="484" y1="204" x2="528" y2="204"></line>
+                            </g>
+                            <g class="mws__mass-labels">
+                                <text x="146" y="230">Mass 1</text>
+                                <text x="266" y="230">Mass 2</text>
+                                <text x="386" y="230">Mass 3</text>
+                                <text x="506" y="230">Mass 4</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="mws__panel mws__panel--plots">
+                        <div class="mws__panel-head">
+                            <span>Signal analysis</span>
+                            <span class="mws__pill">FFT + phase</span>
+                        </div>
+                        <div class="mws__plots">
+                            <svg viewBox="0 0 260 112" aria-label="Frequency response plot">
+                                <path class="mws__plot-grid" d="M0 28 H260 M0 56 H260 M0 84 H260 M52 0 V112 M104 0 V112 M156 0 V112 M208 0 V112"></path>
+                                <path class="mws__plot-line mws__plot-line--blue" d="M0 82 C28 70 42 28 70 36 C98 44 110 86 136 66 C164 42 186 50 208 34 C232 18 246 54 260 28"></path>
+                                <path class="mws__plot-line mws__plot-line--teal" d="M0 94 C32 84 46 58 76 62 C104 66 120 72 148 50 C178 26 196 74 226 58 C242 48 252 76 260 66"></path>
+                            </svg>
+                            <div class="mws__metrics">
+                                <span><strong class="mws__peak-frequency">60 Hz</strong> peak frequency</span>
+                                <span><strong class="mws__active-points">4</strong> active response points</span>
+                                <span><strong>ready</strong> export state</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1859,6 +2071,7 @@
         <a class="dot-nav__dot" href="#experience" data-label="Experience"  title="Experience"></a>
         <a class="dot-nav__dot" href="#skills"      data-label="Skills"      title="Skills"></a>
         <a class="dot-nav__dot" href="#projects"     data-label="Projects"      title="Projects"></a>
+        <a class="dot-nav__dot" href="#measurement-showcase" data-label="Showcase" title="Measurement WorkFlow"></a>
         <a class="dot-nav__dot" href="#blogs"        data-label="Blogs"         title="Blogs"></a>
         <a class="dot-nav__dot" href="#awards"       data-label="Awards"        title="Awards"></a>
         <a class="dot-nav__dot" href="#journeys"     data-label="Journeys"      title="Journeys"></a>
