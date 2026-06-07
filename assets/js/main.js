@@ -286,6 +286,8 @@ function openBlogPopup(targetId) {
 
     const activePanel = document.getElementById(targetId)
     if (activePanel) {
+        loadLazyMedia(activePanel)
+        playAutoplayVideos(activePanel)
         activePanel.scrollTop = 0
         void activePanel.offsetWidth
         window.requestAnimationFrame(() => {
@@ -301,6 +303,7 @@ function closeBlogPopup() {
     document.body.classList.remove('modal-open')
     blogPanels.forEach(panel => {
         panel.classList.remove('blog__feature--active')
+        pauseVideos(panel)
     })
 }
 
@@ -326,6 +329,39 @@ window.addEventListener('keydown', event => {
     }
 })
 
+/*===== LAZY MEDIA =====*/
+function loadLazyVideo(video) {
+    if (!video || video.dataset.videoLoaded === 'true') return
+
+    video.querySelectorAll('source[data-src]').forEach(source => {
+        source.src = source.dataset.src
+        source.removeAttribute('data-src')
+    })
+
+    if (video.dataset.src && !video.getAttribute('src')) {
+        video.src = video.dataset.src
+        video.removeAttribute('data-src')
+    }
+
+    video.dataset.videoLoaded = 'true'
+    video.load?.()
+}
+
+function loadLazyMedia(scope) {
+    ;(scope || document).querySelectorAll('video[data-lazy-video]').forEach(loadLazyVideo)
+}
+
+function playAutoplayVideos(scope) {
+    ;(scope || document).querySelectorAll('video[autoplay]').forEach(video => {
+        loadLazyVideo(video)
+        video.play?.().catch?.(() => {})
+    })
+}
+
+function pauseVideos(scope) {
+    ;(scope || document).querySelectorAll('video').forEach(video => video.pause?.())
+}
+
 /*===== CUSTOM VIDEO PLAYBACK RATES =====*/
 document.querySelectorAll('video[data-playback-rate]').forEach(video => {
     const rate = Number(video.dataset.playbackRate)
@@ -348,7 +384,10 @@ function closePubItem(item) {
     item.classList.remove('pub--open')
     item.setAttribute('aria-expanded', 'false')
     const abstract = item.querySelector('.pub__abstract')
-    if (abstract) abstract.style.maxHeight = '0'
+    if (abstract) {
+        pauseVideos(abstract)
+        abstract.style.maxHeight = '0'
+    }
 }
 
 function openPubItem(item) {
@@ -356,6 +395,8 @@ function openPubItem(item) {
     item.setAttribute('aria-expanded', 'true')
     const abstract = item.querySelector('.pub__abstract')
     if (abstract) {
+        loadLazyMedia(abstract)
+        playAutoplayVideos(abstract)
         const setHeight = () => { abstract.style.maxHeight = abstract.scrollHeight + 'px' }
         setHeight()
         requestAnimationFrame(setHeight)
@@ -1036,14 +1077,19 @@ document.querySelectorAll('.btn--primary, .btn--outline, .btn--outline-navy').fo
 })()
 
 /*===== POSTER LIGHTBOX =====*/
+let lastPosterTrigger = null
+
 function openPosterModal(src) {
     const modal = document.getElementById('posterModal')
     const img   = document.getElementById('posterModalImg')
     if (!modal || !img) return
+    lastPosterTrigger = document.activeElement
     img.src = src
+    modal.setAttribute('aria-hidden', 'false')
     modal.classList.add('active')
     requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('anim-in')))
     document.body.classList.add('modal-open')
+    modal.querySelector('[data-poster-close]')?.focus()
 }
 
 function closePosterModal() {
@@ -1051,15 +1097,28 @@ function closePosterModal() {
     const img   = document.getElementById('posterModalImg')
     if (!modal || !modal.classList.contains('active')) return
     modal.classList.remove('anim-in')
+    modal.setAttribute('aria-hidden', 'true')
     document.body.classList.remove('modal-open')
     const handleTransitionEnd = event => {
         if (event.target !== modal) return
         modal.removeEventListener('transitionend', handleTransitionEnd)
         modal.classList.remove('active')
         if (img) img.removeAttribute('src')
+        lastPosterTrigger?.focus?.()
+        lastPosterTrigger = null
     }
     modal.addEventListener('transitionend', handleTransitionEnd)
 }
+
+document.querySelectorAll('[data-poster-src]').forEach(button => {
+    button.addEventListener('click', () => openPosterModal(button.dataset.posterSrc))
+})
+
+document.querySelector('[data-poster-close]')?.addEventListener('click', closePosterModal)
+
+document.getElementById('posterModal')?.addEventListener('click', event => {
+    if (event.target === event.currentTarget) closePosterModal()
+})
 
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closePosterModal()
@@ -1314,11 +1373,22 @@ document.querySelectorAll('.timeline').forEach(tl => {
 
         window.clearTimeout(body._researchHideTimer)
         body.hidden = false
+        loadLazyMedia(body)
+        playAutoplayVideos(body)
         body.style.maxHeight = '0px'
         setToggleState(card, true)
 
+        const setBodyHeight = () => {
+            if (card.hasAttribute('data-expanded')) body.style.maxHeight = `${body.scrollHeight}px`
+        }
+
         requestAnimationFrame(() => {
-            body.style.maxHeight = `${body.scrollHeight}px`
+            setBodyHeight()
+        })
+
+        body.querySelectorAll('img, video').forEach(media => {
+            media.addEventListener('load', setBodyHeight, { once: true })
+            media.addEventListener('loadedmetadata', setBodyHeight, { once: true })
         })
     }
 
@@ -1329,6 +1399,7 @@ document.querySelectorAll('.timeline').forEach(tl => {
         if (!card.hasAttribute('data-expanded') && body.hidden) return
 
         setToggleState(card, false)
+        pauseVideos(body)
         body.style.maxHeight = `${body.scrollHeight}px`
         window.clearTimeout(body._researchHideTimer)
 
@@ -1402,10 +1473,11 @@ document.querySelectorAll('.timeline').forEach(tl => {
         { id: 'experience',   label: 'Experience',   num: '10' },
         { id: 'skills',       label: 'Skills',       num: '11' },
         { id: 'projects',     label: 'Projects',     num: '12' },
-        { id: 'blogs',        label: 'Blogs',        num: '13' },
-        { id: 'awards',       label: 'Awards',       num: '14' },
-        { id: 'journeys',     label: 'Journeys',     num: '15' },
-        { id: 'contact',      label: 'Contact',      num: '16' },
+        { id: 'measurement-showcase', label: 'Development Tools', num: '13' },
+        { id: 'blogs',        label: 'Blogs',        num: '14' },
+        { id: 'awards',       label: 'Awards',       num: '15' },
+        { id: 'journeys',     label: 'Journeys',     num: '16' },
+        { id: 'contact',      label: 'Contact',      num: '17' },
     ]
 
     function update(id) {
@@ -1417,14 +1489,31 @@ document.querySelectorAll('.timeline').forEach(tl => {
         tracker.classList.add('tracker--visible')
     }
 
-    const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) update(e.target.id) })
-    }, { threshold: 0.3 })
+    const trackedSections = sections
+        .map(section => ({ ...section, el: document.getElementById(section.id) }))
+        .filter(section => section.el)
 
-    sections.forEach(s => {
-        const el = document.getElementById(s.id)
-        if (el) obs.observe(el)
-    })
+    let trackerRaf = 0
+    function updateFromScroll() {
+        trackerRaf = 0
+        const offset = Math.min(window.innerHeight * 0.34, 260)
+        let active = trackedSections[0]
+
+        trackedSections.forEach(section => {
+            if (window.scrollY >= section.el.offsetTop - offset) active = section
+        })
+
+        if (active) update(active.id)
+    }
+
+    function requestTrackerUpdate() {
+        if (!trackerRaf) trackerRaf = window.requestAnimationFrame(updateFromScroll)
+    }
+
+    window.addEventListener('scroll', requestTrackerUpdate, { passive: true })
+    window.addEventListener('resize', requestTrackerUpdate)
+    window.addEventListener('load', updateFromScroll)
+    updateFromScroll()
 })()
 
 /*===== SCHOLAR CITATION COUNT =====*/
@@ -1627,12 +1716,10 @@ document.querySelectorAll('.timeline').forEach(tl => {
 
             let media
             if (isVideoMedia(point.photo)) {
-                media = document.createElement('video')
-                media.src = photoSrc(point.photo)
-                media.muted = true
-                media.playsInline = true
-                media.preload = 'metadata'
-                media.setAttribute('aria-label', `${point.label} video ${point.photoIndex + 1}`)
+                button.classList.add('journey-map-popup__photo--video')
+                media = createEl('span', 'journey-map-popup__video-thumb')
+                media.setAttribute('aria-hidden', 'true')
+                media.innerHTML = '<i class="uil uil-play"></i>'
             } else {
                 media = document.createElement('img')
                 media.src = photoSrc(point.photo)

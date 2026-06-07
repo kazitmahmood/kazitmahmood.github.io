@@ -15,6 +15,8 @@
     --text-muted:  #64748b;
     --border:      #dde3f0;
     --white:       #ffffff;
+    --card-bg:     #ffffff;
+    --text-light:  #8ca0ba;
 
     --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-heading: 'Merriweather', Georgia, serif;
@@ -93,6 +95,18 @@ img {
 strong {
     font-weight: 600;
     color: var(--navy);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /*===== REUSABLE =====*/
@@ -491,7 +505,7 @@ strong {
     font-size: 0.9rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.8);
-    opacity: 0.3;
+    opacity: 0.64;
     transition: color var(--transition), opacity 0.5s ease;
     position: relative;
     padding-bottom: 0.2rem;
@@ -526,7 +540,7 @@ strong {
     font-size: 0.9rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.8);
-    opacity: 0.3;
+    opacity: 0.64;
     display: inline-flex;
     align-items: center;
     gap: 0.2rem;
@@ -3697,7 +3711,8 @@ html.intro-complete .hero__scroll {
 }
 
 .journey-map-popup__photo img,
-.journey-map-popup__photo video {
+.journey-map-popup__photo video,
+.journey-map-popup__video-thumb {
     width: 100%;
     height: 100%;
     min-height: 74px;
@@ -3708,9 +3723,21 @@ html.intro-complete .hero__scroll {
 .journey-map-popup__photo:hover img,
 .journey-map-popup__photo:focus-visible img,
 .journey-map-popup__photo:hover video,
-.journey-map-popup__photo:focus-visible video {
+.journey-map-popup__photo:focus-visible video,
+.journey-map-popup__photo:hover .journey-map-popup__video-thumb,
+.journey-map-popup__photo:focus-visible .journey-map-popup__video-thumb {
     opacity: 0.9;
     transform: scale(1.06);
+}
+
+.journey-map-popup__video-thumb {
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at 50% 45%, rgba(240, 192, 64, 0.24), transparent 38%),
+        linear-gradient(135deg, rgba(17, 35, 71, 0.92), rgba(40, 85, 160, 0.78));
+    color: var(--gold-light);
+    font-size: 1.45rem;
 }
 
 .journey-map-popup__photo:focus-visible {
@@ -5055,6 +5082,7 @@ html.intro-complete .hero__scroll {
         font-size: 1rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         color: rgba(255, 255, 255, 0.85);
+        opacity: 1;
     }
 
     .nav__more-toggle {
@@ -5119,16 +5147,16 @@ html.intro-complete .hero__scroll {
     }
 
     .hero {
-        min-height: calc(100vh + 96px);
-        min-height: calc(100svh + 96px);
-        min-height: calc(100dvh + 96px);
-        padding-top: calc(64px + 1.5rem);
-        padding-bottom: calc(7rem + env(safe-area-inset-bottom));
+        min-height: 100vh;
+        min-height: 100svh;
+        min-height: 100dvh;
+        padding-top: calc(64px + 0.75rem);
+        padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
     }
 
     .hero__container {
         text-align: center;
-        padding: 2rem 1.5rem 3.5rem;
+        padding: clamp(1rem, 4vh, 2rem) 1.25rem 2.75rem;
     }
 
     .hero__poster {
@@ -5148,9 +5176,33 @@ html.intro-complete .hero__scroll {
 
     .hero__scroll {
         bottom: auto;
-        top: calc(100vh - 5rem - env(safe-area-inset-bottom));
-        top: calc(100svh - 5rem - env(safe-area-inset-bottom));
-        top: calc(100dvh - 5rem - env(safe-area-inset-bottom));
+        top: calc(100vh - 6rem - env(safe-area-inset-bottom));
+        top: calc(100svh - 6rem - env(safe-area-inset-bottom));
+        top: calc(100dvh - 6rem - env(safe-area-inset-bottom));
+    }
+
+    .scrollup {
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.05rem;
+    }
+
+    .scrollup.show-scroll {
+        bottom: 1.5rem;
+    }
+
+    .about__text p,
+    .timeline__detail,
+    .timeline__list li,
+    .research__card-preview p,
+    .research__expanded-preview p,
+    .research__expanded-body p,
+    .research__card-body p,
+    .project__summary,
+    .blog__feature-summary,
+    .pub__abstract p {
+        text-align: left;
     }
 
     .about__container {
@@ -6527,6 +6579,11 @@ html.intro-complete .hero__poster {
 .poster-gallery__item {
     position: relative;
     flex: 0 0 clamp(240px, 28vw, 360px);
+    appearance: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
     border-radius: 0;
     cursor: pointer;
     box-shadow: var(--shadow);
@@ -6544,6 +6601,12 @@ html.intro-complete .hero__poster {
     border-color: var(--gold);
 }
 
+.poster-gallery__item:focus-visible {
+    outline: 3px solid rgba(196, 154, 10, 0.5);
+    outline-offset: 4px;
+    border-color: var(--gold);
+}
+
 .poster-gallery__inner {
     width: 100%; height: 100%;
     position: relative;
@@ -6552,7 +6615,8 @@ html.intro-complete .hero__poster {
     border-radius: inherit;
 }
 
-.poster-gallery__item:hover .poster-gallery__inner {
+.poster-gallery__item:hover .poster-gallery__inner,
+.poster-gallery__item:focus-visible .poster-gallery__inner {
     transform: rotateY(180deg);
 }
 

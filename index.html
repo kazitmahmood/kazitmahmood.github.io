@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kazi Tahsin Mahmood, Ph.D. in Mechanical Engineering, researches nonlinear dynamics, topological metamaterials, and quantum-analogous mechanical systems.">
+    <meta name="theme-color" content="#112347">
+    <link rel="canonical" href="https://kazitmahmood.github.io/">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Kazi Tahsin Mahmood">
+    <meta property="og:description" content="Mechanical engineering researcher working on nonlinear dynamics, topological metamaterials, and quantum-analogous mechanics.">
+    <meta property="og:url" content="https://kazitmahmood.github.io/">
+    <meta property="og:image" content="https://kazitmahmood.github.io/assets/img/Jakkas4.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kazi Tahsin Mahmood">
+    <meta name="twitter:description" content="Mechanical engineering researcher working on nonlinear dynamics, topological metamaterials, and quantum-analogous mechanics.">
+    <meta name="twitter:image" content="https://kazitmahmood.github.io/assets/img/Jakkas4.png">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
@@ -81,6 +93,7 @@
 
         <!--==================== HERO ====================-->
         <section class="hero" id="home">
+            <h1 class="sr-only">Kazi Tahsin Mahmood</h1>
             <canvas id="hero-canvas" aria-hidden="true"></canvas>
             <div class="hero__mouse-glow" aria-hidden="true"></div>
             <div class="hero__container container">
@@ -110,10 +123,9 @@
                     </div>
                 </div>
             </div>
-            <a href="#about" class="hero__scroll">
-                <i class="uil uil-mouse-alt"></i>
+            <a href="#about" class="hero__scroll" aria-label="Scroll to About section">
                 <span>Scroll Down</span>
-                <i class="uil uil-arrow-down"></i>
+                <i class="uil uil-arrow-down" aria-hidden="true"></i>
             </a>
         </section>
 
@@ -367,8 +379,8 @@
                             </p>
                             <div class="pub__figures">
                                 <figure class="pub__figure">
-                                    <video class="pub__figure-video" controls autoplay loop muted playsinline preload="metadata">
-                                        <source src="assets/img/hertzian_dashboard_animation.mp4" type="video/mp4">
+                                    <video class="pub__figure-video" controls autoplay loop muted playsinline preload="none" data-lazy-video>
+                                        <source data-src="assets/img/hertzian_dashboard_animation.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                     <figcaption style="padding: 0.5rem 0.75rem; font-size: 0.82rem; color: var(--text-light, #8ca0ba);">
@@ -412,8 +424,8 @@
                             </p>
                             <div class="pub__figures">
                                 <figure class="pub__figure">
-                                    <video class="pub__figure-video" controls autoplay loop muted playsinline preload="metadata">
-                                        <source src="assets/img/topological_mechanics_slide21_no_footer.mp4" type="video/mp4">
+                                    <video class="pub__figure-video" controls autoplay loop muted playsinline preload="none" data-lazy-video>
+                                        <source data-src="assets/img/topological_mechanics_slide21_no_footer.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                     <figcaption style="padding: 0.5rem 0.75rem; font-size: 0.82rem; color: var(--text-light, #8ca0ba);">
@@ -1102,8 +1114,8 @@
                                 <p>Mechanical lattices support topological wave phenomena governed by geometric phases. We develop a compact Hilbert-space description for one-dimensional elastic chains, expressing intracell motion as a normalized superposition of orthogonal eigenstates and tracking complex amplitudes as trajectories on a Bloch sphere. For diatomic lattices, this construction makes inversion symmetry protection explicit: the relative phase between in-phase and out-of-phase modes is piecewise locked, and the Zak phase is quantized with band-dependent jumps at symmetry points. Extending the framework to triatomic lattices shows that restoring inversion retains quantization, whereas breaking it dequantizes the geometric phase while leaving the spectrum origin invariant. Viewing norm-preserving transformations of the modal coefficient pair as Bloch-sphere rotations, we demonstrate classical analogs of single-qubit logic gates: a &pi; phase rotation about a transverse axis swaps the modal poles, and a longitudinal-axis phase flip maps balanced superpositions to their conjugates. These gate-like operations are realized by controlled evolution across wavenumber space and can be driven or reprogramed through spatiotemporal stiffness modulation. Introducing space-time modulation hybridizes carrier and sideband harmonics, producing continuous phase winding and open-path geometric phases accumulated along the Floquet trajectory. Across static and modulated regimes, the framework unifies algebraic and geometric viewpoints, is robust to gauge and basis choices, and operates directly on amplitude-phase data. Results clarify how symmetry, modulation, and topology jointly govern dispersion, modal mixing, and phase accumulation, providing tools to analyze and design vibration and acoustic functionalities in engineered structures.</p>
                                 <div class="pub__figures">
                                     <figure class="pub__figure">
-                                        <video class="pub__figure-video" controls autoplay loop muted playsinline preload="metadata">
-                                            <source src="assets/img/Topological_Vibration.mp4" type="video/mp4">
+                                        <video class="pub__figure-video" controls autoplay loop muted playsinline preload="none" data-lazy-video>
+                                            <source data-src="assets/img/Topological_Vibration.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
                                     </figure>
@@ -1153,8 +1165,8 @@
                                 <p>Nonlinear mechanical oscillators can emulate qubit analogue algebra by leveraging multiple harmonics of large-amplitude vibrations. We realize a logical elastic bit, a room temperature mechanical analogue of a qubit, in a two-mass oscillator joined by a conical spring whose graded stiffness generates a robust sequence of phase-coherent harmonics. From time-series velocity measurements, a Fourier-projection maps the response onto the complete space of in-phase and out-of-phase eigenvectors. The resulting complex coefficients define a Bloch-sphere representation in which classical superpositions are directly controllable. Moreover, we gain more control over the coefficients by pairing the Fourier harmonics in different orders. When the paired Fourier components share a frequency, the coefficients are independent of time, producing tunable states that can serve as phase-defined memory. Pairing distinct harmonics introduces a beat frequency that drives deterministic precession of the Bloch vector, realizing single-bit rotations (e.g., Pauli-X and Hadamard analogues) without the need of additional external input, with time as the gate clock. By splitting the spectrum into blocks, a single resonator can host several elastic bits at once. The Hilbert space grows with the number of blocks while the hardware stays the same, allowing scalable architectures that show classical non-separable correlations. A linear mass-spring model yields closed-form eigenfrequencies and Bloch-angle formulas that overlay measured trajectories across resonance and provide design rules for state initialization and gate timing. All operations occur at ambient conditions and require no feedback or cryogenics, establishing a simple, reproducible route to quantum-inspired logic in macroscopic mechanics.</p>
                                 <div class="pub__figures">
                                     <figure class="pub__figure">
-                                        <video class="pub__figure-video" controls autoplay loop muted playsinline preload="metadata">
-                                            <source src="assets/img/Logical_Video.mp4" type="video/mp4">
+                                        <video class="pub__figure-video" controls autoplay loop muted playsinline preload="none" data-lazy-video>
+                                            <source data-src="assets/img/Logical_Video.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
                                     </figure>
@@ -1180,8 +1192,8 @@
                                 <p>The exploration of the Berry phase in classical mechanics has opened new frontiers in understanding the dynamics of physical systems, analogous to quantum mechanics. Here, we show controlled accumulation of the Berry phase in a two-level elastic bit, which is a classical counterpart to qubits, achieved by manipulating coupled granules with external drivers. Employing the Bloch sphere representation, the paper demonstrates the manipulation of elastic bit states and the realization of quantum-analog logic gates. A key achievement is the calculation of the Berry phase for various system states, revealing insights into the system's topological nature. Unique to this study is the use of external parameters to explore topological transitions, contrasting with traditional approaches focusing on internal system modifications. By linking the classical and quantum worlds through the Berry phase of an elastic bit, this work extends the potential applications of topological concepts in designing new materials and computational models.</p>
                                 <div class="pub__figures">
                                     <figure class="pub__figure">
-                                        <video class="pub__figure-video" controls autoplay loop muted playsinline preload="metadata">
-                                            <source src="assets/img/topological_insights.mp4" type="video/mp4">
+                                        <video class="pub__figure-video" controls autoplay loop muted playsinline preload="none" data-lazy-video>
+                                            <source data-src="assets/img/topological_insights.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
                                     </figure>
@@ -1243,7 +1255,7 @@
                 </div>
 
                 <div class="pub__scholar-btn">
-                    <a href="https://scholar.google.com/citations?user=1GvXCO8AAAAJ&hl=en" target="_blank" class="btn btn--primary">
+                    <a href="https://scholar.google.com/citations?user=1GvXCO8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
                         <i class="uil uil-graduation-cap"></i> View All on Google Scholar
                     </a>
                     <div class="pub__cite-stat">
@@ -1424,7 +1436,7 @@
                     </button>
 
                     <div class="poster-gallery" id="poster-gallery" aria-label="Poster presentations" tabindex="0">
-                        <div class="poster-gallery__item" onclick="openPosterModal('assets/img/IMECE-150444_Kazi_Tahsin_Mahmood-raster.png')">
+                        <button class="poster-gallery__item" type="button" data-poster-src="assets/img/IMECE-150444_Kazi_Tahsin_Mahmood-raster.png" aria-label="View Quantum Topological Computing poster">
                             <div class="poster-gallery__inner">
                                 <div class="poster-gallery__front">
                                     <img src="assets/img/IMECE-150444_Kazi_Tahsin_Mahmood-raster.png" alt="IMECE research poster" class="poster-gallery__img" loading="lazy">
@@ -1435,8 +1447,8 @@
                                     <span class="poster-gallery__back-cta">View Full Poster</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="poster-gallery__item" onclick="openPosterModal('assets/img/Poster2.png')">
+                        </button>
+                        <button class="poster-gallery__item" type="button" data-poster-src="assets/img/Poster2.png" aria-label="View Quantum Coherent States poster">
                             <div class="poster-gallery__inner">
                                 <div class="poster-gallery__front">
                                     <img src="assets/img/Poster2.png" alt="Quantum coherent states through Hertz-type classical nonlinearity poster" class="poster-gallery__img" loading="lazy">
@@ -1447,8 +1459,8 @@
                                     <span class="poster-gallery__back-cta">View Full Poster</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="poster-gallery__item" onclick="openPosterModal('assets/img/Poster3.jfif')">
+                        </button>
+                        <button class="poster-gallery__item" type="button" data-poster-src="assets/img/Poster3.jfif" aria-label="View Logical Elastic Bit poster">
                             <div class="poster-gallery__inner">
                                 <div class="poster-gallery__front">
                                     <img src="assets/img/Poster3.jfif" alt="Logical elastic bit poster" class="poster-gallery__img" loading="lazy">
@@ -1459,8 +1471,8 @@
                                     <span class="poster-gallery__back-cta">View Full Poster</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="poster-gallery__item" onclick="openPosterModal('assets/img/htx2.png')">
+                        </button>
+                        <button class="poster-gallery__item" type="button" data-poster-src="assets/img/htx2.png" aria-label="View Heat Exchanger Design poster">
                             <div class="poster-gallery__inner">
                                 <div class="poster-gallery__front">
                                     <img src="assets/img/htx2.png" alt="Double pipe heat exchanger poster" class="poster-gallery__img" loading="lazy">
@@ -1471,8 +1483,8 @@
                                     <span class="poster-gallery__back-cta">View Full Poster</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="poster-gallery__item" onclick="openPosterModal('assets/img/Topological_Vibration_Analysis.jpg')">
+                        </button>
+                        <button class="poster-gallery__item" type="button" data-poster-src="assets/img/Topological_Vibration_Analysis.jpg" aria-label="View Topological Vibration poster">
                             <div class="poster-gallery__inner">
                                 <div class="poster-gallery__front">
                                     <img src="assets/img/Topological_Vibration_Analysis.jpg" alt="Topological Vibration Analysis" class="poster-gallery__img" loading="lazy">
@@ -1483,8 +1495,8 @@
                                     <span class="poster-gallery__back-cta">View Full Poster</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="poster-gallery__item" onclick="openPosterModal('assets/img/Crane.png')">
+                        </button>
+                        <button class="poster-gallery__item" type="button" data-poster-src="assets/img/Crane.png" aria-label="View Industrial Robotic Crane poster">
                             <div class="poster-gallery__inner">
                                 <div class="poster-gallery__front">
                                     <img src="assets/img/Crane.png" alt="Automatic color sorting pick and place industrial robotic crane poster" class="poster-gallery__img" loading="lazy">
@@ -1495,7 +1507,7 @@
                                     <span class="poster-gallery__back-cta">View Full Poster</span>
                                 </div>
                             </div>
-                        </div>
+                        </button>
                     </div>
 
                     <button class="poster-gallery__nav poster-gallery__nav--next" type="button" data-poster-scroll="next" aria-label="Scroll posters right">
@@ -1630,8 +1642,8 @@
                         </header>
                         <div class="blog__feature-body">
                         <div class="blog__feature-media">
-                            <video class="blog__feature-video" controls autoplay loop muted playsinline preload="metadata">
-                                <source src="assets/img/Presentation1.mp4" type="video/mp4">
+                            <video class="blog__feature-video" controls autoplay loop muted playsinline preload="none" data-lazy-video>
+                                <source data-src="assets/img/Presentation1.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -1686,8 +1698,8 @@
                         </header>
                         <div class="blog__feature-body">
                         <div class="blog__feature-media">
-                            <video class="blog__feature-video" controls autoplay loop muted playsinline preload="metadata" data-playback-rate="0.5">
-                                <source src="assets/img/Blog2.mp4" type="video/mp4">
+                            <video class="blog__feature-video" controls autoplay loop muted playsinline preload="none" data-lazy-video data-playback-rate="0.5">
+                                <source data-src="assets/img/Blog2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -1755,151 +1767,7 @@
 
                 <div class="journeys__places" aria-label="Journey places" aria-hidden="true" hidden></div>
 
-                <div class="journeys__viewer" id="journeys-viewer" aria-hidden="true">
-                    <article class="journey__album" id="journey-upper-peninsula" data-journey-panel role="dialog" aria-modal="true" aria-labelledby="journey-upper-peninsula-title" hidden>
-                        <header class="journey__album-header">
-                            <div>
-                                <span class="journey__album-kicker">Journey Album</span>
-                                <h3 class="journey__album-title" id="journey-upper-peninsula-title">Upper Peninsula</h3>
-                                <p class="journey__album-copy">Lake air, northern roads, and quiet edges of Michigan.</p>
-                            </div>
-                            <button class="journey__close" type="button" data-journey-close aria-label="Close Upper Peninsula album">
-                                <i class="uil uil-times"></i>
-                            </button>
-                        </header>
-                        <div class="journey__photos" aria-label="Upper Peninsula photos">
-                            <figure class="journey__photo">
-                                <img src="assets/img/journeys/upper-peninsula/IMG_0134.jpeg" alt="Upper Peninsula journey photo 1" loading="lazy" decoding="async">
-                            </figure>
-                            <figure class="journey__photo">
-                                <img src="assets/img/journeys/upper-peninsula/IMG_0140.jpeg" alt="Upper Peninsula journey photo 2" loading="lazy" decoding="async">
-                            </figure>
-                            <figure class="journey__photo">
-                                <img src="assets/img/journeys/upper-peninsula/IMG_0262.jpeg" alt="Upper Peninsula journey photo 3" loading="lazy" decoding="async">
-                            </figure>
-                            <figure class="journey__photo">
-                                <img src="assets/img/journeys/upper-peninsula/IMG_0288.jpeg" alt="Upper Peninsula journey photo 4" loading="lazy" decoding="async">
-                            </figure>
-                            <figure class="journey__photo">
-                                <img src="assets/img/journeys/upper-peninsula/IMG_0630.jpeg" alt="Upper Peninsula journey photo 5" loading="lazy" decoding="async">
-                            </figure>
-                            <figure class="journey__photo">
-                                <img src="assets/img/journeys/upper-peninsula/IMG_0646.jpeg" alt="Upper Peninsula journey photo 6" loading="lazy" decoding="async">
-                            </figure>
-                            <figure class="journey__photo">
-                                <img src="assets/img/journeys/upper-peninsula/IMG_0711.jpeg" alt="Upper Peninsula journey photo 7" loading="lazy" decoding="async">
-                            </figure>
-                        </div>
-                    </article>
-
-                    <article class="journey__album" id="journey-utah" data-journey-panel role="dialog" aria-modal="true" aria-labelledby="journey-utah-title" hidden>
-                        <header class="journey__album-header">
-                            <div>
-                                <span class="journey__album-kicker">Journey Album</span>
-                                <h3 class="journey__album-title" id="journey-utah-title">Utah</h3>
-                                <p class="journey__album-copy">Red-rock scale, desert light, and long horizons.</p>
-                            </div>
-                            <button class="journey__close" type="button" data-journey-close aria-label="Close Utah album">
-                                <i class="uil uil-times"></i>
-                            </button>
-                        </header>
-                        <div class="journey__photos" aria-label="Utah photos">
-                            <figure class="journey__photo journey__photo--wide">
-                                <img src="assets/img/Jakkas.jpg" alt="Utah journey photo placeholder" loading="lazy" decoding="async">
-                            </figure>
-                        </div>
-                    </article>
-
-                    <article class="journey__album" id="journey-arizona" data-journey-panel role="dialog" aria-modal="true" aria-labelledby="journey-arizona-title" hidden>
-                        <header class="journey__album-header">
-                            <div>
-                                <span class="journey__album-kicker">Journey Album</span>
-                                <h3 class="journey__album-title" id="journey-arizona-title">Arizona</h3>
-                                <p class="journey__album-copy">Canyon colors, dry heat, and big southwestern skies.</p>
-                            </div>
-                            <button class="journey__close" type="button" data-journey-close aria-label="Close Arizona album">
-                                <i class="uil uil-times"></i>
-                            </button>
-                        </header>
-                        <div class="journey__photos" aria-label="Arizona photos">
-                            <figure class="journey__photo journey__photo--wide">
-                                <img src="assets/img/Jakkas2.jpg" alt="Arizona journey photo placeholder" loading="lazy" decoding="async">
-                            </figure>
-                        </div>
-                    </article>
-
-                    <article class="journey__album" id="journey-yellowstone" data-journey-panel role="dialog" aria-modal="true" aria-labelledby="journey-yellowstone-title" hidden>
-                        <header class="journey__album-header">
-                            <div>
-                                <span class="journey__album-kicker">Journey Album</span>
-                                <h3 class="journey__album-title" id="journey-yellowstone-title">Yellowstone</h3>
-                                <p class="journey__album-copy">Thermal basins, wild landscapes, and changing weather.</p>
-                            </div>
-                            <button class="journey__close" type="button" data-journey-close aria-label="Close Yellowstone album">
-                                <i class="uil uil-times"></i>
-                            </button>
-                        </header>
-                        <div class="journey__photos" aria-label="Yellowstone photos">
-                            <figure class="journey__photo journey__photo--wide">
-                                <img src="assets/img/Jakkas3.jpg" alt="Yellowstone journey photo placeholder" loading="lazy" decoding="async">
-                            </figure>
-                        </div>
-                    </article>
-
-                    <article class="journey__album" id="journey-washington-dc" data-journey-panel role="dialog" aria-modal="true" aria-labelledby="journey-washington-dc-title" hidden>
-                        <header class="journey__album-header">
-                            <div>
-                                <span class="journey__album-kicker">Journey Album</span>
-                                <h3 class="journey__album-title" id="journey-washington-dc-title">Washington DC</h3>
-                                <p class="journey__album-copy">Monuments, museums, and walks through history.</p>
-                            </div>
-                            <button class="journey__close" type="button" data-journey-close aria-label="Close Washington DC album">
-                                <i class="uil uil-times"></i>
-                            </button>
-                        </header>
-                        <div class="journey__photos" aria-label="Washington DC photos">
-                            <figure class="journey__photo journey__photo--wide">
-                                <img src="assets/img/69002370_2344194425694267_9156056228445552640_n.jpg" alt="Washington DC journey photo placeholder" loading="lazy" decoding="async">
-                            </figure>
-                        </div>
-                    </article>
-
-                    <article class="journey__album" id="journey-oregon" data-journey-panel role="dialog" aria-modal="true" aria-labelledby="journey-oregon-title" hidden>
-                        <header class="journey__album-header">
-                            <div>
-                                <span class="journey__album-kicker">Journey Album</span>
-                                <h3 class="journey__album-title" id="journey-oregon-title">Oregon</h3>
-                                <p class="journey__album-copy">Evergreen roads, coastlines, and Pacific Northwest light.</p>
-                            </div>
-                            <button class="journey__close" type="button" data-journey-close aria-label="Close Oregon album">
-                                <i class="uil uil-times"></i>
-                            </button>
-                        </header>
-                        <div class="journey__photos" aria-label="Oregon photos">
-                            <figure class="journey__photo journey__photo--wide">
-                                <img src="assets/img/Jakkas2.jpg" alt="Oregon journey photo placeholder" loading="lazy" decoding="async">
-                            </figure>
-                        </div>
-                    </article>
-
-                    <article class="journey__album" id="journey-midwest" data-journey-panel role="dialog" aria-modal="true" aria-labelledby="journey-midwest-title" hidden>
-                        <header class="journey__album-header">
-                            <div>
-                                <span class="journey__album-kicker">Journey Album</span>
-                                <h3 class="journey__album-title" id="journey-midwest-title">Midwest</h3>
-                                <p class="journey__album-copy">Campus towns, lakeside evenings, and road-trip fragments.</p>
-                            </div>
-                            <button class="journey__close" type="button" data-journey-close aria-label="Close Midwest album">
-                                <i class="uil uil-times"></i>
-                            </button>
-                        </header>
-                        <div class="journey__photos" aria-label="Midwest photos">
-                            <figure class="journey__photo journey__photo--wide">
-                                <img src="assets/img/about.jpg" alt="Midwest journey photo placeholder" loading="lazy" decoding="async">
-                            </figure>
-                        </div>
-                    </article>
-                </div>
+                <div class="journeys__viewer" id="journeys-viewer" aria-hidden="true"></div>
             </div>
         </section>
 
@@ -2007,10 +1875,10 @@
                         </div>
 
                         <div class="contact__social">
-                            <a href="https://www.linkedin.com/in/kazitahsin/" target="_blank" class="contact__social-link">
+                            <a href="https://www.linkedin.com/in/kazitahsin/" target="_blank" rel="noopener noreferrer" class="contact__social-link">
                                 <i class="uil uil-linkedin-alt"></i> LinkedIn
                             </a>
-                            <a href="https://scholar.google.com/citations?user=1GvXCO8AAAAJ&hl=en" target="_blank" class="contact__social-link">
+                            <a href="https://scholar.google.com/citations?user=1GvXCO8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="contact__social-link">
                                 <i class="uil uil-graduation-cap"></i> Google Scholar
                             </a>
                         </div>
@@ -2037,11 +1905,11 @@
     </main>
 
     <!-- Poster Lightbox Modal -->
-    <div class="poster-modal" id="posterModal" onclick="closePosterModal()">
-        <button class="poster-modal__close" aria-label="Close" onclick="event.stopPropagation(); closePosterModal()">
+    <div class="poster-modal" id="posterModal" role="dialog" aria-modal="true" aria-label="Poster preview" aria-hidden="true">
+        <button class="poster-modal__close" type="button" aria-label="Close poster preview" data-poster-close>
             <i class="uil uil-times"></i>
         </button>
-        <img class="poster-modal__img" id="posterModalImg" src="" alt="Poster enlarged view" onclick="event.stopPropagation()">
+        <img class="poster-modal__img" id="posterModalImg" src="" alt="Poster enlarged view">
     </div>
 
     <!--==================== FOOTER ====================-->
