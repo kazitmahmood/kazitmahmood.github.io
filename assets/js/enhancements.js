@@ -83,6 +83,15 @@
         }
     }
     const shapeOrder = ['wave', 'curve', 'slant', 'peaks']
+    const shapeOverrides = {
+        'education>research': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
+        'research>research-experience': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
+        'publications>conferences': { type: 'wave', flip: false },
+        'conferences>posters': { type: 'wave', flip: false },
+        'posters>teaching': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
+        'skills>projects': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
+        'measurement-showcase>blogs': { type: 'wave', flip: false }
+    }
     let shapeCount = 0
     let gradientCount = 0
     const dividers = []
@@ -96,8 +105,9 @@
         const nextColor = sectionColor(sec)
         const divider = document.createElement('div')
         divider.setAttribute('aria-hidden', 'true')
+        const shapeOverride = shapeOverrides[`${prev.id}>${sec.id}`]
 
-        const sameColor = !Array.isArray(prevColor) && !Array.isArray(nextColor) && prevColor === nextColor
+        const sameColor = !shapeOverride && !Array.isArray(prevColor) && !Array.isArray(nextColor) && prevColor === nextColor
         if (sameColor) {
             divider.className = 'sdiv sdiv--orn'
             divider.innerHTML =
@@ -107,9 +117,9 @@
                     '<span class="sdiv__orn-line sdiv__orn-line--r"></span>' +
                 '</span>'
         } else {
-            const type = shapeOrder[shapeCount % shapeOrder.length]
-            const flip = shapeCount % 2 === 1
-            shapeCount += 1
+            const type = shapeOverride?.type || shapeOrder[shapeCount % shapeOrder.length]
+            const flip = shapeOverride?.flip ?? (shapeCount % 2 === 1)
+            if (!shapeOverride) shapeCount += 1
             const shape = shapeDefs[type]
 
             let fill = nextColor
@@ -124,7 +134,7 @@
                 fill = `url(#${gradId})`
             }
 
-            divider.className = `sdiv sdiv--shape sdiv--${type}${flip ? ' sdiv--flip' : ''}`
+            divider.className = `sdiv sdiv--shape sdiv--${type}${flip ? ' sdiv--flip' : ''}${shapeOverride?.className ? ` ${shapeOverride.className}` : ''}`
             divider.innerHTML =
                 `<div class="sdiv__svg"><svg viewBox="${shape.viewBox}" preserveAspectRatio="none" focusable="false">${defs}` +
                 shape.paths.map(p => `<path d="${p.d}" fill="${fill}" fill-opacity="${p.opacity}"></path>`).join('') +

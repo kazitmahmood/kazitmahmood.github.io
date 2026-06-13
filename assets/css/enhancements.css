@@ -65,6 +65,14 @@
     animation: sdivDrift 17s linear infinite;
 }
 
+.sdiv--echo-wave .sdiv__svg {
+    filter: drop-shadow(0 -10px 22px rgba(27, 58, 107, 0.08));
+}
+
+.sdiv--echo-wave .sdiv__svg path:first-of-type {
+    fill: rgba(255, 255, 255, 0.78);
+}
+
 @keyframes sdivDrift {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
