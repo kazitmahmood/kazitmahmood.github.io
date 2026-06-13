@@ -6354,8 +6354,6 @@ html.intro-complete .hero__poster {
     .motion-ready.motion-in,
     .motion-ready.motion-settled,
     .timeline__item--current .timeline__dot,
-    .timeline__runner,
-    .timeline__runner-core,
     .project__card-signals span,
     .project__card-signals span::before,
     .project__highlights li,
@@ -6376,6 +6374,13 @@ html.intro-complete .hero__poster {
         animation: none !important;
         transition-duration: 0.01ms !important;
         transition-delay: 0ms !important;
+    }
+
+    /* The runner is a purely decorative moving ornament; its position
+       comes from an inline transform, so it cannot survive a blanket
+       transform reset. Hide it when motion is reduced. */
+    .timeline__runner {
+        display: none !important;
     }
 
     .section__bg-icons::before,
