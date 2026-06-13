@@ -73,6 +73,38 @@
     fill: rgba(255, 255, 255, 0.78);
 }
 
+.sdiv--contact-wave.sdiv--shape {
+    height: clamp(42px, 6vw, 76px);
+    margin-top: calc(-1 * clamp(22px, 3vw, 40px));
+}
+
+.sdiv--contact-wave::before {
+    content: '';
+    position: absolute;
+    inset: -1px 0 auto;
+    height: 42%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(244, 247, 251, 0.42), rgba(244, 247, 251, 0));
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sdiv--contact-wave .sdiv__svg {
+    filter: drop-shadow(0 -8px 18px rgba(17, 35, 71, 0.12));
+    transition-duration: 1s;
+}
+
+.sdiv--contact-wave .sdiv__svg svg {
+    animation-duration: 21s;
+}
+
+.sdiv--contact-wave.sdiv-in::before {
+    opacity: 1;
+    transform: none;
+}
+
 @keyframes sdivDrift {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }

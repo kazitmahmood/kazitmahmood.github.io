@@ -90,7 +90,8 @@
         'conferences>posters': { type: 'wave', flip: false },
         'posters>teaching': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
         'skills>projects': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
-        'measurement-showcase>blogs': { type: 'wave', flip: false }
+        'measurement-showcase>blogs': { type: 'wave', flip: false },
+        'journeys>contact': { type: 'wave', flip: false, className: 'sdiv--contact-wave' }
     }
     let shapeCount = 0
     let gradientCount = 0
