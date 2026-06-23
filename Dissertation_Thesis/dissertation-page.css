@@ -484,6 +484,12 @@ h3 {
   background: #fff;
 }
 
+.article-body figure video,
+.article-body .animation-card video {
+  aspect-ratio: 16 / 9;
+  background: #101820;
+}
+
 .article-body figcaption,
 .article-body .caption {
   padding: .85rem 1rem 1rem;
@@ -528,6 +534,57 @@ h3 {
   color: var(--navy-dark);
 }
 
+.article-body .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.article-body .thesis-table table {
+  display: table;
+  min-width: 720px;
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.article-body .thesis-table th {
+  font-weight: 800;
+  text-align: left;
+}
+
+.article-body .thesis-table th[scope="row"] {
+  width: 8.5rem;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.article-body .thesis-table td,
+.article-body .thesis-table th {
+  padding: .78rem .86rem;
+}
+
+.article-body .thesis-table .math-cell {
+  color: #172033;
+  font-size: .92rem;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.article-body .thesis-table .math-cell mjx-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.article-body .compact-data-table {
+  min-width: 540px;
+}
+
+.article-body .compact-data-table td,
+.article-body .compact-data-table th {
+  text-align: center;
+}
+
 .article-body pre {
   overflow-x: auto;
   padding: 1rem;
@@ -563,6 +620,11 @@ h3 {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.content-stack .reveal {
+  opacity: 1;
+  transform: none;
 }
 
 @media (max-width: 1100px) {

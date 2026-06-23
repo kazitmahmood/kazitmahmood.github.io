@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Dissertation | Kazi Tahsin Mahmood</title>
 <meta content="A styled HTML edition of Kazi Tahsin Mahmood's dissertation on nonlinear elastic networks, elastic bits, Berry phase, and acoustic topological analogues." name="description"/>
-<link href="dissertation-page.css?v=5" rel="stylesheet"/>
+<link href="dissertation-page.css?v=9" rel="stylesheet"/>
 <script>
     window.MathJax = {
       tex: {
@@ -22,7 +22,7 @@
     };
   </script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script defer="" src="dissertation-page.js?v=3"></script>
+<script defer="" src="dissertation-page.js?v=6"></script>
 </head>
 <body>
 <div aria-hidden="true" class="read-progress"><span></span></div>
@@ -49,11 +49,11 @@
 </div>
 <div aria-label="Dissertation animations" class="hero-visuals">
 <figure class="media-card">
-<img alt="Bloch-sphere state vector animation" loading="eager" src="animations/bloch-sphere-gyroscope.gif"/>
+<img alt="Bloch-sphere state vector animation" height="850" loading="eager" src="animations/bloch-sphere-gyroscope.gif" width="850"/>
 <figcaption><strong>Bloch State</strong></figcaption>
 </figure>
 <figure class="media-card media-card-wide">
-<img alt="Topological mechanics Berry phase and amplitude animation rendered from main.tex" loading="eager" src="animations/topological-mechanics-berry-phase.gif"/>
+<img alt="Topological mechanics Berry phase and amplitude animation rendered from main.tex" height="405" loading="eager" src="animations/topological-mechanics-berry-phase.gif" width="1018"/>
 <figcaption><strong>Topological Mechanics</strong></figcaption>
 </figure>
 </div>
@@ -63,7 +63,7 @@
 <p class="eyebrow">Research Arc</p>
 <h2>From granular nonlinear modes to quantum and topological analogues</h2>
 </div>
-<p>The page preserves the dissertation content while presenting it as a navigable website: compact chapter cards, sticky section links, responsive figures, MathJax equations, and media that stays inside the page rather than opening a notebook shell.</p>
+<p>This dissertation shows how nonlinear elastic networks can realize classical analogues of quantum states and topological phases. Through granular and conical-spring systems, it develops elastic bits that support controllable superpositions on a Bloch sphere and measurable Berry-phase dynamics.</p>
 </section>
 <section aria-label="Chapter overview" class="chapter-grid" id="chapters">
 <a class="chapter-card reveal" href="#abstract"><span>01</span><strong>Abstract</strong><p>Classical Realization of Quantum and Topological Analogous States through Nonlinear Elastic.</p></a>
@@ -98,7 +98,7 @@
 <a href="#autobio">Autobiographical Statement</a>
 </aside>
 <article class="content-stack">
-<section aria-labelledby="abstract-label" class="dissertation-section reveal" id="abstract"><div class="section-label" id="abstract-label">Abstract</div><div class="article-body">
+<section aria-labelledby="abstract-label" class="dissertation-section" id="abstract"><div class="section-label" id="abstract-label">Abstract</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="abstract">
 <h1>Abstract</h1>
 <p>Classical Realization of Quantum and Topological Analogous States through Nonlinear Elastic Networks</p>
@@ -156,7 +156,7 @@ that emulate the power of quantum information processing while remaining accessi
 ambient laboratory conditions.</p>
 </section>
 </div></section>
-<section aria-labelledby="acknowledgments-label" class="dissertation-section reveal" id="acknowledgments"><div class="section-label" id="acknowledgments-label">Acknowledgments</div><div class="article-body">
+<section aria-labelledby="acknowledgments-label" class="dissertation-section" id="acknowledgments"><div class="section-label" id="acknowledgments-label">Acknowledgments</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="acknowledgments">
 <h1>Acknowledgments</h1>
 <p>I would first like to express my deepest gratitude to my supervisor, <strong>Dr. M. Arif Hasan</strong>, Assistant Professor in the Department of Mechanical Engineering at Wayne State University, Detroit, MI, for his invaluable guidance, encouragement, and continuous supervision throughout this dissertation. His insightful feedback, technical expertise, and intellectual mentorship within the Acoustic Pseudospin and Metamaterials Laboratory have been instrumental in shaping the direction and quality of this research.
@@ -165,7 +165,7 @@ I am equally grateful to the <strong>Department of Mechanical Engineering at Way
 Finally, I gratefully acknowledge the NSF grants <strong>2204382</strong> and <strong>2242925</strong>. The interdisciplinary vision and collaborative framework of the <strong>New Frontiers of Sound (NewFoS) Science and Technology Center</strong> have been essential in shaping the broader impact and direction of this research.</p>
 </section>
 </div></section>
-<section aria-labelledby="introduction-label" class="dissertation-section reveal" id="introduction"><div class="section-label" id="introduction-label">Introduction</div><div class="article-body">
+<section aria-labelledby="introduction-label" class="dissertation-section" id="introduction"><div class="section-label" id="introduction-label">Introduction</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>INTRODUCTION</h1>
 <section id="quantum-systems-and-their-applications">
@@ -195,11 +195,11 @@ Finally, I gratefully acknowledge the NSF grants <strong>2204382</strong> and <s
 </section>
 </section>
 </div></section>
-<section aria-labelledby="granular-bead-label" class="dissertation-section reveal" id="granular-bead"><div class="section-label" id="granular-bead-label">Granular Systems</div><div class="article-body">
+<section aria-labelledby="granular-bead-label" class="dissertation-section" id="granular-bead"><div class="section-label" id="granular-bead-label">Granular Systems</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="background-and-tunable-characteristics-of-granular-network-through-theoretical-and-mathematical-modeling">
 <h1>BACKGROUND AND TUNABLE CHARACTERISTICS OF GRANULAR NETWORK THROUGH THEORETICAL AND MATHEMATICAL MODELING</h1>
 <section aria-label="Animated chapter media" class="animation-strip">
-<figure class="animation-card reveal"><video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" src="animations/two-mass-contact-animation.mp4"></video><figcaption><strong>Two-mass contact animation</strong><span>Nonlinear contact motion for the minimal granular network.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Hertzian contact animation from slide 11 of the acoustic analog presentation" height="252" loading="lazy" src="animations/hertzian-contact-animation.gif" width="932"/><figcaption><strong>Hertzian Contact Animation</strong><span>Granular contact nonlinearity from slide 11.</span></figcaption></figure>
 </section>
 <p>Understanding the unique dynamical properties of granular systems lays the foundation for exploiting their potential in simulating quantum-like behaviors. These systems, composed of discrete elastic particles, demonstrate strongly nonlinear interactions, primarily when confined to fixed geometries <span id="id1">[<a class="reference internal" href="#id188">Porter <em>et al.</em>, 2015</a>]</span>. We begin by establishing the foundational definitions and configurations before delving into governing mathematics and its relevance in emerging quantum-analog applications.</p>
 <section id="specification-of-granular-network">
@@ -222,9 +222,9 @@ Finally, I gratefully acknowledge the NSF grants <strong>2204382</strong> and <s
 <li><p><strong>Tapered Chain:</strong> Tapered granular chains feature a gradual change in granule size along their length. This structural gradient has a significant impact on local stiffness and mass distribution, enabling precise wave manipulation, such as energy focusing, shock wave attenuation, and tailored stress wave profiles. These chains are particularly beneficial in applications that require impact mitigation and energy localization <span id="id6">[<a class="reference internal" href="#id183">Melo <em>et al.</em>, 2006</a>]</span>.</p></li>
 <li><p><strong>Tapered Dimer Chain:</strong> Tapered dimer chains combine the structural gradient characteristics of tapered chains with the periodic mass variations of diatomic chains. This complex configuration enhances the ability to control wave propagation, achieve efficient energy trapping, and facilitate targeted wave attenuation. These structures possess advanced capabilities in applications that require high levels of vibration isolation and precise energy management <span id="id7">[<a class="reference internal" href="#id185">Doney <em>et al.</em>, 2009</a>]</span>.</p></li>
 </ul>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Typical configurations of granular networks: (Top-left) Homogeneous System consisting of identical granules uniformly arranged; (Top-right) Tapered Chain with granules gradually increasing in size; (Bottom-left) Diatomic or Dimer Chain featuring alternating large and small granules; (Bottom-right) Tapered Dimer Chain combining periodic mass variations with a gradual structural gradient. These configurations illustrate the diversity in structural designs, each enabling distinct and tunable wave propagation and energy management characteristics in granular networks." loading="lazy" src="figures/figure-granular-beads-tex.png"/></figure>
+<figure><img alt="Typical configurations of granular networks: (Top-left) Homogeneous System consisting of identical granules uniformly arranged; (Top-right) Tapered Chain with granules gradually increasing in size; (Bottom-left) Diatomic or Dimer Chain featuring alternating large and small granules; (Bottom-right) Tapered Dimer Chain combining periodic mass variations with a gradual structural gradient. These configurations illustrate the diversity in structural designs, each enabling distinct and tunable wave propagation and energy management characteristics in granular networks." height="376" loading="lazy" src="figures/figure-granular-beads-tex.png" width="1066"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Typical configurations of granular networks: (Top-left) Homogeneous System consisting of identical granules uniformly arranged; (Top-right) Tapered Chain with granules gradually increasing in size; (Bottom-left) Diatomic or Dimer Chain featuring alternating large and small granules; (Bottom-right) Tapered Dimer Chain combining periodic mass variations with a gradual structural gradient. These configurations illustrate the diversity in structural designs, each enabling distinct and tunable wave propagation and energy management characteristics in granular networks.</p>
 </div>
@@ -268,9 +268,9 @@ Finally, I gratefully acknowledge the NSF grants <strong>2204382</strong> and <s
     \qquad
     R^* = \frac{R}{2}.
 \end{equation}\]</div>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Hertzian contact and deformation of the granules. It represents the deformation of the granules at the contact point." loading="lazy" src="figures/figure-hertzian-contact-tex.png"/></figure>
+<figure><img alt="Hertzian contact and deformation of the granules. It represents the deformation of the granules at the contact point." height="212" loading="lazy" src="figures/figure-hertzian-contact-tex.png" width="938"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Hertzian contact and deformation of the granules. It represents the deformation of the granules at the contact point.</p>
 </div>
@@ -449,9 +449,45 @@ m \ddot{u}_2 =
 \end{aligned}
 \end{equation}\]</div>
 <p>By assuming <span class="math notranslate nohighlight">\(k_1=\tfrac{3}{2}\,k_{\mathrm{NL}}\,\delta_0^{1/2}\)</span>, <span class="math notranslate nohighlight">\(k_2=\tfrac{3}{8}\,k_{\mathrm{NL}}\,\delta_0^{-1/2}\)</span>, and <span class="math notranslate nohighlight">\(k_3=-\tfrac{3}{48}\,k_{\mathrm{NL}}\,\delta_0^{-3/2}\)</span>. We assume the displacement fields as <span class="math notranslate nohighlight">\(u_1 = u_{1,0} + \epsilon u_{1,1} + \epsilon^2 u_{1,2}\)</span> and <span class="math notranslate nohighlight">\(u_2 = u_{2,0} + \epsilon u_{2,1} + \epsilon^2 u_{2,2}\)</span>. To carry out the asymptotic method, we introduce a small dimensionless parameter <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
-<div class="thesis-table reveal" style="--figure-columns:1">
-<div class="figure-grid">
-<figure><img alt="Perturbative expansion of nonlinear granular dynamics for two coupled masses" loading="lazy" src="figures/tab-granule-equations-5054406688598257608.png"/></figure>
+<div class="thesis-table mathjax_process">
+<div class="table-scroll">
+<table aria-label="Perturbative expansion of nonlinear granular dynamics for two coupled masses">
+<thead>
+<tr><th scope="col">Granule</th><th scope="col">Perturbative expansion</th></tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Granule 1</th>
+<td class="math-cell">\(\begin{aligned}
+m(\ddot{u}_{1,0} + \epsilon \ddot{u}_{1,1} + \epsilon^2 \ddot{u}_{1,2})
+&amp;= k_1 \!\left[(F_1 e^{i \omega_D t} - u_{1,0}) - (u_{1,0} - u_{2,0})\right] \\
+&amp;\quad + \epsilon k_1 \!\left[(-u_{1,1}) - (u_{1,1} - u_{2,1})\right]
++ \epsilon^2 k_1 \!\left[(-u_{1,2}) - (u_{1,2} - u_{2,2})\right] \\
+&amp;\quad + \epsilon k_2 \!\Big[(F_1 e^{i \omega_D t} - u_{1,0})^2
++ \epsilon (-2F_1 e^{i \omega_D t}u_{1,1} + 2u_{1,0}u_{1,1}) \\
+&amp;\qquad\quad - (u_{1,0} - u_{2,0})^2
+- \epsilon^2 (2u_{1,0}u_{1,1} - 2u_{1,1}u_{2,0} - 2u_{1,0}u_{2,1} + 2u_{2,0}u_{2,1})\Big] \\
+&amp;\quad + \epsilon^2 k_3 \!\left[(F_1 e^{i \omega_D t} - u_{1,0})^3 - (u_{1,0} - u_{2,0})^3\right] \\
+&amp;\quad - \eta(\dot{u}_{1,0} + \epsilon \dot{u}_{1,1} + \epsilon^2 \dot{u}_{1,2})
+\end{aligned}\)</td>
+</tr>
+<tr>
+<th scope="row">Granule 2</th>
+<td class="math-cell">\(\begin{aligned}
+m(\ddot{u}_{2,0} + \epsilon \ddot{u}_{2,1} + \epsilon^2 \ddot{u}_{2,2})
+&amp;= k_1 \!\left[(u_{1,0} - u_{2,0}) - (u_{2,0} - F_2 e^{i \omega_D t})\right] \\
+&amp;\quad + \epsilon k_1 \!\left[(u_{1,1} - u_{2,1}) - u_{2,1}\right]
++ \epsilon^2 k_1 \!\left[(u_{1,2} - u_{2,2}) - u_{2,2}\right] \\
+&amp;\quad + \epsilon k_2 \!\Big[-(u_{2,0} - F_2 e^{i \omega_D t})^2
++ \epsilon (2F_2 e^{i \omega_D t}u_{2,1} - 2u_{2,0}u_{2,1}) \\
+&amp;\qquad\quad + (u_{1,0} - u_{2,0})^2
++ \epsilon^2 (2u_{1,0}u_{1,1} - 2u_{1,1}u_{2,0} - 2u_{1,0}u_{2,1} + 2u_{2,0}u_{2,1})\Big] \\
+&amp;\quad + \epsilon^2 k_3 \!\left[(u_{1,0} - u_{2,0})^3 - (u_{2,0} - F_2 e^{i \omega_D t})^3\right] \\
+&amp;\quad - \eta(\dot{u}_{2,0} + \epsilon \dot{u}_{2,1} + \epsilon^2 \dot{u}_{2,2})
+\end{aligned}\)</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p class="caption"><span>Table.</span> Perturbative expansion of nonlinear granular dynamics for two coupled masses</p>
 </div>
@@ -527,9 +563,54 @@ k_1 \!\left[(u_{1,2} - u_{2,2}) - u_{2,2}\right]
 - \eta \dot{u}_{2,2} &amp;&amp;
 \end{flalign}\]</div>
 <p>To solve Eq. (<a class="xref" href="#multi-order-equation">16</a>), we assume the solutions of the form <span class="math notranslate nohighlight">\( u_{1,n-1}=nA_{1,n-1} e^{ni\omega_D t}\)</span> and <span class="math notranslate nohighlight">\(u_{2,n-1}=nA_{2,n-1} e^{ni\omega_D t}\)</span>. So,</p>
-<div class="thesis-table reveal" style="--figure-columns:1">
-<div class="figure-grid">
-<figure><img alt="Time-domain harmonic expansions of displacement, velocity, and acceleration components up to the second perturbation order for both granules." loading="lazy" src="figures/tab-harmonic-expansions-2475212400317695683.png"/></figure>
+<div class="thesis-table mathjax_process">
+<div class="table-scroll">
+<table aria-label="Time-domain harmonic expansions of displacement, velocity, and acceleration components up to the second perturbation order for both granules">
+<thead>
+<tr><th scope="col">Order</th><th scope="col">Granule 1</th><th scope="col">Granule 2</th></tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">\(\epsilon^0\)</th>
+<td class="math-cell">\(\begin{array}{rcl}
+u_{1,0} &amp;=&amp; A_{1,0} e^{i \omega_D t} \\
+\dot{u}_{1,0} &amp;=&amp; i \omega_D A_{1,0} e^{i \omega_D t} \\
+\ddot{u}_{1,0} &amp;=&amp; -\omega_D^2 A_{1,0} e^{i \omega_D t}
+\end{array}\)</td>
+<td class="math-cell">\(\begin{array}{rcl}
+u_{2,0} &amp;=&amp; A_{2,0} e^{i \omega_D t} \\
+\dot{u}_{2,0} &amp;=&amp; i \omega_D A_{2,0} e^{i \omega_D t} \\
+\ddot{u}_{2,0} &amp;=&amp; -\omega_D^2 A_{2,0} e^{i \omega_D t}
+\end{array}\)</td>
+</tr>
+<tr>
+<th scope="row">\(\epsilon^1\)</th>
+<td class="math-cell">\(\begin{array}{rcl}
+u_{1,1} &amp;=&amp; 2A_{1,1} e^{2i \omega_D t} \\
+\dot{u}_{1,1} &amp;=&amp; 4i \omega_D A_{1,1} e^{2i \omega_D t} \\
+\ddot{u}_{1,1} &amp;=&amp; -8\omega_D^2 A_{1,1} e^{2i \omega_D t}
+\end{array}\)</td>
+<td class="math-cell">\(\begin{array}{rcl}
+u_{2,1} &amp;=&amp; 2A_{2,1} e^{2i \omega_D t} \\
+\dot{u}_{2,1} &amp;=&amp; 4i \omega_D A_{2,1} e^{2i \omega_D t} \\
+\ddot{u}_{2,1} &amp;=&amp; -8\omega_D^2 A_{2,1} e^{2i \omega_D t}
+\end{array}\)</td>
+</tr>
+<tr>
+<th scope="row">\(\epsilon^2\)</th>
+<td class="math-cell">\(\begin{array}{rcl}
+u_{1,2} &amp;=&amp; 3A_{1,2} e^{3i \omega_D t} \\
+\dot{u}_{1,2} &amp;=&amp; 9i \omega_D A_{1,2} e^{3i \omega_D t} \\
+\ddot{u}_{1,2} &amp;=&amp; -27\omega_D^2 A_{1,2} e^{3i \omega_D t}
+\end{array}\)</td>
+<td class="math-cell">\(\begin{array}{rcl}
+u_{2,2} &amp;=&amp; 3A_{2,2} e^{3i \omega_D t} \\
+\dot{u}_{2,2} &amp;=&amp; 9i \omega_D A_{2,2} e^{3i \omega_D t} \\
+\ddot{u}_{2,2} &amp;=&amp; -27\omega_D^2 A_{2,2} e^{3i \omega_D t}
+\end{array}\)</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p class="caption"><span>Table.</span> Time-domain harmonic expansions of displacement, velocity, and acceleration components up to the second perturbation order for both granules.</p>
 </div>
@@ -821,9 +902,27 @@ A_{2,2} &amp;=
 \end{aligned}
 \end{equation}\]</div>
 <p>We can replace the common terms with <span class="math notranslate nohighlight">\(\gamma_1, \gamma_2, \gamma_3, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_5, \sigma_6\)</span>, giving the amplitudes in the generalized compact form as</p>
-<div class="thesis-table reveal" style="--figure-columns:1">
-<div class="figure-grid">
-<figure><img alt="Amplitude coefficients at successive harmonic orders." loading="lazy" src="figures/tab-amplitudes-1580775916853052345.png"/></figure>
+<div class="thesis-table mathjax_process">
+<div class="table-scroll">
+<table aria-label="Amplitude coefficients at successive harmonic orders">
+<thead>
+<tr><th scope="col">Granule 1</th><th scope="col">Granule 2</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="math-cell">\(A_{1,0}= \dfrac{F_1 k_1 \gamma_1 + F_2 k_1^2}{\gamma_1^2 - k_1^2}\)</td>
+<td class="math-cell">\(A_{2,0}= \dfrac{F_1 k_1^2 + F_2 k_1 \gamma_1}{\gamma_1^2 - k_1^2}\)</td>
+</tr>
+<tr>
+<td class="math-cell">\(A_{1,1}= \dfrac{2k_1k_2\sigma_1 + k_2\gamma_2\sigma_2}{\gamma_2^2 - 4k_1^2}\)</td>
+<td class="math-cell">\(A_{2,1}= \dfrac{2k_1k_2\sigma_2 + k_2\gamma_2\sigma_1}{\gamma_2^2 - 4k_1^2}\)</td>
+</tr>
+<tr>
+<td class="math-cell">\(A_{1,2}= \dfrac{12k_1k_2\sigma_5 + 3k_1k_3\sigma_3 + 4k_2\gamma_3\sigma_6 + k_3\gamma_3\sigma_4}{\gamma_3^2 - 9k_1^2}\)</td>
+<td class="math-cell">\(A_{2,2}= \dfrac{12k_1k_2\sigma_6 + 3k_1k_3\sigma_4 + 4k_2\gamma_3\sigma_5 + k_3\gamma_3\sigma_3}{\gamma_3^2 - 9k_1^2}\)</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p class="caption"><span>Table.</span> Amplitude coefficients at successive harmonic orders.</p>
 </div>
@@ -849,7 +948,7 @@ The zeroth-order amplitude represents the linearized term, while the first- and 
 </section>
 </section>
 </div></section>
-<section aria-labelledby="nonlinear-normal-mode-label" class="dissertation-section reveal" id="nonlinear-normal-mode"><div class="section-label" id="nonlinear-normal-mode-label">Nonlinear Normal Modes</div><div class="article-body">
+<section aria-labelledby="nonlinear-normal-mode-label" class="dissertation-section" id="nonlinear-normal-mode"><div class="section-label" id="nonlinear-normal-mode-label">Nonlinear Normal Modes</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="definition-and-demonstration-of-nonlinear-normal-mode-in-classical-granular-medium-and-control-through-external-excitation">
 <h1>DEFINITION AND DEMONSTRATION OF NONLINEAR NORMAL MODE IN CLASSICAL GRANULAR MEDIUM AND CONTROL THROUGH EXTERNAL EXCITATION</h1>
 <p>The study of oscillatory dynamics in nonlinear systems is a cornerstone of understanding energy transfer, wave behavior, and coherent structures in a wide range of physical media. In granular systems, where interactions are inherently nonlinear and non-cohesive, traditional linear modal analysis falls short of capturing the full dynamic richness. This necessitates the introduction of Nonlinear Normal Modes (NNMs), a generalization of linear normal modes tailored to nonlinear and often discontinuous systems.
@@ -929,9 +1028,9 @@ By applying perturbation analysis and modal projection, the model reveals two fu
 <li><p>The <strong>out-of-phase mode</strong>, representing antisymmetric oscillation in which one granule moves against the other, producing alternating contact compression and rarefaction.</p></li>
 </ul>
 <p>These two NNMs form the backbone of the nonlinear dynamic response in granular dimers, serving as mechanical analogues of the acoustic and optical branches in diatomic lattices. As the excitation amplitude increases, the two branches deviate from their linear counterparts, displaying characteristic frequency shifts and energy exchange phenomena. This system, therefore, provides a compact framework for investigating the transition from linear modal behavior to fully nonlinear oscillations and mode coupling.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-nnm-modes"><img alt="Time-domain displacement, frequency response, and phase difference between two granules in a nonlinear granular network exhibiting Nonlinear Normal Modes (NNMs). The left column illustrates the in-phase NNM at driving frequency \((\omega_D=0.45)\), where both masses oscillate synchronously with zero phase difference, a characteristic of lower-frequency excitation and intermittent contact. The right column shows the out-of-phase NNM \((\omega_D=0.73)\), with masses oscillating in anti-symmetry (\(\pi\) phase difference), corresponding to higher frequency excitation and sustained contact. The responses are obtained under strongly nonlinear conditions with no static precompression \((\delta_0=0)\), revealing distinct modal structures governed by Hertzian interactions." loading="lazy" src="figures/fig-nnm-modes-1573448966992848885.png"/></figure>
+<figure id="fig-nnm-modes"><img alt="Time-domain displacement, frequency response, and phase difference between two granules in a nonlinear granular network exhibiting Nonlinear Normal Modes (NNMs). The left column illustrates the in-phase NNM at driving frequency \((\omega_D=0.45)\), where both masses oscillate synchronously with zero phase difference, a characteristic of lower-frequency excitation and intermittent contact. The right column shows the out-of-phase NNM \((\omega_D=0.73)\), with masses oscillating in anti-symmetry (\(\pi\) phase difference), corresponding to higher frequency excitation and sustained contact. The responses are obtained under strongly nonlinear conditions with no static precompression \((\delta_0=0)\), revealing distinct modal structures governed by Hertzian interactions." height="994" loading="lazy" src="figures/fig-nnm-modes-1573448966992848885.png" width="1299"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Time-domain displacement, frequency response, and phase difference between two granules in a nonlinear granular network exhibiting Nonlinear Normal Modes (NNMs). The left column illustrates the in-phase NNM at driving frequency \((\omega_D=0.45)\), where both masses oscillate synchronously with zero phase difference, a characteristic of lower-frequency excitation and intermittent contact. The right column shows the out-of-phase NNM \((\omega_D=0.73)\), with masses oscillating in anti-symmetry (\(\pi\) phase difference), corresponding to higher frequency excitation and sustained contact. The responses are obtained under strongly nonlinear conditions with no static precompression \((\delta_0=0)\), revealing distinct modal structures governed by Hertzian interactions.</p>
 </div>
@@ -964,12 +1063,11 @@ In subsequent sections, these fundamental NNMs will be mapped onto mechanical an
 </section>
 </section>
 </div></section>
-<section aria-labelledby="elastic-bit-label" class="dissertation-section reveal" id="elastic-bit"><div class="section-label" id="elastic-bit-label">Elastic Bit</div><div class="article-body">
+<section aria-labelledby="elastic-bit-label" class="dissertation-section" id="elastic-bit"><div class="section-label" id="elastic-bit-label">Elastic Bit</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="illustration-of-elastic-bit-mathematical-modeling-of-the-classical-analogous-superposition-of-states-coefficient-of-complex-amplitude">
 <h1>ILLUSTRATION OF ELASTIC BIT: MATHEMATICAL MODELING OF THE CLASSICAL ANALOGOUS SUPERPOSITION OF STATES COEFFICIENT OF COMPLEX AMPLITUDE</h1>
 <section aria-label="Animated chapter media" class="animation-strip">
-<figure class="animation-card reveal"><img alt="Elastic-bit Bloch sphere" loading="lazy" src="animations/bloch-sphere-state-vector.gif"/><figcaption><strong>Elastic-bit Bloch sphere</strong><span>The two-state elastic-bit vector moving on the Bloch sphere.</span></figcaption></figure>
-<figure class="animation-card reveal"><video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" src="animations/evolution-bloch.mp4"></video><figcaption><strong>Experimental Bloch evolution</strong><span>Measured state evolution mapped onto the Bloch sphere.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Elastic-bit Bloch sphere" height="700" loading="lazy" src="animations/bloch-sphere-state-vector.gif" width="700"/><figcaption><strong>Elastic-bit Bloch sphere</strong><span>The two-state elastic-bit vector moving on the Bloch sphere.</span></figcaption></figure>
 </section>
 <section id="eigenmodes-of-granular-network">
 <span id="elastic-bit"></span><h2>Eigenmodes of Granular Network</h2>
@@ -1252,9 +1350,9 @@ A_2
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r_{\alpha}\)</span> and <span class="math notranslate nohighlight">\(r_{\beta}\)</span> are the magnitudes of the complex amplitude coefficients <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, respectively.<br/>
 These states are represented in polar space as <span class="math notranslate nohighlight">\(r_{\alpha} = \cos\theta\)</span> and <span class="math notranslate nohighlight">\(r_{\beta} = \sin\theta\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> is the polar angle, indicating the angle of the superposition states with respect to the <span class="math notranslate nohighlight">\(z\)</span>-axis of a Bloch sphere, as shown in Figure <span class="xref unresolved-xref">4</span> <span id="id4">[<a class="reference internal" href="#id157">Mahmood and Hasan, 2025</a>, <a class="reference internal" href="#id2">Oliveira <em>et al.</em>, 2007</a>]</span>.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Three-dimensional illustration of the Bloch sphere, showcasing its relationship with the Cartesian coordinate system. This diagram highlights the sphere's axes and the defining angles, theta \((\theta)\) and phi \((\varphi)\)-- representing an elastic bit's state." loading="lazy" src="figures/figure-bloch-sphere-tex.png"/></figure>
+<figure><img alt="Three-dimensional illustration of the Bloch sphere, showcasing its relationship with the Cartesian coordinate system. This diagram highlights the sphere's axes and the defining angles, theta \((\theta)\) and phi \((\varphi)\)-- representing an elastic bit's state." height="412" loading="lazy" src="figures/figure-bloch-sphere-tex.png" width="420"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Three-dimensional illustration of the Bloch sphere, showcasing its relationship with the Cartesian coordinate system. This diagram highlights the sphere's axes and the defining angles, theta \((\theta)\) and phi \((\varphi)\)-- representing an elastic bit's state.</p>
 </div>
@@ -1319,9 +1417,9 @@ The evolution of these angles on the Bloch sphere reveals the underlying dynamic
 <section id="experimental-procedure">
 <h3>Experimental Procedure</h3>
 <p>We develop an experimental setup to observe the evolution of Bloch states and the accumulation of the Berry phase. Figure <span class="xref unresolved-xref">5</span> illustrates a driven nonlinear granular network that creates an elastic bit.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Experimental setup of the nonlinear granular network. One of the granules is driven by an ultrasonic transducer. Meanwhile, the lateral transducers record the responses of the vibrating granules." loading="lazy" src="animations/experimental-setup-figure.gif"/></figure>
+<figure><img alt="Experimental setup of the nonlinear granular network. One of the granules is driven by an ultrasonic transducer. Meanwhile, the lateral transducers record the responses of the vibrating granules." height="633" loading="lazy" src="animations/experimental-setup-figure.gif" width="980"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Experimental setup of the nonlinear granular network. One of the granules is driven by an ultrasonic transducer. Meanwhile, the lateral transducers record the responses of the vibrating granules.</p>
 </div>
@@ -1331,15 +1429,15 @@ Record transducers are positioned with one in the longitudinal direction and two
 </section>
 </section>
 </div></section>
-<section aria-labelledby="theoretical-and-experimental-study-label" class="dissertation-section reveal" id="theoretical-and-experimental-study"><div class="section-label" id="theoretical-and-experimental-study-label">Theory and Experiment</div><div class="article-body">
+<section aria-labelledby="theoretical-and-experimental-study-label" class="dissertation-section" id="theoretical-and-experimental-study"><div class="section-label" id="theoretical-and-experimental-study-label">Theory and Experiment</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="theoretical-and-experimental-demonstration-of-classical-analogous-quantum-superposition-of-states-and-the-quantum-analogous-logic-gate">
 <h1>THEORETICAL AND EXPERIMENTAL DEMONSTRATION OF CLASSICAL ANALOGOUS QUANTUM SUPERPOSITION OF STATES AND THE QUANTUM ANALOGOUS LOGIC GATE</h1>
 <section aria-label="Animated chapter media" class="animation-strip">
-<figure class="animation-card reveal"><img alt="Pauli-X gate" loading="lazy" src="animations/pauli-x-gate.gif"/><figcaption><strong>Pauli-X gate</strong><span>Elastic-bit state transfer along a bit-flip-like path.</span></figcaption></figure>
-<figure class="animation-card reveal"><img alt="Pauli-Y gate" loading="lazy" src="animations/pauli-y-gate.gif"/><figcaption><strong>Pauli-Y gate</strong><span>Phase-aware state transfer for the elastic-bit analogue.</span></figcaption></figure>
-<figure class="animation-card reveal"><img alt="Hadamard gate" loading="lazy" src="animations/hadamard-gate.gif"/><figcaption><strong>Hadamard gate</strong><span>Pure-to-superposed state transformation on the Bloch sphere.</span></figcaption></figure>
-<figure class="animation-card reveal"><video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" src="animations/coeff-9850hz.mp4"></video><figcaption><strong>Coefficient evolution at 9.85 kHz</strong><span>Time-varying complex-amplitude coefficients from the experiment.</span></figcaption></figure>
-<figure class="animation-card reveal"><video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" src="animations/coeff-9050hz.mp4"></video><figcaption><strong>Coefficient evolution at 9.05 kHz</strong><span>A contrasting drive condition navigating a different region of state space.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Pauli-X gate" height="420" loading="lazy" src="animations/pauli-x-gate.gif" width="560"/><figcaption><strong>Pauli-X gate</strong><span>Elastic-bit state transfer along a bit-flip-like path.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Pauli-Y gate" height="420" loading="lazy" src="animations/pauli-y-gate.gif" width="560"/><figcaption><strong>Pauli-Y gate</strong><span>Phase-aware state transfer for the elastic-bit analogue.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Hadamard gate" height="420" loading="lazy" src="animations/hadamard-gate.gif" width="560"/><figcaption><strong>Hadamard gate</strong><span>Pure-to-superposed state transformation on the Bloch sphere.</span></figcaption></figure>
+<figure class="animation-card"><video autoplay="" class="lazy-video" controls="" data-src="animations/coeff-9850hz.mp4" loop="" muted="" playsinline="" preload="none"></video><figcaption><strong>Coefficient evolution at 9.85 kHz</strong><span>Time-varying complex-amplitude coefficients from the experiment.</span></figcaption></figure>
+<figure class="animation-card"><video autoplay="" class="lazy-video" controls="" data-src="animations/coeff-9050hz.mp4" loop="" muted="" playsinline="" preload="none"></video><figcaption><strong>Coefficient evolution at 9.05 kHz</strong><span>A contrasting drive condition navigating a different region of state space.</span></figcaption></figure>
 </section>
 <p>Through the operation of the system, we can observe the formation of elastic bits. Here, we will explore how to control the superposition of states in the theoretical formation of elastic bits. Later, we will present a comparison between the theoretical and experimental formation of the time-dependent superposition of states in a nonlinear granular network.</p>
 <section id="theoretical-control-of-the-superposition-of-states-in-linearized-network">
@@ -1352,9 +1450,9 @@ F_1 = \mathcal{E} + (1 - \mathcal{E})e^{i\xi}, \quad
 F_2 = \mathcal{E} - (1 - \mathcal{E})e^{i\xi}.
 \end{equation}\]</div>
 <p>Equation (<a class="xref" href="#force">41</a>) shows how the system is driven so that the ratio of the two pure states <span class="math notranslate nohighlight">\((\mathcal{E})\)</span> of the linearized granular system and their phase difference <span class="math notranslate nohighlight">\((\xi)\)</span> determine the amplitudes of the external forces. External signal generators can be used in experiments to change these parameters. We will demonstrate how different superpositions of the <span class="math notranslate nohighlight">\(\ket{E_1}\)</span> and <span class="math notranslate nohighlight">\(\ket{E_2}\)</span> states can be obtained by adjusting the drivers’ frequency and amplitudes <span class="math notranslate nohighlight">\(F_1\)</span> and <span class="math notranslate nohighlight">\(F_2\)</span>. We will then be able to examine their corresponding state vectors on the Bloch sphere. Therefore, we will show that, despite system (<a class="xref" href="#equation-of-motion-2-mass">13</a>) being homogeneous, the external drive enables controlled state superpositions within the elastic-bit framework.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Illustration of the transformation of states of the two-level elastic bit system, represented geometrically on the Bloch sphere. Panel (a) shows the variation of the polar angle \(\theta\) with the ratio of E while keeping the azimuthal angle \((\varphi)\) constant, illustrating the transition from pure states \(E_1\) (\(\theta=0\)) to \(E_2\) (\(\theta=\pi\)) and various superpositions in between. The initial phase \(\xi\) was fixed during this demonstration. Panel (b) focuses on the azimuthal angle \((\varphi)\) while keeping \(\theta\) constant, by varying \(\xi\) from \(-\pi\) to \(+\pi\) for a set value of \(\mathcal{E}=0.5\). This panel effectively visualizes the full \(2\pi\) rotation of \(\varphi\) on the Bloch sphere, crucial for the calculation of the Berry phase. The arrows on the sphere indicate the direction of state vector evolution for different parameter adjustments, thereby providing a clear visual guide to understanding how external parameters like \(\mathcal{E}\) and \(\xi\) influence the states of the elastic bit." loading="lazy" src="animations/acoustic-slide-17-bloch-measurement.gif"/></figure>
+<figure><img alt="Illustration of the transformation of states of the two-level elastic bit system, represented geometrically on the Bloch sphere. Panel (a) shows the variation of the polar angle \(\theta\) with the ratio of E while keeping the azimuthal angle \((\varphi)\) constant, illustrating the transition from pure states \(E_1\) (\(\theta=0\)) to \(E_2\) (\(\theta=\pi\)) and various superpositions in between. The initial phase \(\xi\) was fixed during this demonstration. Panel (b) focuses on the azimuthal angle \((\varphi)\) while keeping \(\theta\) constant, by varying \(\xi\) from \(-\pi\) to \(+\pi\) for a set value of \(\mathcal{E}=0.5\). This panel effectively visualizes the full \(2\pi\) rotation of \(\varphi\) on the Bloch sphere, crucial for the calculation of the Berry phase. The arrows on the sphere indicate the direction of state vector evolution for different parameter adjustments, thereby providing a clear visual guide to understanding how external parameters like \(\mathcal{E}\) and \(\xi\) influence the states of the elastic bit." height="378" loading="lazy" src="animations/acoustic-slide-17-bloch-measurement.gif" width="975"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Illustration of the transformation of states of the two-level elastic bit system, represented geometrically on the Bloch sphere. Panel (a) shows the variation of the polar angle \(\theta\) with the ratio of E while keeping the azimuthal angle \((\varphi)\) constant, illustrating the transition from pure states \(E_1\) (\(\theta=0\)) to \(E_2\) (\(\theta=\pi\)) and various superpositions in between. The initial phase \(\xi\) was fixed during this demonstration. Panel (b) focuses on the azimuthal angle \((\varphi)\) while keeping \(\theta\) constant, by varying \(\xi\) from \(-\pi\) to \(+\pi\) for a set value of \(\mathcal{E}=0.5\). This panel effectively visualizes the full \(2\pi\) rotation of \(\varphi\) on the Bloch sphere, crucial for the calculation of the Berry phase. The arrows on the sphere indicate the direction of state vector evolution for different parameter adjustments, thereby providing a clear visual guide to understanding how external parameters like \(\mathcal{E}\) and \(\xi\) influence the states of the elastic bit.</p>
 </div>
@@ -1434,9 +1532,9 @@ as follows:</p>
 \end{bmatrix}
 \ket{E_2} = \frac{\ket{E_1} - \ket{E_2}}{\sqrt{2}}.
 \end{equation*}\]</div>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Transformation of the elastic bit states through various quantum-analogue logical gates. Each panel represents a different type of gate operation: Panels (a) and (b) display the effects of the Pauli-X and Pauli-Y gates, respectively, showcasing state conversions (\(\ket{E_1}\) to \(\ket{E_2}\) and vice versa) along distinct operational paths. Panel (c) depicts the Hadamard gate's role in mapping pure states to equal superpositions and conversely. Panels (d), (e), and (f) focus on the phase-shift gate families, Pauli-Z, \(S\), and \(T\) gates, respectively. These gates demonstrate the transformation of superposed states by altering only one aspect of the complex amplitude's coefficient, thus modifying the state's direction through the azimuthal angle \(\varphi\). The specific transformations effected by each gate are represented through transitions on the Bloch sphere, with arrows indicating the direction and nature of state changes. System parameters: \(m=1\), \(k_L=1\), \(\eta=0.003\), \(\omega_D=\sqrt{2}\)." loading="lazy" src="animations/acoustic-slide-18-quantum-gates.gif"/></figure>
+<figure><img alt="Transformation of the elastic bit states through various quantum-analogue logical gates. Each panel represents a different type of gate operation: Panels (a) and (b) display the effects of the Pauli-X and Pauli-Y gates, respectively, showcasing state conversions (\(\ket{E_1}\) to \(\ket{E_2}\) and vice versa) along distinct operational paths. Panel (c) depicts the Hadamard gate's role in mapping pure states to equal superpositions and conversely. Panels (d), (e), and (f) focus on the phase-shift gate families, Pauli-Z, \(S\), and \(T\) gates, respectively. These gates demonstrate the transformation of superposed states by altering only one aspect of the complex amplitude's coefficient, thus modifying the state's direction through the azimuthal angle \(\varphi\). The specific transformations effected by each gate are represented through transitions on the Bloch sphere, with arrows indicating the direction and nature of state changes. System parameters: \(m=1\), \(k_L=1\), \(\eta=0.003\), \(\omega_D=\sqrt{2}\)." height="525" loading="lazy" src="animations/acoustic-slide-18-quantum-gates.gif" width="1099"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Transformation of the elastic bit states through various quantum-analogue logical gates. Each panel represents a different type of gate operation: Panels (a) and (b) display the effects of the Pauli-X and Pauli-Y gates, respectively, showcasing state conversions (\(\ket{E_1}\) to \(\ket{E_2}\) and vice versa) along distinct operational paths. Panel (c) depicts the Hadamard gate's role in mapping pure states to equal superpositions and conversely. Panels (d), (e), and (f) focus on the phase-shift gate families, Pauli-Z, \(S\), and \(T\) gates, respectively. These gates demonstrate the transformation of superposed states by altering only one aspect of the complex amplitude's coefficient, thus modifying the state's direction through the azimuthal angle \(\varphi\). The specific transformations effected by each gate are represented through transitions on the Bloch sphere, with arrows indicating the direction and nature of state changes. System parameters: \(m=1\), \(k_L=1\), \(\eta=0.003\), \(\omega_D=\sqrt{2}\).</p>
 </div>
@@ -1467,9 +1565,9 @@ The operations of these gates are as follows:</p>
 <section id="manipulating-the-state-evolution-in-nonlinear-network">
 <h2>Manipulating the State Evolution in Nonlinear Network</h2>
 <p>From Eq. (<a class="xref" href="#modal-cont">40</a>), we observe that the polar <span class="math notranslate nohighlight">\(\tilde{\theta}(t)\)</span> and the azimuthal <span class="math notranslate nohighlight">\(\tilde{\varphi}(t)\)</span> angles depend on the complex coefficients <span class="math notranslate nohighlight">\(\tilde{\alpha}(t)\)</span> and <span class="math notranslate nohighlight">\(\tilde{\beta}(t)\)</span>, which are themselves influenced by the external driving forces, frequency, and static precompression. Hence, the evolution of the elastic bit’s state is governed by the external driving parameters, including the amplitudes <span class="math notranslate nohighlight">\(F_1\)</span> and <span class="math notranslate nohighlight">\(F_2\)</span>, the driving frequency <span class="math notranslate nohighlight">\(\omega_D\)</span>, and the static precompression <span class="math notranslate nohighlight">\(\delta_0\)</span>. By adjusting these parameters, we can control the path that the elastic bit takes on the Bloch sphere. Fig. <a class="xref" href="#fig-blochstatetime">8</a> illustrates this by showing the evolution of the elastic bit’s state for different driving conditions. The external drivers influence both the polar and azimuthal angles, and variations in these parameters lead to different trajectories on the Bloch sphere.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-blochstatetime"><img alt="Time-Dependent State Evolution of Elastic Bits. The time-dependent evolution of the elastic bit's state, represented on the Bloch sphere, under a specific set of driving frequencies and amplitudes, highlighting the continuous loop and periodic return to the initial state. The polar angle \(\tilde{\theta}(t)\) remained nearly constant, indicating that the system's evolution occurred predominantly along the equator of the sphere. Panels (a) to (c) show the effects of varying external stimuli like frequency on the system's varying state evolutions." loading="lazy" src="figures/fig-blochstatetime-3666758806258464684.png"/></figure>
+<figure id="fig-blochstatetime"><img alt="Time-Dependent State Evolution of Elastic Bits. The time-dependent evolution of the elastic bit's state, represented on the Bloch sphere, under a specific set of driving frequencies and amplitudes, highlighting the continuous loop and periodic return to the initial state. The polar angle \(\tilde{\theta}(t)\) remained nearly constant, indicating that the system's evolution occurred predominantly along the equator of the sphere. Panels (a) to (c) show the effects of varying external stimuli like frequency on the system's varying state evolutions." height="1016" loading="lazy" src="figures/fig-blochstatetime-3666758806258464684.png" width="1299"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Time-Dependent State Evolution of Elastic Bits. The time-dependent evolution of the elastic bit's state, represented on the Bloch sphere, under a specific set of driving frequencies and amplitudes, highlighting the continuous loop and periodic return to the initial state. The polar angle \(\tilde{\theta}(t)\) remained nearly constant, indicating that the system's evolution occurred predominantly along the equator of the sphere. Panels (a) to (c) show the effects of varying external stimuli like frequency on the system's varying state evolutions.</p>
 </div>
@@ -1480,9 +1578,9 @@ The operations of these gates are as follows:</p>
 <p>We tune the peak-to-peak voltage to fix the amplitudes of external excitations in order to experimentally observe different nonlinear responses in such a damped-driven, essentially nonlinear granular system. However, the external driver’s frequency (<span class="math notranslate nohighlight">\(\omega_D\)</span>) fluctuates between <span class="math notranslate nohighlight">\(100~Hz\)</span> and <span class="math notranslate nohighlight">\(20~kHz\)</span> in increments of <span class="math notranslate nohighlight">\(10~Hz\)</span>, with a resting period to achieve a steady state. We experimentally obtain Fig. <span class="xref unresolved-xref">9a</span>, which displays the time series of the transmission amplitudes recorded by the detecting transducers of each granule at steady state for various combinations of driving conditions (frequency and amplitude). The Fourier sum of the linear and nonlinear modes, each with a distinctive frequency, constitutes the transmission amplitude field shown in Fig. <span class="xref unresolved-xref">9a</span>. The temporal Fourier transform (FFT) of the granule’s amplitude, presented in Fig. <span class="xref unresolved-xref">9b</span>, makes this clear. We set a threshold of 1% of the maximum amplitude to remove noise and identify the system’s dominant characteristic frequencies. For every dominant characteristic frequency, we also compute the phase difference between the granules.</p>
 <p>For instance, we observe in the left panel of Fig. <span class="xref unresolved-xref">9c</span> that the phase difference between granules is nearly zero for the driving frequency <span class="math notranslate nohighlight">\(\omega = \omega_D = 9.85~\text{kHz}\)</span>, corresponding to the lowest dominant characteristic frequency. This suggests that the amplitude field of the granular system can be described by the state <span class="math notranslate nohighlight">\(\ket{E_1} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}\)</span> at the characteristic frequency <span class="math notranslate nohighlight">\(\omega = \omega_D = 9.85~\text{kHz}\)</span>. Conversely, when the driving frequency is altered to <span class="math notranslate nohighlight">\(\omega_D = 9.05~\text{kHz}\)</span>, we observe that the phase difference between the granules is close to <span class="math notranslate nohighlight">\(\pi\)</span> at the lowest dominant characteristic frequency <span class="math notranslate nohighlight">\(\omega = \omega_D = 9.05~\text{kHz}\)</span>, as shown in the right panel of Fig. <span class="xref unresolved-xref">9c</span>. The amplitude field at this characteristic frequency can therefore be described by the state <span class="math notranslate nohighlight">\(\ket{E_2} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix}\)</span>.</p>
 <p>Next, we observe in both the left and right panels of Fig. <span class="xref unresolved-xref">9a</span> that the phase difference between granules is neither <span class="math notranslate nohighlight">\(0\)</span> nor <span class="math notranslate nohighlight">\(\pi\)</span> at the second and third higher harmonics, <span class="math notranslate nohighlight">\(2\omega_D\)</span> and <span class="math notranslate nohighlight">\(3\omega_D\)</span>. Therefore, the corresponding states can be described as combinations of <span class="math notranslate nohighlight">\(\ket{E_1}\)</span> and <span class="math notranslate nohighlight">\(\ket{E_2}\)</span>.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="&lt;strong&gt;Time Response of two granular network due to different driving frequencies.&lt;/strong&gt; (a) Amplitude versus time recorded by the detecting transducers of each granule at steady state, revealing rich nonlinear responses of the system. Left panel: driving frequency \(\omega_D=9.85\,kHz\) and driving amplitude \(100\, V_{p-p}\); Right panel: driving frequency \(\omega_D=9.05\,kHz\) and driving amplitude \(100\, V_{p-p}\). (b) Temporal Fourier transform of the granules amplitudes, and (c) phase differences between granules; revealing the combinations of \(\ket{E_1}\) and \(\ket{E_2}\) eigenstates associated with each characteristic frequency." loading="lazy" src="figures/fig-experiment-6404713645356383440.png"/></figure>
+<figure><img alt="&lt;strong&gt;Time Response of two granular network due to different driving frequencies.&lt;/strong&gt; (a) Amplitude versus time recorded by the detecting transducers of each granule at steady state, revealing rich nonlinear responses of the system. Left panel: driving frequency \(\omega_D=9.85\,kHz\) and driving amplitude \(100\, V_{p-p}\); Right panel: driving frequency \(\omega_D=9.05\,kHz\) and driving amplitude \(100\, V_{p-p}\). (b) Temporal Fourier transform of the granules amplitudes, and (c) phase differences between granules; revealing the combinations of \(\ket{E_1}\) and \(\ket{E_2}\) eigenstates associated with each characteristic frequency." height="1246" loading="lazy" src="figures/fig-experiment-6404713645356383440.png" width="1316"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Time Response of two granular network due to different driving frequencies.</strong> (a) Amplitude versus time recorded by the detecting transducers of each granule at steady state, revealing rich nonlinear responses of the system. Left panel: driving frequency \(\omega_D=9.85\,kHz\) and driving amplitude \(100\, V_{p-p}\); Right panel: driving frequency \(\omega_D=9.05\,kHz\) and driving amplitude \(100\, V_{p-p}\). (b) Temporal Fourier transform of the granules amplitudes, and (c) phase differences between granules; revealing the combinations of \(\ket{E_1}\) and \(\ket{E_2}\) eigenstates associated with each characteristic frequency.</p>
 </div>
@@ -1491,9 +1589,9 @@ The operations of these gates are as follows:</p>
 <h2>Classical Analogous Superposition of States of Nonlinear Network</h2>
 <p>To experimentally create an elastic bit in a classical nonlinear granular system that can generate a time-dependent superposition of states, we utilize a setup similar to that described in Ref. <span id="id4">[<a class="reference internal" href="#id42">Mahmood and Hasan, 2022</a>]</span>. It is known that the nonlinearity of the granular system can be controlled by adjusting external driving parameters such as frequency, amplitude, or static precompression <span id="id5">[<a class="reference internal" href="#id78">Hasan and Deymier, 2022</a>]</span>. In our theoretical analysis, as shown in Eq. (<a class="xref" href="#modal-cont">40</a>), we demonstrate that when the two granules are subjected to static precompression and driven at a specific frequency, the nonlinear vibrational mode can be expressed in a linear normal mode orthonormal basis (<span class="math notranslate nohighlight">\(\ket{E_1}\)</span> and <span class="math notranslate nohighlight">\(\ket{E_2}\)</span>) with time-dependent Bloch states <span class="math notranslate nohighlight">\(\tilde{\theta}(t)\)</span> and <span class="math notranslate nohighlight">\(\tilde{\varphi}(t)\)</span>. These Bloch states constitute the components of a state vector in the two-dimensional Hilbert space of the elastic bit, allowing the system to explore this space parametrically over time along closed periodic paths.</p>
 <p>Following these theoretical procedures, we use the same orthonormal basis of the elastic bit to map the experimental displacement fields to the Bloch states <span class="math notranslate nohighlight">\(\tilde{\theta}\)</span> and <span class="math notranslate nohighlight">\(\tilde{\varphi}\)</span>. This mapping enables us to track the evolution of the states through the Bloch representation, thereby providing a direct correspondence between theoretical predictions and experimentally observed coherent state dynamics.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="&lt;strong&gt;Experimental manifestation of elastic bit evolution.&lt;/strong&gt; (a) Time evolution of the moduli of the complex amplitudes, \(\tilde{\alpha}(t)\) and \(\tilde{\beta}(t)\), corresponding to two mutually orthogonal states, \(\ket{E_1}\) and \(\ket{E_2}\). The vertical lines labeled (i), (ii), and (iii) correspond to three distinct time instants: (i) \(t_1\), (ii) \(t_2\), and (iii) \(t_3\), where \(t_3 &amp;gt; t_2 &amp;gt; t_1\). (b) Trajectories on the Bloch sphere showing the cyclic evolution of the elastic bit's states at various driving frequencies, illustrating the rotational paths traced by the system's state. The distinct trajectories highlight the path dependence of the evolution. The amplitude of the external driver remains constant, while the frequency is varied to alter the cyclic path." loading="lazy" src="figures/fig-coeffbloch-5657212514930691285.png"/></figure>
+<figure><img alt="&lt;strong&gt;Experimental manifestation of elastic bit evolution.&lt;/strong&gt; (a) Time evolution of the moduli of the complex amplitudes, \(\tilde{\alpha}(t)\) and \(\tilde{\beta}(t)\), corresponding to two mutually orthogonal states, \(\ket{E_1}\) and \(\ket{E_2}\). The vertical lines labeled (i), (ii), and (iii) correspond to three distinct time instants: (i) \(t_1\), (ii) \(t_2\), and (iii) \(t_3\), where \(t_3 &amp;gt; t_2 &amp;gt; t_1\). (b) Trajectories on the Bloch sphere showing the cyclic evolution of the elastic bit's states at various driving frequencies, illustrating the rotational paths traced by the system's state. The distinct trajectories highlight the path dependence of the evolution. The amplitude of the external driver remains constant, while the frequency is varied to alter the cyclic path." height="1011" loading="lazy" src="figures/fig-coeffbloch-5657212514930691285.png" width="1316"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Experimental manifestation of elastic bit evolution.</strong> (a) Time evolution of the moduli of the complex amplitudes, \(\tilde{\alpha}(t)\) and \(\tilde{\beta}(t)\), corresponding to two mutually orthogonal states, \(\ket{E_1}\) and \(\ket{E_2}\). The vertical lines labeled (i), (ii), and (iii) correspond to three distinct time instants: (i) \(t_1\), (ii) \(t_2\), and (iii) \(t_3\), where \(t_3 &gt; t_2 &gt; t_1\). (b) Trajectories on the Bloch sphere showing the cyclic evolution of the elastic bit's states at various driving frequencies, illustrating the rotational paths traced by the system's state. The distinct trajectories highlight the path dependence of the evolution. The amplitude of the external driver remains constant, while the frequency is varied to alter the cyclic path.</p>
 </div>
@@ -1577,23 +1675,23 @@ Therefore, the superposition of states can be written as:</p>
 \end{bmatrix}.
 \end{equation}\]</div>
 <p>The transformation matrix <span class="math notranslate nohighlight">\(\tfrac{1}{\sqrt{2}}\begin{bmatrix}1 &amp; 1\\ 1 &amp; -1\end{bmatrix}\)</span> is the usual Hadamard gate. If we apply the Hadamard gate to the state (ii), we return to the initial pure state <span class="math notranslate nohighlight">\(\ket{E_2}\)</span> at time instant <span class="math notranslate nohighlight">\(t_3\)</span> (labeled (iii)).</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="&lt;strong&gt;Classical analogue of Hadamard gate on Bloch sphere.&lt;/strong&gt; The Hadamard gate 'rotates' the initial pure state \(\ket{E_2}\) (a) (also labeled (i) in Fig. &lt;a class=&quot;xref&quot; href=&quot;#fig-coeff&quot;&gt;10a&lt;/a&gt;, right panel) to a superposition of states (b) (also labeled (ii) in Fig. &lt;a class=&quot;xref&quot; href=&quot;#fig-coeff&quot;&gt;10a&lt;/a&gt;, right panel) through the unitary transformation \(\tfrac{1}{\sqrt{2}}\begin{bmatrix} 1 &amp;amp; 1 \\ 1 &amp;amp; -1 \end{bmatrix}\)" loading="lazy" src="figures/fig-hadamard-gate-1160395263769653034.png"/></figure>
+<figure><img alt="&lt;strong&gt;Classical analogue of Hadamard gate on Bloch sphere.&lt;/strong&gt; The Hadamard gate 'rotates' the initial pure state \(\ket{E_2}\) (a) (also labeled (i) in Fig. &lt;a class=&quot;xref&quot; href=&quot;#fig-coeff&quot;&gt;10a&lt;/a&gt;, right panel) to a superposition of states (b) (also labeled (ii) in Fig. &lt;a class=&quot;xref&quot; href=&quot;#fig-coeff&quot;&gt;10a&lt;/a&gt;, right panel) through the unitary transformation \(\tfrac{1}{\sqrt{2}}\begin{bmatrix} 1 &amp;amp; 1 \\ 1 &amp;amp; -1 \end{bmatrix}\)" height="567" loading="lazy" src="figures/fig-hadamard-gate-1160395263769653034.png" width="1299"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Classical analogue of Hadamard gate on Bloch sphere.</strong> The Hadamard gate 'rotates' the initial pure state \(\ket{E_2}\) (a) (also labeled (i) in Fig. <span class="xref unresolved-xref">10a</span>, right panel) to a superposition of states (b) (also labeled (ii) in Fig. <span class="xref unresolved-xref">10a</span>, right panel) through the unitary transformation \(\tfrac{1}{\sqrt{2}}\begin{bmatrix} 1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix}\)</p>
 </div>
 </section>
 </section>
 </div></section>
-<section aria-labelledby="logical-elastic-bit-label" class="dissertation-section reveal" id="logical-elastic-bit"><div class="section-label" id="logical-elastic-bit-label">Logical Elastic Bit</div><div class="article-body">
+<section aria-labelledby="logical-elastic-bit-label" class="dissertation-section" id="logical-elastic-bit"><div class="section-label" id="logical-elastic-bit-label">Logical Elastic Bit</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="formation-of-scalable-logical-elastic-bit-through-the-nonlinear-response-of-mass-conical-spring-model">
 <h1>FORMATION OF SCALABLE LOGICAL ELASTIC BIT THROUGH THE NONLINEAR RESPONSE OF MASS-CONICAL SPRING MODEL</h1>
 <section aria-label="Animated chapter media" class="animation-strip">
-<figure class="animation-card reveal"><video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" src="animations/conical-bloch.mp4"></video><figcaption><strong>Conical-spring Bloch motion</strong><span>Logical elastic-bit evolution for the conical spring platform.</span></figcaption></figure>
-<figure class="animation-card reveal"><video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" src="animations/coeff-65hz.mp4"></video><figcaption><strong>65 Hz coefficient dynamics</strong><span>Harmonic coefficients extracted from the mass-conical-spring response.</span></figcaption></figure>
-<figure class="animation-card reveal"><img alt="Entropy evolution" loading="lazy" src="animations/animation3.gif"/><figcaption><strong>Entropy evolution</strong><span>Time-dependent entropy behavior for a two-bit spectral partition.</span></figcaption></figure>
-<figure class="animation-card reveal"><img alt="Alternative entropy partition" loading="lazy" src="animations/animation4.gif"/><figcaption><strong>Alternative entropy partition</strong><span>Contrasting nonseparable behavior under a different partition.</span></figcaption></figure>
+<figure class="animation-card"><video autoplay="" class="lazy-video" controls="" data-src="animations/conical-bloch.mp4" loop="" muted="" playsinline="" preload="none"></video><figcaption><strong>Conical-spring Bloch motion</strong><span>Logical elastic-bit evolution for the conical spring platform.</span></figcaption></figure>
+<figure class="animation-card"><video autoplay="" class="lazy-video" controls="" data-src="animations/coeff-65hz.mp4" loop="" muted="" playsinline="" preload="none"></video><figcaption><strong>65 Hz coefficient dynamics</strong><span>Harmonic coefficients extracted from the mass-conical-spring response.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Entropy evolution" height="908" loading="lazy" src="animations/animation3.gif" width="1920"/><figcaption><strong>Entropy evolution</strong><span>Time-dependent entropy behavior for a two-bit spectral partition.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Alternative entropy partition" height="802" loading="lazy" src="animations/animation4.gif" width="711"/><figcaption><strong>Alternative entropy partition</strong><span>Contrasting nonseparable behavior under a different partition.</span></figcaption></figure>
 </section>
 <section id="nonlinear-response-of-the-mass-conicalspring-oscillator">
 <h2>Nonlinear Response of the Mass-Conical‑Spring Oscillator</h2>
@@ -1601,9 +1699,9 @@ Therefore, the superposition of states can be written as:</p>
 <section id="experimental-platform-and-measurement-protocol">
 <h3>Experimental Platform and Measurement Protocol</h3>
 <p>To prepare a logical elastic bit in a classical nonlinear system, we designed an experimental setup consisting of a one-dimensional mass-conical spring model composed of two masses and two springs. We record the response of both masses in a stable region. The schematic illustration for creating the logical elastic bit and its superposition of states in the two mass-conical spring model is depicted in Fig. <span class="xref unresolved-xref">12</span>. Here, we seek to experimentally explore the response of two mass (Multipurpose 6061 Aluminum: McMaster-Carr 1610T624, 3/4 inch diameter, 1/2 inch length) connected with a conical spring (302 Stainless Steel: McMaster-Carr 1692K918, 0.375-inch length). One of the masses is connected to a linear compression spring (Zinc Plated Music-Wire Steel, McMaster-Carr 9657K309, 1 inch length) which is connected to the vibration exciter (LDS-210) to drive the system. We send signal to the vibration exciter using an Arbitrary Waveform Generator (B&amp;K Precision 4055b) from 15 Hz to 150 Hz at <span class="math notranslate nohighlight">\(3 V_{p-p}\)</span> amplitude, and the excitation amplitude is amplified by 20 through amplifier (Bruel &amp; Kjaer Type 2706). The responses of the masses are recorded through a Scanning Laser Doppler Vibrometer (Polytec PSV-600F) and processed using a MATLAB-based algorithm. The system is placed on a base (Amazon Natural White Teflon PTFE) and machine oil (Amazon 3-IN-ONE 10038) is used for reducing the friction of the vibration. The experimental setup is devised for longitudinal vibration direction.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Schematic Illustration of Mass Conical Spring System. Two identical cylindrical masses \((m)\) are connected with a conical spring. Harmonics drive \(A\sin (\omega_{d}t)\) excites the mass 1 through a linear spring. The responses of the masses are recorded in the direction of the external vibration through a laser doppler vibrometer. System parameters: Stiffness, Linear Spring, \(k_{l} = 15~lbf / in\), Conical Spring, \(k_{c} = 22~lbf / in\). Mass, \(m = 10g\)." loading="lazy" src="figures/figure-experimental-figure-tex.png"/></figure>
+<figure><img alt="Schematic Illustration of Mass Conical Spring System. Two identical cylindrical masses \((m)\) are connected with a conical spring. Harmonics drive \(A\sin (\omega_{d}t)\) excites the mass 1 through a linear spring. The responses of the masses are recorded in the direction of the external vibration through a laser doppler vibrometer. System parameters: Stiffness, Linear Spring, \(k_{l} = 15~lbf / in\), Conical Spring, \(k_{c} = 22~lbf / in\). Mass, \(m = 10g\)." height="378" loading="lazy" src="animations/mass-conical-spring-setup.gif" width="1112"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Schematic Illustration of Mass Conical Spring System. Two identical cylindrical masses \((m)\) are connected with a conical spring. Harmonics drive \(A\sin (\omega_{d}t)\) excites the mass 1 through a linear spring. The responses of the masses are recorded in the direction of the external vibration through a laser doppler vibrometer. System parameters: Stiffness, Linear Spring, \(k_{l} = 15~lbf / in\), Conical Spring, \(k_{c} = 22~lbf / in\). Mass, \(m = 10g\).</p>
 </div>
@@ -1618,9 +1716,9 @@ During this interval, Mass 2 continues to move while Mass 1 momentarily hovers n
 When the external forcing changes sign once more, the spring relaxes back into compression, momentum is transferred back to Mass 1, and the sequence begins anew.
 The pronounced left–right asymmetry confirms that the graded stiffness of the conical spring, not merely geometric nonlinearity, governs the energy flow.
 Similar asymmetric phenomena have been reported in nonlinear granular media for nonlinear normal modes response <span id="id2">[<a class="reference internal" href="#id93">Jayaprakash <em>et al.</em>, 2011</a>]</span>.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-mass-spring"><img alt="&lt;strong&gt;Nonlinear dynamics of the two-mass / conical-spring oscillator.&lt;/strong&gt; (a) Measured velocity-time histories of Mass 1 (blue) and Mass 2 (orange) at a representative drive frequency \(\omega_d = 65~\mathrm{Hz}\) reveal a strongly asymmetric waveform: energy is shuttled from the compliant to the stiff end of the graded spring during each cycle, producing the four characteristic stages annotated 1-4. (b) Steady-state Fourier spectra of the two masses display a series of harmonics at integer multiples \(\omega_n = n\omega_d\) (up to \(n = 5\) shown); the monotonic amplitude decay and persistence of higher-order peaks confirm a robust, amplitude-dependent restoring force. (c) Absolute phases of each harmonic for both masses with respect to the shaker reference clock (a common time origin), from which the evolving phase difference \(\Delta\phi_{12}(n)\) discriminates in-phase (\(\Delta\phi \approx 0~\mathrm{rad}\)) and out-of-phase (\(\Delta\phi \approx \pi~\mathrm{rad}\)) contributions, providing the modal information used in subsequent Bloch-sphere reconstructions. All data were acquired after transient decay, with the shaker excitation amplitude held constant at \(60~V_{\mathrm{p\text{-}p}}\)." loading="lazy" src="figures/fig-mass-spring-8678541039604167916.png"/></figure>
+<figure id="fig-mass-spring"><img alt="&lt;strong&gt;Nonlinear dynamics of the two-mass / conical-spring oscillator.&lt;/strong&gt; (a) Measured velocity-time histories of Mass 1 (blue) and Mass 2 (orange) at a representative drive frequency \(\omega_d = 65~\mathrm{Hz}\) reveal a strongly asymmetric waveform: energy is shuttled from the compliant to the stiff end of the graded spring during each cycle, producing the four characteristic stages annotated 1-4. (b) Steady-state Fourier spectra of the two masses display a series of harmonics at integer multiples \(\omega_n = n\omega_d\) (up to \(n = 5\) shown); the monotonic amplitude decay and persistence of higher-order peaks confirm a robust, amplitude-dependent restoring force. (c) Absolute phases of each harmonic for both masses with respect to the shaker reference clock (a common time origin), from which the evolving phase difference \(\Delta\phi_{12}(n)\) discriminates in-phase (\(\Delta\phi \approx 0~\mathrm{rad}\)) and out-of-phase (\(\Delta\phi \approx \pi~\mathrm{rad}\)) contributions, providing the modal information used in subsequent Bloch-sphere reconstructions. All data were acquired after transient decay, with the shaker excitation amplitude held constant at \(60~V_{\mathrm{p\text{-}p}}\)." height="1406" loading="lazy" src="figures/fig-mass-spring-8678541039604167916.png" width="1252"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Nonlinear dynamics of the two-mass / conical-spring oscillator.</strong> (a) Measured velocity-time histories of Mass 1 (blue) and Mass 2 (orange) at a representative drive frequency \(\omega_d = 65~\mathrm{Hz}\) reveal a strongly asymmetric waveform: energy is shuttled from the compliant to the stiff end of the graded spring during each cycle, producing the four characteristic stages annotated 1-4. (b) Steady-state Fourier spectra of the two masses display a series of harmonics at integer multiples \(\omega_n = n\omega_d\) (up to \(n = 5\) shown); the monotonic amplitude decay and persistence of higher-order peaks confirm a robust, amplitude-dependent restoring force. (c) Absolute phases of each harmonic for both masses with respect to the shaker reference clock (a common time origin), from which the evolving phase difference \(\Delta\phi_{12}(n)\) discriminates in-phase (\(\Delta\phi \approx 0~\mathrm{rad}\)) and out-of-phase (\(\Delta\phi \approx \pi~\mathrm{rad}\)) contributions, providing the modal information used in subsequent Bloch-sphere reconstructions. All data were acquired after transient decay, with the shaker excitation amplitude held constant at \(60~V_{\mathrm{p\text{-}p}}\).</p>
 </div>
@@ -1636,9 +1734,9 @@ Similar asymmetric phenomena have been reported in nonlinear granular media for 
 <span class="math notranslate nohighlight">\(\Delta\phi_{12}^n = \phi_1^n - \phi_2^n\)</span>
 between the masses that discriminates modal content: for <span class="math notranslate nohighlight">\(n = 1\)</span> the masses move nearly in-phase (<span class="math notranslate nohighlight">\(\Delta\phi_{12}^1 \approx 0\)</span>), corresponding to the linearized in-phase eigenmode <span class="math notranslate nohighlight">\(\ket{E_1} =\tfrac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}\)</span>; at <span class="math notranslate nohighlight">\(n = 2\)</span>, the phase difference approaches <span class="math notranslate nohighlight">\(\pi\)</span>, matching the out-of-phase mode <span class="math notranslate nohighlight">\(\ket{E_2} = \tfrac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}\)</span>; and at <span class="math notranslate nohighlight">\(n &gt; 2\)</span>, <span class="math notranslate nohighlight">\(\Delta\phi_{12}^{(n&gt;2)} \neq 0\)</span> or <span class="math notranslate nohighlight">\(\pi\)</span>, indicating that such harmonics can be regarded as controlled superpositions of <span class="math notranslate nohighlight">\(\ket{E_1}\)</span> and <span class="math notranslate nohighlight">\(\ket{E_2}\)</span>.</p>
 <p>The modal structure revealed through the harmonic content at a fixed drive frequency is fully consistent with the behavior observed in the fundamental response under a frequency sweep. When the excitation frequency is varied from 15 Hz to 150 Hz, the system exhibits the same in-phase <span class="math notranslate nohighlight">\(\ket{E_1}\)</span> motion at low frequencies, a clear progression toward the out-of-phase <span class="math notranslate nohighlight">\(\ket{E_2}\)</span> motion in the upper band, and mixed-mode behavior in the intermediate region.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Phase difference change of masses due to the driving excitation frequency at the first characteristics frequency component of each excitation. The transition of the phases is indicating shift from \(\ket{E_1}\) to \(\ket{E_2}\) mode." loading="lazy" src="figures/figure-phase-difference-tex.png"/></figure>
+<figure><img alt="Phase difference change of masses due to the driving excitation frequency at the first characteristics frequency component of each excitation. The transition of the phases is indicating shift from \(\ket{E_1}\) to \(\ket{E_2}\) mode." height="364" loading="lazy" src="figures/figure-phase-difference-tex.png" width="710"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Phase difference change of masses due to the driving excitation frequency at the first characteristics frequency component of each excitation. The transition of the phases is indicating shift from \(\ket{E_1}\) to \(\ket{E_2}\) mode.</p>
 </div>
@@ -1704,9 +1802,9 @@ Segmenting the first four harmonics into <span class="math notranslate nohighlig
 <h2>Static versus Dynamic Logical States</h2>
 <p>Logical bits inherit the dynamical richness of their physical elastic-bit counterparts. If all <span class="math notranslate nohighlight">\(\omega_n\)</span> within a block are equal (e.g., degenerate sidebands in a driven-damped system), then <span class="math notranslate nohighlight">\(\psi_0^{(p)}\)</span> and <span class="math notranslate nohighlight">\(\psi_1^{(p)}\)</span> are constant and the logical Bloch vector is fixed, ideal for memory. Harmonics of differing orders cause predictable precession on the Bloch sphere. By waiting for a set time, one can realize rotations equivalent to Pauli-<span class="math notranslate nohighlight">\(X\)</span>, Hadamard, or phase gates without additional control.</p>
 <p>The logical-bit architecture leverages three experimental facts. First, nonlinearity ensures that higher-order harmonics remain phase-coherent with the excitation, preserving superposition integrity. Second, the relative amplitudes of those harmonics are tunable through driver amplitude, precompression, or modest geometric tweaks, yielding a convenient control dial for gate synthesis. Third, unlike true qubits, elastic bits operate at room temperature and are immune to decoherence; signal-to-noise, not phase collapse, sets the performance ceiling. Using frequency-domain partitioning and Hilbert-space mapping, we build a scalable mechanical platform that captures the logic of multi-qubit quantum circuits while operating in the classical regime.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Fourier projection pipeline from time series to modal coefficients and Bloch representation, splitting into time-independent and time-dependent cases depending on frequency pairing." loading="lazy" src="figures/figure-flowchart-logical-tex.png"/></figure>
+<figure><img alt="Fourier projection pipeline from time series to modal coefficients and Bloch representation, splitting into time-independent and time-dependent cases depending on frequency pairing." height="901" loading="lazy" src="figures/figure-flowchart-logical-tex.png" width="1316"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Fourier projection pipeline from time series to modal coefficients and Bloch representation, splitting into time-independent and time-dependent cases depending on frequency pairing.</p>
 </div>
@@ -1768,9 +1866,9 @@ Finally, the detuning <span class="math notranslate nohighlight">\(\Delta\omega_
 <p>A logical elastic bit becomes time-independent when its two basis amplitudes are drawn from the same harmonic of the measured velocity field. In that degenerate limit, the modal coefficients <span class="math notranslate nohighlight">\(\tilde{\psi}_0\)</span> and <span class="math notranslate nohighlight">\(\tilde{\psi}_1\)</span> in Eq. (<a class="xref" href="#logical-coeff">49</a>) reduce to constants because <span class="math notranslate nohighlight">\(\omega_m = \omega_n\)</span>; the common exponential factor <span class="math notranslate nohighlight">\(e^{i\omega_n t}\)</span> multiplies both basis terms and cancels in the normalized Bloch coefficients, so only their complex amplitudes remain time-independent.</p>
 <p>Consequently, after removing this global phase, Eq. (3) collapses to a pair of time-independent complex numbers, leaving the external drive frequency <span class="math notranslate nohighlight">\(\omega_d\)</span> as the sole tuning knob. By adiabatically sweeping <span class="math notranslate nohighlight">\(\omega_d\)</span>, we can translate the Bloch vector smoothly over the sphere without inducing internal precession, exactly the classical analogue of adiabatic qubit manipulation.</p>
 <p>Similar static-phase superpositions have been demonstrated in acoustic <span class="math notranslate nohighlight">\(\phi\)</span>-bits and in macroscopic pendulum dimers, underscoring the universality of the underlying phase-locking mechanism across disparate classical qubit analogues <span id="id11">[<a class="reference internal" href="#id132">Deymier <em>et al.</em>, 2023</a>, <a class="reference internal" href="#id22">Lorenz <em>et al.</em>, 2023</a>, <a class="reference internal" href="#id140">Deymier <em>et al.</em>, 2023</a>]</span>.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-timeindependent"><img alt="&lt;strong&gt;Frequency-dependent Bloch angles of time-independent logical elastic bits.&lt;/strong&gt; Polar (\(\theta\)) and azimuthal (\(\varphi\)) angles extracted from the complex modal coefficients of three distinct elastic bits, Bit 1 (\(\omega_m=\omega_n=\omega_d\)), Bit 2 (\(\omega_m=\omega_n=2\omega_d\)), and Bit 3 (\(\omega_m=\omega_n=3\omega_d\)), are plotted as functions of the external drive frequency \(\omega_d\). (a-c) Experimental trajectories for Bits 1-3 show a continuous sweep of \(\theta\) from the north pole (pure in-phase mode) toward the south pole (pure out-of-phase mode) as \(\omega_d\) approaches each bit's characteristic eigenfrequency; at resonance, \(\varphi\) executes a quantized \(\pi\) jump that signals a phase flip of the modal basis \(\ket{E_1}\) and \(\ket{E_2}\)." loading="lazy" src="figures/fig-timeindependent-363951897491077919.png"/></figure>
+<figure id="fig-timeindependent"><img alt="&lt;strong&gt;Frequency-dependent Bloch angles of time-independent logical elastic bits.&lt;/strong&gt; Polar (\(\theta\)) and azimuthal (\(\varphi\)) angles extracted from the complex modal coefficients of three distinct elastic bits, Bit 1 (\(\omega_m=\omega_n=\omega_d\)), Bit 2 (\(\omega_m=\omega_n=2\omega_d\)), and Bit 3 (\(\omega_m=\omega_n=3\omega_d\)), are plotted as functions of the external drive frequency \(\omega_d\). (a-c) Experimental trajectories for Bits 1-3 show a continuous sweep of \(\theta\) from the north pole (pure in-phase mode) toward the south pole (pure out-of-phase mode) as \(\omega_d\) approaches each bit's characteristic eigenfrequency; at resonance, \(\varphi\) executes a quantized \(\pi\) jump that signals a phase flip of the modal basis \(\ket{E_1}\) and \(\ket{E_2}\)." height="1231" loading="lazy" src="figures/fig-timeindependent-363951897491077919.png" width="1316"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Frequency-dependent Bloch angles of time-independent logical elastic bits.</strong> Polar (\(\theta\)) and azimuthal (\(\varphi\)) angles extracted from the complex modal coefficients of three distinct elastic bits, Bit 1 (\(\omega_m=\omega_n=\omega_d\)), Bit 2 (\(\omega_m=\omega_n=2\omega_d\)), and Bit 3 (\(\omega_m=\omega_n=3\omega_d\)), are plotted as functions of the external drive frequency \(\omega_d\). (a-c) Experimental trajectories for Bits 1-3 show a continuous sweep of \(\theta\) from the north pole (pure in-phase mode) toward the south pole (pure out-of-phase mode) as \(\omega_d\) approaches each bit's characteristic eigenfrequency; at resonance, \(\varphi\) executes a quantized \(\pi\) jump that signals a phase flip of the modal basis \(\ket{E_1}\) and \(\ket{E_2}\).</p>
 </div>
@@ -2519,9 +2617,9 @@ k_2^{\prime}(C_{1,0}-C_{2,0})^2
 \right]
 \end{aligned}
 \end{equation}\]</div>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-logical-theory"><img alt='Theoretical Analogy of the Frequency Dependent Evolution of the Bloch States of Elastic Bit 1 and 2. (a) Analytical prediction of Bit 1 obtained from the zeroth order (\(\epsilon^0\)) model [Eq. (&lt;a class="xref" href="#pa-bit1"&gt;70&lt;/a&gt;)], reproducing both the \(\theta\) sweep and the \(\varphi\) jump with an adjustable damping parameter. (b) Analytical prediction of Bit 2 obtained from the first order (\(\epsilon^1\)) model [Eq. (&lt;a class="xref" href="#pa-bit2"&gt;72&lt;/a&gt;)].' loading="lazy" src="figures/fig-logical-theory-5616138056041165411.png"/></figure>
+<figure id="fig-logical-theory"><img alt='Theoretical Analogy of the Frequency Dependent Evolution of the Bloch States of Elastic Bit 1 and 2. (a) Analytical prediction of Bit 1 obtained from the zeroth order (\(\epsilon^0\)) model [Eq. (&lt;a class="xref" href="#pa-bit1"&gt;70&lt;/a&gt;)], reproducing both the \(\theta\) sweep and the \(\varphi\) jump with an adjustable damping parameter. (b) Analytical prediction of Bit 2 obtained from the first order (\(\epsilon^1\)) model [Eq. (&lt;a class="xref" href="#pa-bit2"&gt;72&lt;/a&gt;)].' height="470" loading="lazy" src="figures/fig-logical-theory-5616138056041165411.png" width="1299"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Theoretical Analogy of the Frequency Dependent Evolution of the Bloch States of Elastic Bit 1 and 2. (a) Analytical prediction of Bit 1 obtained from the zeroth order (\(\epsilon^0\)) model [Eq. (<a class="xref" href="#pa-bit1">70</a>)], reproducing both the \(\theta\) sweep and the \(\varphi\) jump with an adjustable damping parameter. (b) Analytical prediction of Bit 2 obtained from the first order (\(\epsilon^1\)) model [Eq. (<a class="xref" href="#pa-bit2">72</a>)].</p>
 </div>
@@ -2808,9 +2906,9 @@ xy
 <h2>Trajectory Engineering via Harmonic Pairing</h2>
 <p>Figure 3 plots representative trajectories <span class="math notranslate nohighlight">\(\big(\tilde{\theta}_{(m,n)}(t),\, \tilde{\varphi}_{(m,n)}(t)\big)\)</span> for two logical elastic bits formed by the harmonic pairs <span class="math notranslate nohighlight">\((\omega_2,\, \omega_1)\)</span> and <span class="math notranslate nohighlight">\((\omega_5,\, \omega_4)\)</span>. The beating between the chosen frequencies modulates the envelope of the two-component superposition, i.e., the complex coefficients <span class="math notranslate nohighlight">\(\big(\tilde{\psi}_0,\, \tilde{\psi}_1\big)\)</span> in Eq. (<a class="xref" href="#orth-mass">66</a>), with period <span class="math notranslate nohighlight">\(T_{mn} = 2\pi / |\Delta\omega_{mn}|\)</span>, producing closed latitude- or longitude-like loops whose size and orientation are governed by the amplitude ratio <span class="math notranslate nohighlight">\(|C_1^m| / |C_2^n|\)</span> and phase offset <span class="math notranslate nohighlight">\(\Delta\varphi_{mn}\)</span>.</p>
 <p>This periodicity is essential for the calculation of the Berry phase, a topological quantity that characterizes the evolution of the state vector over time. Further, in the <span class="math notranslate nohighlight">\((\omega_2,\, \omega_1)\)</span> case, the polar deviation is minimal, confining the path near a line of longitude; by contrast, the <span class="math notranslate nohighlight">\((\omega_5,\, \omega_4)\)</span> pair sweeps a wide band across latitudes, demonstrating the tunability of state-space coverage. Because time itself parametrizes these paths, one can map any desired rotation simply by waiting the appropriate interval, without altering external drive settings.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="&lt;strong&gt;Detuning-driven Bloch-sphere precession enables passive gate-like rotations&lt;/strong&gt;. Time traces of \(\tilde{\theta}(t)\) and \(\tilde{\varphi}(t)\) for two logical elastic bits constructed from harmonic pairs with detuning \(\Delta\omega_{mn}=|\omega_m-\omega_n|\) illustrate deterministic, unitary evolution. Detuning \(\Delta\omega_{12}\) (pairing \(\omega_2\) and \(\omega_1\)) confines the Bloch vector to a narrow longitudinal loop of period \(T_{21}=2\pi/|\Delta\omega_{12}|\), emulating a slow \(Z\)-rotation useful for memory operations. Detuning \(\Delta\omega_{54}\) (pairing \(\omega_5\) and \(\omega_4\)) drives a wide latitude sweep that spans larger \(\tilde{\theta}\), accomplishing a full Pauli-\(X\)-like bit-flip." loading="lazy" src="figures/figure-logical-time-bloch-pdf.png"/></figure>
+<figure><img alt="&lt;strong&gt;Detuning-driven Bloch-sphere precession enables passive gate-like rotations&lt;/strong&gt;. Time traces of \(\tilde{\theta}(t)\) and \(\tilde{\varphi}(t)\) for two logical elastic bits constructed from harmonic pairs with detuning \(\Delta\omega_{mn}=|\omega_m-\omega_n|\) illustrate deterministic, unitary evolution. Detuning \(\Delta\omega_{12}\) (pairing \(\omega_2\) and \(\omega_1\)) confines the Bloch vector to a narrow longitudinal loop of period \(T_{21}=2\pi/|\Delta\omega_{12}|\), emulating a slow \(Z\)-rotation useful for memory operations. Detuning \(\Delta\omega_{54}\) (pairing \(\omega_5\) and \(\omega_4\)) drives a wide latitude sweep that spans larger \(\tilde{\theta}\), accomplishing a full Pauli-\(X\)-like bit-flip." height="638" loading="lazy" src="figures/figure-logical-time-bloch-pdf.png" width="848"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Detuning-driven Bloch-sphere precession enables passive gate-like rotations</strong>. Time traces of \(\tilde{\theta}(t)\) and \(\tilde{\varphi}(t)\) for two logical elastic bits constructed from harmonic pairs with detuning \(\Delta\omega_{mn}=|\omega_m-\omega_n|\) illustrate deterministic, unitary evolution. Detuning \(\Delta\omega_{12}\) (pairing \(\omega_2\) and \(\omega_1\)) confines the Bloch vector to a narrow longitudinal loop of period \(T_{21}=2\pi/|\Delta\omega_{12}|\), emulating a slow \(Z\)-rotation useful for memory operations. Detuning \(\Delta\omega_{54}\) (pairing \(\omega_5\) and \(\omega_4\)) drives a wide latitude sweep that spans larger \(\tilde{\theta}\), accomplishing a full Pauli-\(X\)-like bit-flip.</p>
 </div>
@@ -2890,9 +2988,9 @@ X
 <section id="fourier-harmonics-of-mass-conical-spring-model">
 <h2>Fourier Harmonics of Mass-Conical Spring Model</h2>
 <p>The experimental system consists of two point masses coupled in series by a combination of linear and conical springs, with Mass 1 attached to an electrodynamic shaker through the linear spring and Mass 2 connected to Mass 1 via the conical spring. The graded geometry of the conical element produces an amplitude-dependent axial stiffness that is softer in tension than in compression, introducing a controlled nonlinearity without the need for additional hardware. The system is driven by a harmonic excitation at <span class="math notranslate nohighlight">\(62\,Hz\)</span> with a driving amplitude of <span class="math notranslate nohighlight">\(60\,V_{p-p}\)</span>, and the steady-state out-of-plane velocities of both masses are measured using a scanning laser Doppler vibrometer. This non-contact measurement avoids mass-loading effects and ensures accurate capture of both amplitude and phase relationships across the response spectrum. Figure <a class="xref" href="#fig-fft">19</a> shows the corresponding frequency response, where the top panel displays the Fourier coefficients <span class="math notranslate nohighlight">\(|C_i|\)</span> of the two masses on a logarithmic scale, highlighting the resonance peaks, while the bottom panel shows the absolute phase evolution as a function of frequency.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-fft"><img alt='Frequency response of the two-mass system under harmonic excitation at a driving frequency of \(62\mathrm{Hz}\) with a driving amplitude of \(60\,V_{p-p}\). &lt;strong&gt;(&lt;a class="xref" href="#fig-fft-amp"&gt;19a&lt;/a&gt;)&lt;/strong&gt;: The Fourier magnitudes \(|C_i|\) of Mass 1 and Mass 2, highlighting resonance peaks. &lt;strong&gt;(&lt;a class="xref" href="#fig-fft-phase"&gt;19b&lt;/a&gt;)&lt;/strong&gt;: The corresponding relative phase between the masses with frequency. Dashed boxes indicate selected spectral regions \(S_1\) and \(S_2\).' loading="lazy" src="figures/fig-fft-6112455900112793541.png"/></figure>
+<figure id="fig-fft"><img alt='Frequency response of the two-mass system under harmonic excitation at a driving frequency of \(62\mathrm{Hz}\) with a driving amplitude of \(60\,V_{p-p}\). &lt;strong&gt;(&lt;a class="xref" href="#fig-fft-amp"&gt;19a&lt;/a&gt;)&lt;/strong&gt;: The Fourier magnitudes \(|C_i|\) of Mass 1 and Mass 2, highlighting resonance peaks. &lt;strong&gt;(&lt;a class="xref" href="#fig-fft-phase"&gt;19b&lt;/a&gt;)&lt;/strong&gt;: The corresponding relative phase between the masses with frequency. Dashed boxes indicate selected spectral regions \(S_1\) and \(S_2\).' height="971" loading="lazy" src="figures/fig-fft-6112455900112793541.png" width="1188"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Frequency response of the two-mass system under harmonic excitation at a driving frequency of \(62\mathrm{Hz}\) with a driving amplitude of \(60\,V_{p-p}\). <strong>(<span class="xref unresolved-xref">19a</span>)</strong>: The Fourier magnitudes \(|C_i|\) of Mass 1 and Mass 2, highlighting resonance peaks. <strong>(<span class="xref unresolved-xref">19b</span>)</strong>: The corresponding relative phase between the masses with frequency. Dashed boxes indicate selected spectral regions \(S_1\) and \(S_2\).</p>
 </div>
@@ -2999,9 +3097,9 @@ X
 \end{aligned}
 \end{equation}\]</div>
 <p>Here, the indices  <span class="math notranslate nohighlight">\(i,j,p,q\)</span>  label the harmonic components of the nonlinear mass responses, as identified in Fig. <a class="xref" href="#fig-two-bit">20</a>, and can be selected from either fundamental or higher-order Fourier content depending on the spectral resolution of interest. The subscripts <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> denote the two physical masses of the oscillator. Different indices choices correspond to different embeddings/bases and can lead to different effective operators, but once the indices are fixed the resulting state and the associated gate-like mapping are uniquely determined by the measured evolution. This flexibility therefore does not imply universality by relabeling; the achievable operation set is still constrained by the intrinsic dynamics and available control parameters. This formulation emphasizes that the choice of harmonic indices is flexible, enabling different frequency components to be combined within a single basis representation. Consequently, the total displacement field is expressed as an expansion in the product Hilbert space  <span class="math notranslate nohighlight">\(\mathcal{H}_{\varepsilon}\)</span>, with time-dependent complex coefficients <span class="math notranslate nohighlight">\(\tilde{\psi}_{ij}(t)\)</span> that encode both the modal structure and the nonlinear mixing across harmonics. After normalization of Eq. (<a class="xref" href="#two-bit-states">77</a>), the state is a unit vector in a complex, four-dimensional Hilbert space spanned by the orthonormal product <span class="math notranslate nohighlight">\(\left[\left|E_1^{S_1}\right\rangle \otimes \left|E_1^{S_2}\right\rangle, \left|E_1^{S_1}\right\rangle \otimes \left|E_2^{S_2}\right\rangle, \left|E_2^{S_1}\right\rangle \otimes \left|E_1^{S_2}\right\rangle, \left|E_2^{S_1}\right\rangle \otimes \left|E_2^{S_2}\right\rangle \right]\)</span>. The coefficients  <span class="math notranslate nohighlight">\(\tilde{\psi}_{ij}(t)\)</span>  encode the instantaneous modal content, both amplitude and phase, and their joint structure determines separability: a necessary condition for a non-separable (classically entangled) state is  <span class="math notranslate nohighlight">\(\tilde{\psi}_{00}\tilde{\psi}_{11} \neq \tilde{\psi}_{01}\tilde{\psi}_{10}\)</span> <span id="id17">[<a class="reference internal" href="#id193">Nielsen and Chuang, 2000</a>]</span>. Importantly, Eq. (<a class="xref" href="#two-bit-states">77</a>) distinguishes linear from nonlinear operation: in a linear elastic system, where no modal mixing occurs, a single harmonic suffices and  <span class="math notranslate nohighlight">\(\tilde{\psi}_{ij}\)</span> are time-independent <span id="id18">[<a class="reference internal" href="#id157">Mahmood and Hasan, 2025</a>]</span>; in the nonlinear regime studied here, higher-order content drives explicit time dependence in <span class="math notranslate nohighlight">\(\tilde{\psi}_{ij}\)</span>, enabling controlled evolution of the superposed product states within the same fixed basis.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-two-bit"><img alt='Temporal evolution of the joint two e-bits state coefficients for two Fourier-segment selections. The upper panels show the real parts and the lower panels the imaginary parts of \(\tilde{\psi}_{00}(t)\), \(\tilde{\psi}_{01}(t)\) , \(\tilde{\psi}_{10}(t)\), and \(\tilde{\psi}_{11}(t)\). Vertical dashed lines indicate time instants \(t_1\) (red) and \(t_2\) (blue). &lt;strong&gt;(&lt;a class="xref" href="#fig-comb-a"&gt;20a&lt;/a&gt;)&lt;/strong&gt; Segment choice \([C_1^2; C_2^1; C_1^1; C_2^2]\) leads to time-dependent variation in the relative amplitudes and phases of the four joint state coefficients. &lt;strong&gt;(&lt;a class="xref" href="#fig-comb-b"&gt;20b&lt;/a&gt;)&lt;/strong&gt; Segment choice \([C_1^1; C_2^2; C_1^2; C_2^1]\) produces a distinct temporal pattern of relative amplitudes and phase evolution.' loading="lazy" src="figures/fig-two-bit-1125348655161344783.png"/></figure>
+<figure id="fig-two-bit"><img alt='Temporal evolution of the joint two e-bits state coefficients for two Fourier-segment selections. The upper panels show the real parts and the lower panels the imaginary parts of \(\tilde{\psi}_{00}(t)\), \(\tilde{\psi}_{01}(t)\) , \(\tilde{\psi}_{10}(t)\), and \(\tilde{\psi}_{11}(t)\). Vertical dashed lines indicate time instants \(t_1\) (red) and \(t_2\) (blue). &lt;strong&gt;(&lt;a class="xref" href="#fig-comb-a"&gt;20a&lt;/a&gt;)&lt;/strong&gt; Segment choice \([C_1^2; C_2^1; C_1^1; C_2^2]\) leads to time-dependent variation in the relative amplitudes and phases of the four joint state coefficients. &lt;strong&gt;(&lt;a class="xref" href="#fig-comb-b"&gt;20b&lt;/a&gt;)&lt;/strong&gt; Segment choice \([C_1^1; C_2^2; C_1^2; C_2^1]\) produces a distinct temporal pattern of relative amplitudes and phase evolution.' height="829" loading="lazy" src="figures/fig-two-bit-1125348655161344783.png" width="1316"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Temporal evolution of the joint two e-bits state coefficients for two Fourier-segment selections. The upper panels show the real parts and the lower panels the imaginary parts of \(\tilde{\psi}_{00}(t)\), \(\tilde{\psi}_{01}(t)\) , \(\tilde{\psi}_{10}(t)\), and \(\tilde{\psi}_{11}(t)\). Vertical dashed lines indicate time instants \(t_1\) (red) and \(t_2\) (blue). <strong>(<span class="xref unresolved-xref">20a</span>)</strong> Segment choice \([C_1^2; C_2^1; C_1^1; C_2^2]\) leads to time-dependent variation in the relative amplitudes and phases of the four joint state coefficients. <strong>(<span class="xref unresolved-xref">20b</span>)</strong> Segment choice \([C_1^1; C_2^2; C_1^2; C_2^1]\) produces a distinct temporal pattern of relative amplitudes and phase evolution.</p>
 </div>
@@ -3136,9 +3234,9 @@ S_p(t) = -\,\mathrm{Tr}\big[\, \rho_{S_1}(t) \,\log \rho_{S_1}(t)\,\big]
 S_p(t) = - \sum_{k=1}^{2} \lambda_k(t)\,\log \lambda_k(t).
 \end{equation}\]</div>
 <p>In the separable limit, one eigenvalue equals unity and the other vanishes, leading to <span class="math notranslate nohighlight">\(S_p(t)=0\)</span>. In the maximally non-separable limit, both eigenvalues converge to <span class="math notranslate nohighlight">\(1/2\)</span>, and the entropy reaches <span class="math notranslate nohighlight">\(S_p(t)=\log 2\)</span>. Thus, the temporal profile <span class="math notranslate nohighlight">\(S_p(t)\)</span> reveals how nonlinear mode mixing and Fourier-segment contributions dynamically generate and suppress correlations between the elastic bits. In this framework, separability corresponds to vanishing entropy, while non-separability is signaled by finite entropy, with the magnitude encoding the strength of the effective entanglement.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-entropy"><img alt="Time-dependent entropy of entanglement for two Fourier-segment selections. (a) For \([C_1^1;C_2^1;C_1^2;C_2^2]\), the entropy remains at \(S_p(t)\approx 0\), consistent with a separable state where the two subsystems evolve independently. (b) For \([C_1^1;C_2^2;C_1^2;C_2^1]\), the entropy stays finite at \(S_p(t)\approx 0.6\) with small oscillations, indicating persistent non-separability and sustained correlations between the elastic bits. The contrast between (a) and (b) highlights how the choice of Fourier-segment partitioning directly controls whether the system exhibits separable or classically entangled behavior." loading="lazy" src="figures/fig-entropy-5850663160169682786.png"/></figure>
+<figure id="fig-entropy"><img alt="Time-dependent entropy of entanglement for two Fourier-segment selections. (a) For \([C_1^1;C_2^1;C_1^2;C_2^2]\), the entropy remains at \(S_p(t)\approx 0\), consistent with a separable state where the two subsystems evolve independently. (b) For \([C_1^1;C_2^2;C_1^2;C_2^1]\), the entropy stays finite at \(S_p(t)\approx 0.6\) with small oscillations, indicating persistent non-separability and sustained correlations between the elastic bits. The contrast between (a) and (b) highlights how the choice of Fourier-segment partitioning directly controls whether the system exhibits separable or classically entangled behavior." height="500" loading="lazy" src="figures/fig-entropy-5850663160169682786.png" width="1299"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Time-dependent entropy of entanglement for two Fourier-segment selections. (a) For \([C_1^1;C_2^1;C_1^2;C_2^2]\), the entropy remains at \(S_p(t)\approx 0\), consistent with a separable state where the two subsystems evolve independently. (b) For \([C_1^1;C_2^2;C_1^2;C_2^1]\), the entropy stays finite at \(S_p(t)\approx 0.6\) with small oscillations, indicating persistent non-separability and sustained correlations between the elastic bits. The contrast between (a) and (b) highlights how the choice of Fourier-segment partitioning directly controls whether the system exhibits separable or classically entangled behavior.</p>
 </div>
@@ -3198,9 +3296,9 @@ S_p(t) = - \sum_{k=1}^{2} \lambda_k(t)\,\log \lambda_k(t).
 + \tilde{\psi}_{111}(t)\,\lvert E_2 E_2 E_2 \rangle
 \end{aligned}
 \end{equation}\]</div>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-three-bit"><img alt="Temporal variations of the three-bit state coefficients. Vertical dashed lines mark two instants, \(t_1\) and \(t_2\) (\(t_2&amp;gt;t_1\)), at which the composite states are denoted \(\ket{\psi(t_1)}\) and \(\ket{\psi(t_1)}\). The observed evolution enables gate-like mappings between these states, analogous to operations in an eight-dimensional Hilbert space." loading="lazy" src="figures/fig-three-bit-8615324406098482396.png"/></figure>
+<figure id="fig-three-bit"><img alt="Temporal variations of the three-bit state coefficients. Vertical dashed lines mark two instants, \(t_1\) and \(t_2\) (\(t_2&amp;gt;t_1\)), at which the composite states are denoted \(\ket{\psi(t_1)}\) and \(\ket{\psi(t_1)}\). The observed evolution enables gate-like mappings between these states, analogous to operations in an eight-dimensional Hilbert space." height="967" loading="lazy" src="figures/fig-three-bit-8615324406098482396.png" width="1316"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Temporal variations of the three-bit state coefficients. Vertical dashed lines mark two instants, \(t_1\) and \(t_2\) (\(t_2&gt;t_1\)), at which the composite states are denoted \(\ket{\psi(t_1)}\) and \(\ket{\psi(t_1)}\). The observed evolution enables gate-like mappings between these states, analogous to operations in an eight-dimensional Hilbert space.</p>
 </div>
@@ -3259,14 +3357,14 @@ e^{i\pi}
 </section>
 </section>
 </div></section>
-<section aria-labelledby="berry-phase-label" class="dissertation-section reveal" id="berry-phase"><div class="section-label" id="berry-phase-label">Berry Phase</div><div class="article-body">
+<section aria-labelledby="berry-phase-label" class="dissertation-section" id="berry-phase"><div class="section-label" id="berry-phase-label">Berry Phase</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="topological-interpretation-of-the-elastic-bit-through-the-realization-of-berry-phase">
 <h1>TOPOLOGICAL INTERPRETATION OF THE ELASTIC BIT THROUGH THE REALIZATION OF BERRY PHASE:</h1>
 <section aria-label="Animated chapter media" class="animation-strip">
-<figure class="animation-card reveal"><video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" src="animations/nonlinear-berry.mp4"></video><figcaption><strong>Nonlinear Berry phase</strong><span>Berry phase accumulation from a nonlinear elastic-bit trajectory.</span></figcaption></figure>
-<figure class="animation-card reveal"><video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" src="animations/topology-transition.mp4"></video><figcaption><strong>Topology transition</strong><span>Control-parameter transition between trivial and nontrivial regimes.</span></figcaption></figure>
-<figure class="animation-card reveal"><img alt="Energy distribution" loading="lazy" src="animations/energy-distribution.gif"/><figcaption><strong>Energy distribution</strong><span>Energy localization linked to Berry-phase behavior.</span></figcaption></figure>
-<figure class="animation-card reveal"><img alt="Geometric vibration phase" loading="lazy" src="animations/phase-geometric-vibration-animation.gif"/><figcaption><strong>Geometric vibration phase</strong><span>A compact phase-space animation for geometric vibration.</span></figcaption></figure>
+<figure class="animation-card"><video autoplay="" class="lazy-video" controls="" data-src="animations/nonlinear-berry.mp4" loop="" muted="" playsinline="" preload="none"></video><figcaption><strong>Nonlinear Berry phase</strong><span>Berry phase accumulation from a nonlinear elastic-bit trajectory.</span></figcaption></figure>
+<figure class="animation-card"><video autoplay="" class="lazy-video" controls="" data-src="animations/topology-transition.mp4" loop="" muted="" playsinline="" preload="none"></video><figcaption><strong>Topology transition</strong><span>Control-parameter transition between trivial and nontrivial regimes.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Energy distribution" height="646" loading="lazy" src="animations/energy-distribution.gif" width="656"/><figcaption><strong>Energy distribution</strong><span>Energy localization linked to Berry-phase behavior.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Geometric vibration phase" height="1080" loading="lazy" src="animations/phase-geometric-vibration-animation.gif" width="1920"/><figcaption><strong>Geometric vibration phase</strong><span>A compact phase-space animation for geometric vibration.</span></figcaption></figure>
 </section>
 <p>Building on the foundations laid in previous sections, where we explored the representation of a two-level elastic bit on a Bloch sphere and its practical application in quantum-analogue gates, in this section, we delve into the intricate calculations of the Berry phase for the elastic bit. This exploration is crucial, as it characterizes the vibrational behavior and the topological nature of the granular system.</p>
 <p>The traditional conception of the Berry phase involves an eigenvector tracing a closed path within the momentum space of periodic systems, such as 1D crystals. This geometric phase arises due to the adiabatic and cyclic evolution of the system’s parameters, typically in the context of quantum mechanical systems where the momentum plays a pivotal role in defining the manifold.</p>
@@ -3350,9 +3448,9 @@ i\sin^{2}\!\tfrac{\theta}{2} \, d\varphi \\[3pt]
 \end{equation}\]</div>
 <p>The expression in Eq. (<a class="xref" href="#eq-berry-phase-static">87</a>) requires the polar angle <span class="math notranslate nohighlight">\(\theta\)</span> to remain constant while the azimuthal angle <span class="math notranslate nohighlight">\(\varphi\)</span> completes a full <span class="math notranslate nohighlight">\(2\pi\)</span> revolution to form a closed loop.
 As illustrated in Fig. 16(b), maintaining a constant <span class="math notranslate nohighlight">\(\theta\)</span> while allowing <span class="math notranslate nohighlight">\(\varphi\)</span> to advance through one complete cycle yields a closed path, whose enclosed solid angle determines the Berry phase.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="A three-dimensional representation of the Berry phase variation in response to the external drivers underscores the system's ability to generate a continuous spectrum of Berry phase values between \(0\) (trivial phase) and \(\pi\) (nontrivial phase). Here, \(\omega_{01} = 1\) and \(\omega_{02} = \sqrt{3}\) denote the two eigenmode frequencies of the linearized granular system." loading="lazy" src="figures/figure-berry-phase-ti-pdf.png"/></figure>
+<figure><img alt="A three-dimensional representation of the Berry phase variation in response to the external drivers underscores the system's ability to generate a continuous spectrum of Berry phase values between \(0\) (trivial phase) and \(\pi\) (nontrivial phase). Here, \(\omega_{01} = 1\) and \(\omega_{02} = \sqrt{3}\) denote the two eigenmode frequencies of the linearized granular system." height="985" loading="lazy" src="figures/figure-berry-phase-ti-pdf.png" width="1210"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> A three-dimensional representation of the Berry phase variation in response to the external drivers underscores the system's ability to generate a continuous spectrum of Berry phase values between \(0\) (trivial phase) and \(\pi\) (nontrivial phase). Here, \(\omega_{01} = 1\) and \(\omega_{02} = \sqrt{3}\) denote the two eigenmode frequencies of the linearized granular system.</p>
 </div>
@@ -3378,9 +3476,9 @@ This demonstrates the system’s capability to generate a continuous spectrum of
 <p>As demonstrated earlier, Fig. <span class="xref unresolved-xref">6</span> illustrates the evolution of the elastic-bit states parameterized by the external controls <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> and <span class="math notranslate nohighlight">\(\xi\)</span>, forming a closed manifold in parameter space. The Berry phase represents the total phase accumulated by the state vector along this closed path. As shown in Fig. <span class="xref unresolved-xref">23</span>, selecting <span class="math notranslate nohighlight">\((\omega_D, \mathcal{E}) = (\sqrt{2},\,0.5)\)</span> yields a nontrivial Berry phase of <span class="math notranslate nohighlight">\(\pi\)</span>. Achieving this value involves cycling <span class="math notranslate nohighlight">\(\xi\)</span> continuously from <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(+\pi\)</span>.</p>
 <p>Examining the system dynamics for <span class="math notranslate nohighlight">\((\omega_D, \mathcal{E}, \xi) = (\sqrt{2},\,0.5,\,\pi)\)</span> or <span class="math notranslate nohighlight">\((\sqrt{2},\,0.5,\,-\pi)\)</span> reveals that the vibration localizes entirely within the first mass, leaving the second mass effectively motionless, as shown in Fig. <span class="xref unresolved-xref">24a</span>. This figure plots the amplitude response of each mass as <span class="math notranslate nohighlight">\(\xi\)</span> is varied from <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(+\pi\)</span>, with <span class="math notranslate nohighlight">\(\omega_D = \sqrt{2}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{E} = 0.5\)</span>. Conversely, when <span class="math notranslate nohighlight">\((\omega_D, \mathcal{E}, \xi) = (\sqrt{2},\,0.5,\,0)\)</span>, the energy localizes in the second mass, suppressing the first. The resulting alternation of energy between the two granules, oscillation and rest, corresponds to the nontrivial Berry phase <span class="math notranslate nohighlight">\(\pi\)</span>, reflecting a topologically distinct vibration mode.</p>
 <p>In contrast, setting <span class="math notranslate nohighlight">\((\omega_D, \mathcal{E})\)</span> to either <span class="math notranslate nohighlight">\((\sqrt{2},\,0)\)</span> or <span class="math notranslate nohighlight">\((\sqrt{2},\,1)\)</span> produces a trivial Berry phase of <span class="math notranslate nohighlight">\(0\)</span> (as shown in Fig. <span class="xref unresolved-xref">23</span>), where both masses share equal amplitudes regardless of <span class="math notranslate nohighlight">\(\xi\)</span>, as illustrated in Fig. <span class="xref unresolved-xref">24b</span>. These results demonstrate that the Berry phase effectively captures the transition between uniform and localized vibrational states, revealing the topological structure of the elastic-bit system.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Correlation between the dynamics of the linearized granular system and the corresponding Berry phase values, elucidating the system's topological nature. &lt;strong&gt;Vibration amplitude responses:&lt;/strong&gt; Panel (a) depicts the amplitude response of each mass as \(\xi\) varies from \(-\pi\) to \(\pi\), showing how energy localization within the granules corresponds to nontrivial Berry phase values. Panel (b) contrasts this with a trivial Berry phase regime, where both masses exhibit identical amplitude responses. &lt;strong&gt;Phase difference analysis:&lt;/strong&gt; Panels (c) and (d) illustrate the phase differences between the granules (\(\phi_{m_1-m_2}\)) and between a granule and its driver (\(\phi_{m_1-d_1}\)), respectively. These plots show how phase differences evolve with \(\xi\) for varying amplitude ratios \(\mathcal{E}\), highlighting distinct behaviors below and above the critical value \(\mathcal{E}=0.5\), which marks a topological transition point." loading="lazy" src="figures/fig-system-topology-6903944616096142595.png"/></figure>
+<figure><img alt="Correlation between the dynamics of the linearized granular system and the corresponding Berry phase values, elucidating the system's topological nature. &lt;strong&gt;Vibration amplitude responses:&lt;/strong&gt; Panel (a) depicts the amplitude response of each mass as \(\xi\) varies from \(-\pi\) to \(\pi\), showing how energy localization within the granules corresponds to nontrivial Berry phase values. Panel (b) contrasts this with a trivial Berry phase regime, where both masses exhibit identical amplitude responses. &lt;strong&gt;Phase difference analysis:&lt;/strong&gt; Panels (c) and (d) illustrate the phase differences between the granules (\(\phi_{m_1-m_2}\)) and between a granule and its driver (\(\phi_{m_1-d_1}\)), respectively. These plots show how phase differences evolve with \(\xi\) for varying amplitude ratios \(\mathcal{E}\), highlighting distinct behaviors below and above the critical value \(\mathcal{E}=0.5\), which marks a topological transition point." height="657" loading="lazy" src="figures/fig-system-topology-6903944616096142595.png" width="1312"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Correlation between the dynamics of the linearized granular system and the corresponding Berry phase values, elucidating the system's topological nature. <strong>Vibration amplitude responses:</strong> Panel (a) depicts the amplitude response of each mass as \(\xi\) varies from \(-\pi\) to \(\pi\), showing how energy localization within the granules corresponds to nontrivial Berry phase values. Panel (b) contrasts this with a trivial Berry phase regime, where both masses exhibit identical amplitude responses. <strong>Phase difference analysis:</strong> Panels (c) and (d) illustrate the phase differences between the granules (\(\phi_{m_1-m_2}\)) and between a granule and its driver (\(\phi_{m_1-d_1}\)), respectively. These plots show how phase differences evolve with \(\xi\) for varying amplitude ratios \(\mathcal{E}\), highlighting distinct behaviors below and above the critical value \(\mathcal{E}=0.5\), which marks a topological transition point.</p>
 </div>
@@ -3435,9 +3533,9 @@ i \langle \psi(\tilde{\theta}(t), \tilde{\varphi}(t)) \lvert
 \end{equation}\]</div>
 <p>As shown in Eq. (<a class="xref" href="#berry-p-time">91</a>), the Berry phase represents the net phase accumulated over one response period, which is governed by the frequency of the external drivers. The Berry connection, in turn, spans the same period, collectively encoding the geometric evolution of the elastic bit’s state. Hence, the Berry phase serves as a topological descriptor of the elastic bit’s dynamics.</p>
 <p>From Eqs. (<a class="xref" href="#berry-c-time">90</a>) and (<a class="xref" href="#berry-p-time">91</a>), it is evident that both the Berry phase and the Berry connection are determined by the angular coordinates <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\varphi\)</span>, which define the Bloch-sphere trajectory of the state vector. These angles depend directly on the amplitudes, frequencies, and phases of the external drivers. Therefore, by carefully tuning these experimentally accessible parameters, one can continuously manipulate the value of the Berry phase. This tunability highlights the intimate coupling between the system’s driving conditions and its underlying geometric properties. Figure <a class="xref" href="#fig-blochstatetime">8</a> illustrates this relationship, showing how variations in the external drivers reshape the Berry phase landscape, offering a clear route to experimentally controllable geometric phases in mechanical analogues of quantum systems.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="&lt;strong&gt;Frequency and Precompression Dependence of Berry Phase.&lt;/strong&gt; Variation of the Berry phase with external driving frequency (\(\omega_D\)) and static precompression (\(\delta_0\)). At low precompression, the system exhibits two distinct nontrivial Berry phases of \(\pi\), separated by a trivial Berry phase of \(0\). As the static precompression increases, the nontrivial Berry phases shift toward higher driving frequencies, marking the transition from highly nonlinear to weakly nonlinear regimes. In the linearized limit, the two nontrivial phases merge into a single \(\pi\) phase. The plot highlights the sensitivity of the Berry phase to different experimental conditions under varying precompression levels. &lt;em&gt;System parameters:&lt;/em&gt; \(F_1 = 1\), \(F_2 = 2.5\), and \(\eta = 0.4\)." loading="lazy" src="figures/figure-berry-phase-td-pdf.png"/></figure>
+<figure><img alt="&lt;strong&gt;Frequency and Precompression Dependence of Berry Phase.&lt;/strong&gt; Variation of the Berry phase with external driving frequency (\(\omega_D\)) and static precompression (\(\delta_0\)). At low precompression, the system exhibits two distinct nontrivial Berry phases of \(\pi\), separated by a trivial Berry phase of \(0\). As the static precompression increases, the nontrivial Berry phases shift toward higher driving frequencies, marking the transition from highly nonlinear to weakly nonlinear regimes. In the linearized limit, the two nontrivial phases merge into a single \(\pi\) phase. The plot highlights the sensitivity of the Berry phase to different experimental conditions under varying precompression levels. &lt;em&gt;System parameters:&lt;/em&gt; \(F_1 = 1\), \(F_2 = 2.5\), and \(\eta = 0.4\)." height="823" loading="lazy" src="figures/figure-berry-phase-td-pdf.png" width="975"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Frequency and Precompression Dependence of Berry Phase.</strong> Variation of the Berry phase with external driving frequency (\(\omega_D\)) and static precompression (\(\delta_0\)). At low precompression, the system exhibits two distinct nontrivial Berry phases of \(\pi\), separated by a trivial Berry phase of \(0\). As the static precompression increases, the nontrivial Berry phases shift toward higher driving frequencies, marking the transition from highly nonlinear to weakly nonlinear regimes. In the linearized limit, the two nontrivial phases merge into a single \(\pi\) phase. The plot highlights the sensitivity of the Berry phase to different experimental conditions under varying precompression levels. <em>System parameters:</em> \(F_1 = 1\), \(F_2 = 2.5\), and \(\eta = 0.4\).</p>
 </div>
@@ -3451,9 +3549,9 @@ i \langle \psi(\tilde{\theta}(t), \tilde{\varphi}(t)) \lvert
 <p>To experimentally realize an elastic bit within a classical nonlinear granular system capable of generating a time-dependent superposition of states, we employ an apparatus similar to that described in Ref <span id="id3">[<a class="reference internal" href="#id42">Mahmood and Hasan, 2022</a>]</span>. The nonlinearity of the granular system can be controlled by adjusting external driving parameters such as frequency, amplitude, and static precompression.</p>
 <p>In our theoretical formulation [see Eq. (<a class="xref" href="#berry-p-time">91</a>)], we showed that when two granules are subjected to static precompression and driven at a specific frequency, their nonlinear vibrational response can be represented in the orthonormal linear normal-mode basis (<span class="math notranslate nohighlight">\(\ket{E_1}\)</span>, <span class="math notranslate nohighlight">\(\ket{E_2}\)</span>) using time-dependent Bloch-state coordinates <span class="math notranslate nohighlight">\((\tilde{\theta}(t), \tilde{\varphi}(t))\)</span>. These Bloch states form the components of a state vector in the two-dimensional Hilbert space of the elastic bit, allowing the system to evolve parametrically along closed, periodic trajectories on the Bloch sphere.</p>
 <p>Following this theoretical framework, we map the experimentally measured displacement fields of the two-mass system onto the same orthonormal basis to extract the corresponding Bloch-state coordinates <span class="math notranslate nohighlight">\((\tilde{\theta}, \tilde{\varphi})\)</span>. This mapping enables us to track the temporal evolution of the system’s state in the Bloch representation and subsequently compute the Berry connection and Berry phase directly from experimental data.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-experimental-berry-phase"><img alt="&lt;strong&gt;Experimental Manifestation of Elastic Bit Evolution and Berry Phase Accumulation.&lt;/strong&gt;(&lt;strong&gt;a&lt;/strong&gt;) &lt;em&gt;Trajectories on the Bloch Sphere:&lt;/em&gt; Cyclic evolution of the elastic bit's states on the Bloch sphere at various driving frequencies, illustrating the rotational paths traced by the system's state. The amplitude of the external driver remains constant while the frequency variation alters the cyclic paths, revealing distinct trajectories that highlight the path dependence of the evolution. (&lt;strong&gt;b&lt;/strong&gt;) &lt;em&gt;Frequency-dependent Berry phase:&lt;/em&gt; Variation of the Berry phase with driving frequency under constant amplitude and static precompression. The ratio of driving frequencies yielding trivial (\(0\)) and non-trivial (\(\pi\)) Berry phases is \(1.09\) (black line), consistent with the theoretical prediction of \(1.18\) (gray line)." loading="lazy" src="figures/fig-experimental-berry-phase-3116656946865586166.png"/></figure>
+<figure id="fig-experimental-berry-phase"><img alt="&lt;strong&gt;Experimental Manifestation of Elastic Bit Evolution and Berry Phase Accumulation.&lt;/strong&gt;(&lt;strong&gt;a&lt;/strong&gt;) &lt;em&gt;Trajectories on the Bloch Sphere:&lt;/em&gt; Cyclic evolution of the elastic bit's states on the Bloch sphere at various driving frequencies, illustrating the rotational paths traced by the system's state. The amplitude of the external driver remains constant while the frequency variation alters the cyclic paths, revealing distinct trajectories that highlight the path dependence of the evolution. (&lt;strong&gt;b&lt;/strong&gt;) &lt;em&gt;Frequency-dependent Berry phase:&lt;/em&gt; Variation of the Berry phase with driving frequency under constant amplitude and static precompression. The ratio of driving frequencies yielding trivial (\(0\)) and non-trivial (\(\pi\)) Berry phases is \(1.09\) (black line), consistent with the theoretical prediction of \(1.18\) (gray line)." height="1077" loading="lazy" src="figures/fig-experimental-berry-phase-3116656946865586166.png" width="1316"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Experimental Manifestation of Elastic Bit Evolution and Berry Phase Accumulation.</strong>(<strong>a</strong>) <em>Trajectories on the Bloch Sphere:</em> Cyclic evolution of the elastic bit's states on the Bloch sphere at various driving frequencies, illustrating the rotational paths traced by the system's state. The amplitude of the external driver remains constant while the frequency variation alters the cyclic paths, revealing distinct trajectories that highlight the path dependence of the evolution. (<strong>b</strong>) <em>Frequency-dependent Berry phase:</em> Variation of the Berry phase with driving frequency under constant amplitude and static precompression. The ratio of driving frequencies yielding trivial (\(0\)) and non-trivial (\(\pi\)) Berry phases is \(1.09\) (black line), consistent with the theoretical prediction of \(1.18\) (gray line).</p>
 </div>
@@ -3488,9 +3586,18 @@ As <span class="math notranslate nohighlight">\(\omega_d\)</span> is swept slowl
 \ln \! \big[\mathrm{BC}(\tilde{\theta}(z), \tilde{\varphi}(z)) \big]. 
 \end{equation}\]</div>
 <p>Evaluating Eqs. (<a class="xref" href="#eq-bc-theta-phi">86</a>)-(<a class="xref" href="#eq-berry-accumulation">92</a>) over the sweep yields the Berry phase values summarized below.</p>
-<div class="thesis-table reveal" style="--figure-columns:1">
-<div class="figure-grid">
-<figure><img alt="Time-invariant Berry phase values obtained from frequency sweeps." loading="lazy" src="figures/tab-ti-berry-7488443291197391331.png"/></figure>
+<div class="thesis-table mathjax_process">
+<div class="table-scroll">
+<table aria-label="Time-invariant Berry phase values obtained from frequency sweeps" class="compact-data-table">
+<thead>
+<tr><th scope="col">Elastic Bit</th><th scope="col">Frequency Components</th><th scope="col">Berry Phase (radian)</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">1</th><td class="math-cell">\((\omega_m = \omega_n = \omega_d)\)</td><td>2.778</td></tr>
+<tr><th scope="row">2</th><td class="math-cell">\((\omega_m = \omega_n = 2\omega_d)\)</td><td>0.721</td></tr>
+<tr><th scope="row">3</th><td class="math-cell">\((\omega_m = \omega_n = 3\omega_d)\)</td><td>1.642</td></tr>
+</tbody>
+</table>
 </div>
 <p class="caption"><span>Table.</span> Time-invariant Berry phase values obtained from frequency sweeps.</p>
 </div>
@@ -3499,9 +3606,19 @@ Because they are geometric, they remain insensitive to small timing errors or fl
 <section id="time-variant-model-beat-driven-berry-phase">
 <h3>Time-Variant Model: Beat-Driven Berry Phase</h3>
 <p>For detuned pairings, the parametric coordinate is <span class="math notranslate nohighlight">\(z \equiv t\)</span>. The Bloch angles precess with the beat frequency, producing closed loops whose shape is determined by the amplitude ratio and initial phase offset (Fig. <span class="xref unresolved-xref">18</span>). The Berry phase accumulated over one beat period for representative harmonic pairs is summarized below.</p>
-<div class="thesis-table reveal" style="--figure-columns:1">
-<div class="figure-grid">
-<figure><img alt="Time-variant logical elastic-bit Berry phase values." loading="lazy" src="figures/tab-tv-berry-2770255849574774757.png"/></figure>
+<div class="thesis-table mathjax_process">
+<div class="table-scroll">
+<table aria-label="Time-variant logical elastic-bit Berry phase values" class="compact-data-table">
+<thead>
+<tr><th scope="col">Elastic Bit</th><th scope="col">Amplitude Components</th><th scope="col">Harmonic Pairs</th><th scope="col">Berry Phase (radian)</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">1</th><td class="math-cell">\([C_1^{2},\,C_2^{1}]\)</td><td class="math-cell">\((\omega_2,\,\omega_1)\)</td><td>1.264</td></tr>
+<tr><th scope="row">2</th><td class="math-cell">\([C_1^{3},\,C_2^{2}]\)</td><td class="math-cell">\((\omega_3,\,\omega_2)\)</td><td>2.073</td></tr>
+<tr><th scope="row">3</th><td class="math-cell">\([C_1^{4},\,C_2^{3}]\)</td><td class="math-cell">\((\omega_4,\,\omega_3)\)</td><td>2.863</td></tr>
+<tr><th scope="row">4</th><td class="math-cell">\([C_1^{5},\,C_2^{4}]\)</td><td class="math-cell">\((\omega_5,\,\omega_4)\)</td><td>1.602</td></tr>
+</tbody>
+</table>
 </div>
 <p class="caption"><span>Table.</span> Time-variant logical elastic-bit Berry phase values.</p>
 </div>
@@ -3515,11 +3632,11 @@ This inherent robustness to small perturbations makes them powerful for reliable
 </section>
 </section>
 </div></section>
-<section aria-labelledby="acoustic-ssg-label" class="dissertation-section reveal" id="acoustic-ssg"><div class="section-label" id="acoustic-ssg-label">Acoustic SSH / SSG</div><div class="article-body">
+<section aria-labelledby="acoustic-ssg-label" class="dissertation-section" id="acoustic-ssg"><div class="section-label" id="acoustic-ssg-label">Acoustic SSH / SSG</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="topological-vibration-analysis-of-elastic-lattices-via-bloch-sphere-mapping">
 <h1>Topological Vibration Analysis of Elastic Lattices via Bloch Sphere Mapping</h1>
 <section aria-label="Animated chapter media" class="animation-strip">
-<figure class="animation-card reveal"><video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata" src="animations/psi-n-minus.mp4"></video><figcaption><strong>Time-dependent stiffness band motion</strong><span>Spatiotemporal modulation and band evolution.</span></figcaption></figure>
+<figure class="animation-card"><video autoplay="" class="lazy-video" controls="" data-src="animations/psi-n-minus.mp4" loop="" muted="" playsinline="" preload="none"></video><figcaption><strong>Time-dependent stiffness band motion</strong><span>Spatiotemporal modulation and band evolution.</span></figcaption></figure>
 </section>
 <p>﻿</p>
 <section id="elastic-lattice-under-consideration">
@@ -3532,9 +3649,9 @@ This inherent robustness to small perturbations makes them powerful for reliable
 <h2>Diatomic Unit Cell Lattice with Time-Independent Stiffness</h2>
 <p id="diatomic-unit">We consider a diatomic unit cell composed of identical masses coupled by nearest-neighbor springs of stiffness <span class="math notranslate nohighlight">\(\psi_{1}\)</span> and <span class="math notranslate nohighlight">\(\psi_{2}\)</span>, arranged periodically and subject to Born-von Kármán boundary conditions. Our aim is twofold: (i) to obtain closed-form acoustic/optical traveling-wave solutions and their complex amplitudes, and (ii) to recast the lattice motion as a normalized superposition of two orthogonal eigenstates, thereby exposing how inversion symmetry fixes the relative phase (0 or <span class="math notranslate nohighlight">\(\pi\)</span>) across the Brillouin zone, the 1D Zak-phase quantization that we later visualize on a Bloch sphere. The quantization of the Zak phase in inversion-symmetric 1D lattices and its dependence on origin are well established and provide the topological backdrop for our superposition analysis.</p>
 <p>We first consider a system of two identical masses per unit cell with modulated spring constants, for which the analytical solutions of the eigen-problem are available and can be compared with numerical results obtained via SAAP. Figure <span class="xref unresolved-xref">27</span> represents the schematic of the 1D elastic lattices.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Schematic of a one-dimensional diatomic mass-spring lattice consisting of two identical masses per unit cell and alternating spring constants. Each unit cell of length \(L=2a\) contains two masses, \((1,N_i)\) and \((2,N_i)\), coupled by springs with stiffness \(\psi_1(t)\) and \(\psi_2(t)\). \(a\) is the inter-mass spacing. The shaded region highlights a representative unit cell of the periodic structure." loading="lazy" src="animations/acoustic-ssh-mass-spring-chain.gif"/></figure>
+<figure><img alt="Schematic of a one-dimensional diatomic mass-spring lattice consisting of two identical masses per unit cell and alternating spring constants. Each unit cell of length \(L=2a\) contains two masses, \((1,N_i)\) and \((2,N_i)\), coupled by springs with stiffness \(\psi_1(t)\) and \(\psi_2(t)\). \(a\) is the inter-mass spacing. The shaded region highlights a representative unit cell of the periodic structure." height="271" loading="lazy" src="animations/acoustic-ssh-mass-spring-chain.gif" width="1159"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Schematic of a one-dimensional diatomic mass-spring lattice consisting of two identical masses per unit cell and alternating spring constants. Each unit cell of length \(L=2a\) contains two masses, \((1,N_i)\) and \((2,N_i)\), coupled by springs with stiffness \(\psi_1(t)\) and \(\psi_2(t)\). \(a\) is the inter-mass spacing. The shaded region highlights a representative unit cell of the periodic structure.</p>
 </div>
@@ -3615,9 +3732,9 @@ u_{1, N_{i}}(t) = A_{1} e^{\mathrm{i}\left(k N_{i} L + \omega t\right)}, \quad u
 \;\right],
 \end{equation*}\]</div>
 <p>giving the acoustic <span class="math notranslate nohighlight">\((+)\)</span> and optical <span class="math notranslate nohighlight">\((-)\)</span> branches.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Dispersion relation of the diatomic lattice in the first Brillouin zone (\(-\pi \leq kL \leq \pi\)). The lower curve (red) is the acoustic branch, which tends to zero frequency at \(k=0\), while the upper curve (blue) is the optical branch, which starts at finite frequency. A band gap exists between the two branches when \(\psi_1\neq\psi_2\), reflecting the difference in stiffness." loading="lazy" src="figures/supplementary-material-figure-band-dispersion-tex.png"/></figure>
+<figure><img alt="Dispersion relation of the diatomic lattice in the first Brillouin zone (\(-\pi \leq kL \leq \pi\)). The lower curve (red) is the acoustic branch, which tends to zero frequency at \(k=0\), while the upper curve (blue) is the optical branch, which starts at finite frequency. A band gap exists between the two branches when \(\psi_1\neq\psi_2\), reflecting the difference in stiffness." height="447" loading="lazy" src="figures/supplementary-material-figure-band-dispersion-tex.png" width="603"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Dispersion relation of the diatomic lattice in the first Brillouin zone (\(-\pi \leq kL \leq \pi\)). The lower curve (red) is the acoustic branch, which tends to zero frequency at \(k=0\), while the upper curve (blue) is the optical branch, which starts at finite frequency. A band gap exists between the two branches when \(\psi_1\neq\psi_2\), reflecting the difference in stiffness.</p>
 </div>
@@ -3790,9 +3907,9 @@ e^{-\mathrm{i}\theta/2}
 <p>In the second set of MD simulations, the band structure is used to prescribe the initial conditions. We take <span class="math notranslate nohighlight">\(u_{n,N_i}(0)=\cos(k N_i L)\)</span> and <span class="math notranslate nohighlight">\(\dot{u}_{n,N_i}(0)=-\,\omega_j(k)\,\sin(k N_i L)\)</span>. This sets the velocity consistent with the computed band structure. Each MD simulation yields the displacement <span class="math notranslate nohighlight">\(u_{n,N_i}(t)\)</span>, which is then used to compute the complex amplitude <span class="math notranslate nohighlight">\(A_{n,j}(k)\)</span> of the mass <span class="math notranslate nohighlight">\(n-th\)</span> and its phase <span class="math notranslate nohighlight">\(\phi_{n,j}(k)\)</span>.</p>
 <p>For a numerical solution, the initial conditions are set as displacement <span class="math notranslate nohighlight">\(u_{n,N_i}(0)=\cos(kN_i L)\)</span> and velocity <span class="math notranslate nohighlight">\(\ddot{u}_{n,N_i}=0\)</span>. for the case of masses. In the first molecular dynamics simulation using the prescribed initial conditions, the dispersion relation is calculated using the temporal integral of the displacement <span class="math notranslate nohighlight">\(u_{n,N_i}(t)\)</span> and the band structure <span class="math notranslate nohighlight">\(\omega_j(k)\)</span> is measured at the span of the wave number <span class="math notranslate nohighlight">\(k\)</span>. The wave number <span class="math notranslate nohighlight">\(k\)</span> has a linear range in <span class="math notranslate nohighlight">\([-\pi,\pi]\)</span> with an increase of <span class="math notranslate nohighlight">\(2\pi/N_c\)</span> in Brillouin zone 1.</p>
 <p>The second set of molecular dynamics simulations has a different initial condition as we have developed the band structure for the system. Using the initial condition as <span class="math notranslate nohighlight">\(u_{n,N_i}(0)=\cos(kN_i L)\)</span> and <span class="math notranslate nohighlight">\(\dot{u}_{n,N_i}(0)=-\,\omega_j(k)\,\sin(k N_i L)\)</span>, the displacement of the traveling wave is obtained through the 2nd MD simulation necessary for the solution of the modulus. This initial condition sets the velocity value to the one prescribed by the band structure. One must use a specified traveling elastic wave initial condition to obtain the wave function band structure and the amplitude and phase of the masses. After the second set of MD simulations, we use the displacement <span class="math notranslate nohighlight">\(u_{n,N_i}(t)\)</span> to calculate the complex amplitude, and the phase of the nth mass and the letter use those to calculate the modulus and the modulus’s phase to calculate the system state. Geometrical representation by the Bloch sphere is demonstrated for the superposition of the state (Fig. <span class="xref unresolved-xref">29</span>).</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Algorithm for 2-Step Molecular Dynamics (MD) simulation and calculations of coefficients of the superposition of states." loading="lazy" src="figures/supplementary-material-figure-flow-chart-tex.png"/></figure>
+<figure><img alt="Algorithm for 2-Step Molecular Dynamics (MD) simulation and calculations of coefficients of the superposition of states." height="1058" loading="lazy" src="figures/supplementary-material-figure-flow-chart-tex.png" width="1190"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Algorithm for 2-Step Molecular Dynamics (MD) simulation and calculations of coefficients of the superposition of states.</p>
 </div>
@@ -3965,9 +4082,9 @@ k L = \pi - \varepsilon, \quad \varepsilon \rightarrow 0,
 <p>In contrast with earlier works , the explicit coefficient forms above make the classical two-state superposition structure completely transparent: each band eigenstate is a normalized spinor <span class="math notranslate nohighlight">\(\hat\alpha \left| E_1 \right\rangle + \hat\beta \left| E_2 \right\rangle\)</span> whose trajectory on the Bloch sphere will encode the Berry/Zak phase accrued as <span class="math notranslate nohighlight">\(k\)</span> winds the BZ. That geometric viewpoint, classically realized here, has been the standard language for qubits and two-level systems and will underpin our Bloch-sphere visualizations and Berry-phase computations in the rest of the paper.</p>
 <p>In inversion-symmetric 1D lattices (such as the diatomic chain studied here), the Zak phase of an isolated band is quantized to 0 or <span class="math notranslate nohighlight">\(\pi\)</span>; the two possibilities are exchanged by moving the unit-cell origin, and the phase jump occurs at the BZ symmetry point, precisely the behavior recovered by the limiting forms above. This connects our classical superpositions directly to the SSH-family topological invariant and to contemporary measurements/derivations of Zak phases in 1D photonic/acoustic analogs .</p>
 <p>While previous studies derive Berry/Zak phases from amplitude-vector overlaps, the explicit closed-form spinors at the BZ edges (Eqs. (<a class="xref" href="#eq6">103</a>)–(<a class="xref" href="#eq7">104</a>) and the four limits) let us read off the relative phase locking and the ensuing Zak class directly, and then will map those states (see Sec. <a class="xref" href="#bloch-sphere-time-independent">8.4</a>) onto a Bloch sphere to visualize classical superpositions that mirror qubit states. This dual algebraic-geometric representation, classical superposition coefficients and two-state Bloch sphere, clarifies how stiffness ordering and the sign of <span class="math notranslate nohighlight">\(k\)</span> select the longitude on sphere, offering a compact, physically transparent route to the same topological conclusions and providing a platform for extending the analysis (Sec. <a class="xref" href="#time-dependent-stiffness">8.7</a>) to time-modulated lattices via non-cyclic geometric phases .</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-modulus-2mass"><img alt="&lt;strong&gt;Top Panel:&lt;/strong&gt; Modulus of complex amplitudes \(|\hat\alpha|\) and \(|\hat\beta|\) of two mutually orthogonal states \(|E_1\rangle\) and \(|E_2\rangle\). &lt;strong&gt;Bottom Panel:&lt;/strong&gt; phase difference between the amplitude moduli." loading="lazy" src="figures/fig-modulus-2mass-8635825954338788817.png"/></figure>
+<figure id="fig-modulus-2mass"><img alt="&lt;strong&gt;Top Panel:&lt;/strong&gt; Modulus of complex amplitudes \(|\hat\alpha|\) and \(|\hat\beta|\) of two mutually orthogonal states \(|E_1\rangle\) and \(|E_2\rangle\). &lt;strong&gt;Bottom Panel:&lt;/strong&gt; phase difference between the amplitude moduli." height="974" loading="lazy" src="figures/fig-modulus-2mass-8635825954338788817.png" width="1316"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Top Panel:</strong> Modulus of complex amplitudes \(|\hat\alpha|\) and \(|\hat\beta|\) of two mutually orthogonal states \(|E_1\rangle\) and \(|E_2\rangle\). <strong>Bottom Panel:</strong> phase difference between the amplitude moduli.</p>
 </div>
@@ -4024,10 +4141,10 @@ k L = \pi - \varepsilon, \quad \varepsilon \rightarrow 0,
 \end{equation*}\]</div>
 <p>with <span class="math notranslate nohighlight">\(\theta = \frac{\pi}{2}\)</span> and <span class="math notranslate nohighlight">\(\varphi = \frac{\pi}{2}\)</span>. This corresponds to a balanced, classically nonseparable (i.e., phase-coherent) superposition with the state proportional to <span class="math notranslate nohighlight">\(\left(\lvert E_1 \rangle + \mathrm{i} \lvert E_2 \rangle \right)\)</span> up to overall normalization. The geometry is now on the equator at azimuth <span class="math notranslate nohighlight">\(\varphi = \pi/2\)</span>.</p>
 <p>These points confirm that the lattice state moves smoothly between the poles and the equator as <span class="math notranslate nohighlight">\(k\)</span> sweeps the Brillouin zone, exactly mirroring the interchange of the modulus hierarchy <span class="math notranslate nohighlight">\(|\hat{\alpha}| \gtrless |\hat{\beta}|\)</span> identified in Fig. <a class="xref" href="#fig-modulus-2mass">30</a>. Using Eq. (<a class="xref" href="#eq8">105</a>) at every discretized <span class="math notranslate nohighlight">\(k\)</span>, we reconstruct the full path <span class="math notranslate nohighlight">\([\theta(k), \varphi(k)]\)</span> on the sphere (Fig. <span class="xref unresolved-xref">31</span>).</p>
-<div class="thesis-figure reveal" style="--figure-columns:2">
+<div class="thesis-figure" style="--figure-columns:2">
 <div class="figure-grid">
-<figure><img alt="Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi_1&amp;gt;\psi_2\) (b) \(\psi_1&amp;lt;\psi_2\) at the acoustic branch." loading="lazy" src="animations/trying-bloch-ti-1large2.gif"/><figcaption class="panel-caption">\(\psi_1&gt;\psi_2\)</figcaption></figure>
-<figure><img alt="Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi_1&amp;gt;\psi_2\) (b) \(\psi_1&amp;lt;\psi_2\) at the acoustic branch." loading="lazy" src="animations/trying-bloch-ti-1small2.gif"/><figcaption class="panel-caption">\(\psi_1&lt;\psi_2\)</figcaption></figure>
+<figure><img alt="Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi_1&amp;gt;\psi_2\) (b) \(\psi_1&amp;lt;\psi_2\) at the acoustic branch." height="374" loading="lazy" src="animations/trying-bloch-ti-1large2.gif" width="572"/><figcaption class="panel-caption">\(\psi_1&gt;\psi_2\)</figcaption></figure>
+<figure><img alt="Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi_1&amp;gt;\psi_2\) (b) \(\psi_1&amp;lt;\psi_2\) at the acoustic branch." height="374" loading="lazy" src="animations/trying-bloch-ti-1small2.gif" width="572"/><figcaption class="panel-caption">\(\psi_1&lt;\psi_2\)</figcaption></figure>
 </div>
 <p class="caption"><span>Figure.</span> Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi_1&gt;\psi_2\) (b) \(\psi_1&lt;\psi_2\) at the acoustic branch.</p>
 </div>
@@ -4133,9 +4250,9 @@ S =
     \chi_{\mathrm{disc}} = - \operatorname{Im} \left\{ \ln \left[ \prod_{i=1}^{N_c} \mathbf{B}_V(k_i) \right] \right\}.
 \end{equation}\]</div>
 <p>Equations (<a class="xref" href="#eq11">108</a>)–(<a class="xref" href="#eq13">110</a>) are the conventional geometric-phase expressions in both the continuum and discrete settings. In the continuum, the Berry connection reads <span class="math notranslate nohighlight">\(A(k) = \mathrm{i} \left\langle u_{k} \mid \partial_{k} u_{k} \right\rangle\)</span> and the Zak (Berry) phase is its line integral over a closed loop in the Brillouin zone; on a discretized mesh the same object is evaluated as the imaginary part of the logarithm of the ordered product of nearest-neighbor overlaps. These are the forms we use in (<a class="xref" href="#eq11">108</a>)–(<a class="xref" href="#eq13">110</a>), and they coincide with established treatments of Berry/Zak phases and their lattice discretizations .</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig3"><img alt="Analytical result of the real and imaginary component of the Berry vector corresponding to the stiffness of (a) \(\psi_1&amp;gt;\psi_2\) and (b) \(\psi_1&amp;lt;\psi_2\)." loading="lazy" src="figures/fig3-1043627569272782579.png"/></figure>
+<figure id="fig3"><img alt="Analytical result of the real and imaginary component of the Berry vector corresponding to the stiffness of (a) \(\psi_1&amp;gt;\psi_2\) and (b) \(\psi_1&amp;lt;\psi_2\)." height="417" loading="lazy" src="figures/fig3-1043627569272782579.png" width="1299"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Analytical result of the real and imaginary component of the Berry vector corresponding to the stiffness of (a) \(\psi_1&gt;\psi_2\) and (b) \(\psi_1&lt;\psi_2\).</p>
 </div>
@@ -4189,23 +4306,32 @@ A_3
 \end{aligned}   
 \end{equation}\]</div>
 <p>We study three representative stiffness sets:</p>
-<div class="thesis-table reveal" style="--figure-columns:1">
-<div class="figure-grid">
-<figure><img alt="table panel 1" loading="lazy" src="figures/table-7-5467382114508385948.png"/></figure>
+<div class="thesis-table mathjax_process">
+<div class="table-scroll">
+<table aria-label="Representative stiffness sets" class="compact-data-table">
+<thead>
+<tr><th scope="col">Case</th><th scope="col">Stiffness Set</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">(i)</th><td class="math-cell">\(\psi_1 = \psi_2,\ \psi_3 = 2\psi_1\)</td></tr>
+<tr><th scope="row">(ii)</th><td class="math-cell">\(\psi_1 = \psi_2,\ \psi_3 = \frac{1}{2}\psi_1\)</td></tr>
+<tr><th scope="row">(iii)</th><td class="math-cell">\(\psi_2 = \psi_3,\ \psi_1 = 2\psi_2\)</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 <p>Cases (i)–(ii) satisfy inversion symmetry and therefore must yield Zak phases equal to <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(\pi \pmod{2\pi}\)</span>, while case (iii) explicitly breaks inversion and thus generically produces non-quantized geometric phases. For each case, we compute the dispersion and the cell-wise complex amplitudes <span class="math notranslate nohighlight">\((\hat\alpha, \hat\beta, \hat\gamma)\)</span> across the Brillouin zone <span class="math notranslate nohighlight">\(k L \in [-\pi, \pi]\)</span>.
 \tikzset{every picture/.style={baseline=(current bounding box.south)}}</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-modulation-3mass"><img alt="Evolution of the coefficients of the complex amplitude of a three mass unit cell at different set of parameters." loading="lazy" src="figures/fig-modulation-3mass-488609168583435929.png"/></figure>
+<figure id="fig-modulation-3mass"><img alt="Evolution of the coefficients of the complex amplitude of a three mass unit cell at different set of parameters." height="1406" loading="lazy" src="figures/fig-modulation-3mass-488609168583435929.png" width="1304"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Evolution of the coefficients of the complex amplitude of a three mass unit cell at different set of parameters.</p>
 </div>
 <p>From Fig. <a class="xref" href="#fig-modulation-3mass">33</a>, we see that the domination of the complex coefficients depends on the set of parameters. Across all three parameter sets, the acoustic branch is dominated by <span class="math notranslate nohighlight">\(\hat\alpha\)</span>. We can see an interchangeable effect in the 1st and 2nd optical branches in the case of the parameter set case (i) <span class="math notranslate nohighlight">\(\psi_1=\psi_2, \psi_3=2\psi_1\)</span> and (ii) <span class="math notranslate nohighlight">\(\psi_1=\psi_2, \psi_3=0.5\psi_1\)</span>. These two conditions of stiffness show a shift in the domination of the complex coefficients <span class="math notranslate nohighlight">\(\lvert\hat\beta\rvert\)</span> and <span class="math notranslate nohighlight">\(\lvert\hat\gamma\rvert\)</span>. This inversion in the 1st and 2nd optical shows a topological transition within the branches in the Hilbert space. And, across different parameters, we can see the clear separation of complex coefficients <span class="math notranslate nohighlight">\(\lvert\hat\alpha\rvert\)</span>, <span class="math notranslate nohighlight">\(\lvert\hat\beta\rvert\)</span> and <span class="math notranslate nohighlight">\(\lvert\hat\beta\rvert\)</span>. This clear separation, visible in Fig. <a class="xref" href="#fig-modulation-3mass">33</a> for cases (<span class="xref unresolved-xref">33c</span>)–(<span class="xref unresolved-xref">33i</span>), provides an unambiguous, stiffness-agnostic labeling of the three branches that we will use to compare the phase evolution below. The continuity of these modulus trends through the Brillouin zone is also consistent with the smooth evolution of the Bloch eigenvectors away from high-symmetry points. We will focus on the acoustic branch for the set parameters.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-3massphase"><img alt="Absolute phases of the complex coefficients at the acoustic branch at the set parameters (i) \(\psi_1=\psi_2, \psi_3=2\psi_1\), (ii) \(\psi_1=\psi_2, \psi_3=0.5\psi_1\), and (iii) \(\psi_2=\psi_3, \psi_1=2\psi_2\)." loading="lazy" src="figures/fig-3massphase-8350475735942627379.png"/></figure>
+<figure id="fig-3massphase"><img alt="Absolute phases of the complex coefficients at the acoustic branch at the set parameters (i) \(\psi_1=\psi_2, \psi_3=2\psi_1\), (ii) \(\psi_1=\psi_2, \psi_3=0.5\psi_1\), and (iii) \(\psi_2=\psi_3, \psi_1=2\psi_2\)." height="551" loading="lazy" src="figures/fig-3massphase-8350475735942627379.png" width="1265"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Absolute phases of the complex coefficients at the acoustic branch at the set parameters (i) \(\psi_1=\psi_2, \psi_3=2\psi_1\), (ii) \(\psi_1=\psi_2, \psi_3=0.5\psi_1\), and (iii) \(\psi_2=\psi_3, \psi_1=2\psi_2\).</p>
 </div>
@@ -4241,16 +4367,16 @@ A_3
 \end{equation}\]</div>
 <p>We label <span class="math notranslate nohighlight">\(\psi_n^{+}\)</span> for the “<span class="math notranslate nohighlight">\(+\)</span>” and <span class="math notranslate nohighlight">\(\psi_n^{-}\)</span> for the “<span class="math notranslate nohighlight">\(-\)</span>” choice. These two cases are related by an origin shift of half a cell (from the first mass to mid-cell).</p>
 <p>Consequently, they share the same band structure but differ by Berry-phase conventions tied to origin choice, an invariance of the spectrum under unitary re-labelings that simultaneously allows different Berry phases under translations of the real-space origin.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt="Elastic wave band structure for variable periodical sinusoidal modulation of stiffness at \(V_m=350m/s\). The red line defines the first fundamental branch, and the green line represents the second one." loading="lazy" src="figures/figure-contourplot-tex.png"/></figure>
+<figure><img alt="Elastic wave band structure for variable periodical sinusoidal modulation of stiffness at \(V_m=350m/s\). The red line defines the first fundamental branch, and the green line represents the second one." height="578" loading="lazy" src="figures/figure-contourplot-tex.png" width="942"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Elastic wave band structure for variable periodical sinusoidal modulation of stiffness at \(V_m=350m/s\). The red line defines the first fundamental branch, and the green line represents the second one.</p>
 </div>
 <p>Fig. <span class="xref unresolved-xref">35</span> shows the dispersion of the space-time-modulated superlattice (as also reported in our prior work on ). The moving modulation generates directional hybridization (one-sided) gaps and Doppler-shifted replicas of the static branches, canonical signatures of non-reciprocal phononic media with space-time periodicity and Willis-type effective descriptions. The placement and multiplicity of gaps depend on the modulation speed and harmonic content, consistent with general theories and with beam-lattice implementations of spatiotemporal elasticity.</p>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure id="fig-mp-2mass-td"><img alt="Amplitude and Phase modulation of the two-mass system for the time-dependent stiffness of the harmonic spring for the stiffness of \(\psi^+\) and \(\psi^-\) at the first (FFB) and second (SFB) fundamental branch. &lt;strong&gt;Top Panel:&lt;/strong&gt; Modulus of complex amplitudes \(|\hat\alpha|\) and \(|\hat\beta|\). &lt;strong&gt;Bottom Panel:&lt;/strong&gt; Phase difference between the amplitude moduli \(\arg(\hat\alpha)-\arg(\hat\beta)\)." loading="lazy" src="figures/fig-mp-2mass-td-2535566845373814238.png"/></figure>
+<figure id="fig-mp-2mass-td"><img alt="Amplitude and Phase modulation of the two-mass system for the time-dependent stiffness of the harmonic spring for the stiffness of \(\psi^+\) and \(\psi^-\) at the first (FFB) and second (SFB) fundamental branch. &lt;strong&gt;Top Panel:&lt;/strong&gt; Modulus of complex amplitudes \(|\hat\alpha|\) and \(|\hat\beta|\). &lt;strong&gt;Bottom Panel:&lt;/strong&gt; Phase difference between the amplitude moduli \(\arg(\hat\alpha)-\arg(\hat\beta)\)." height="974" loading="lazy" src="figures/fig-mp-2mass-td-2535566845373814238.png" width="1316"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> Amplitude and Phase modulation of the two-mass system for the time-dependent stiffness of the harmonic spring for the stiffness of \(\psi^+\) and \(\psi^-\) at the first (FFB) and second (SFB) fundamental branch. <strong>Top Panel:</strong> Modulus of complex amplitudes \(|\hat\alpha|\) and \(|\hat\beta|\). <strong>Bottom Panel:</strong> Phase difference between the amplitude moduli \(\arg(\hat\alpha)-\arg(\hat\beta)\).</p>
 </div>
@@ -4260,10 +4386,10 @@ A_3
 <section id="bloch-sphere-picture-with-time-dependent-stiffness">
 <h3>Bloch-Sphere Picture With Time-Dependent Stiffness</h3>
 <p>The Bloch-sphere representation remains a powerful geometric lens for the two-mass cell. With static stiffness, the state vector traces an approximate circle (one “plane” on the sphere) as <span class="math notranslate nohighlight">\(k\)</span> sweeps the zone. Under space-time modulation, the extra quadratures generated by sideband mixing allow the state to explore a much larger portion of the sphere, sampling both longitudes and latitudes rather than remaining confined to a single great-circle arc (Fig. <span class="xref unresolved-xref">37</span>). Physically, near hybridization points the instantaneous diatomic state admits admixtures that effectively span the full two-state manifold, and the accumulated geometric phase follows the non-cyclic, geodesically closed prescription.</p>
-<div class="thesis-figure reveal" style="--figure-columns:2">
+<div class="thesis-figure" style="--figure-columns:2">
 <div class="figure-grid">
-<figure><img alt="Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi^+\) (b) \(\psi^-\) at the first fundamental branch." loading="lazy" src="animations/trying-bloch-psi-plus.gif"/><figcaption class="panel-caption">\(\psi^+\)</figcaption></figure>
-<figure><img alt="Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi^+\) (b) \(\psi^-\) at the first fundamental branch." loading="lazy" src="animations/trying-bloch-psi-minus.gif"/><figcaption class="panel-caption">\(\psi^-\)</figcaption></figure>
+<figure><img alt="Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi^+\) (b) \(\psi^-\) at the first fundamental branch." height="551" loading="lazy" src="animations/trying-bloch-psi-plus.gif" width="610"/><figcaption class="panel-caption">\(\psi^+\)</figcaption></figure>
+<figure><img alt="Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi^+\) (b) \(\psi^-\) at the first fundamental branch." height="551" loading="lazy" src="animations/trying-bloch-psi-minus.gif" width="610"/><figcaption class="panel-caption">\(\psi^-\)</figcaption></figure>
 </div>
 <p class="caption"><span>Figure.</span> Bloch state demonstration of change of state between \(\ket{E_1}\) and \(\ket{E_2}\) at a two-mass system depicted in Hilbert Space with different stiffness matrices for the two cases (a) \(\psi^+\) (b) \(\psi^-\) at the first fundamental branch.</p>
 </div>
@@ -4274,13 +4400,13 @@ A_3
 </section>
 </section>
 </div></section>
-<section aria-labelledby="novelty-label" class="dissertation-section reveal" id="novelty"><div class="section-label" id="novelty-label">Novelty Criteria</div><div class="article-body">
+<section aria-labelledby="novelty-label" class="dissertation-section" id="novelty"><div class="section-label" id="novelty-label">Novelty Criteria</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="novelty-criteria">
 <h1>Novelty Criteria</h1>
 <section aria-label="Animated chapter media" class="animation-strip">
-<figure class="animation-card reveal"><img alt="Phase gate" loading="lazy" src="animations/phase-gate.gif"/><figcaption><strong>Phase gate</strong><span>A compact gate-level visualization for the criteria chapter.</span></figcaption></figure>
-<figure class="animation-card reveal"><img alt="S gate" loading="lazy" src="animations/s-gate.gif"/><figcaption><strong>S gate</strong><span>Quarter-turn phase operation on the elastic-bit sphere.</span></figcaption></figure>
-<figure class="animation-card reveal"><img alt="T gate" loading="lazy" src="animations/t-gate.gif"/><figcaption><strong>T gate</strong><span>Eighth-turn phase operation for finer control.</span></figcaption></figure>
+<figure class="animation-card"><img alt="Phase gate" height="420" loading="lazy" src="animations/phase-gate.gif" width="560"/><figcaption><strong>Phase gate</strong><span>A compact gate-level visualization for the criteria chapter.</span></figcaption></figure>
+<figure class="animation-card"><img alt="S gate" height="720" loading="lazy" src="animations/s-gate.gif" width="1260"/><figcaption><strong>S gate</strong><span>Quarter-turn phase operation on the elastic-bit sphere.</span></figcaption></figure>
+<figure class="animation-card"><img alt="T gate" height="1000" loading="lazy" src="animations/t-gate.gif" width="700"/><figcaption><strong>T gate</strong><span>Eighth-turn phase operation for finer control.</span></figcaption></figure>
 </section>
 <p>﻿</p>
 </section>
@@ -4382,9 +4508,9 @@ Intermediate <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> a
     \qquad
     \varphi \;=\; \arg(\beta)-\arg(\alpha).
 \end{equation}\]</div>
-<div class="thesis-figure reveal" style="--figure-columns:1">
+<div class="thesis-figure" style="--figure-columns:1">
 <div class="figure-grid">
-<figure><img alt='&lt;strong&gt;Creation and control of qubit-analogue elastic states.&lt;/strong&gt; Equal-phase, equal-amplitude drive (\(\mathcal{E}=1\)) yields the pure in-phase state \(\ket{E_1}\); equal-amplitude, \(\pi\)-out-of-phase drive (\(\mathcal{E}=0\)) yields the pure out-of-phase state \(\ket{E_2}\). Intermediate \(\mathcal{E}\) and phase \(\xi\) produce coherent superpositions. Bloch-sphere visualization of the elastic state (&lt;a class="xref" href="#eq-bloch"&gt;121&lt;/a&gt;): poles correspond to pure modes, while the equator represents equal-weight superpositions; arrows illustrate how \((\mathcal{E},\xi)\) move the state on the sphere and how detuning sets the rotation rate.' loading="lazy" src="figures/figure-figure-1-tex.png"/></figure>
+<figure><img alt='&lt;strong&gt;Creation and control of qubit-analogue elastic states.&lt;/strong&gt; Equal-phase, equal-amplitude drive (\(\mathcal{E}=1\)) yields the pure in-phase state \(\ket{E_1}\); equal-amplitude, \(\pi\)-out-of-phase drive (\(\mathcal{E}=0\)) yields the pure out-of-phase state \(\ket{E_2}\). Intermediate \(\mathcal{E}\) and phase \(\xi\) produce coherent superpositions. Bloch-sphere visualization of the elastic state (&lt;a class="xref" href="#eq-bloch"&gt;121&lt;/a&gt;): poles correspond to pure modes, while the equator represents equal-weight superpositions; arrows illustrate how \((\mathcal{E},\xi)\) move the state on the sphere and how detuning sets the rotation rate.' height="505" loading="lazy" src="figures/figure-figure-1-tex.png" width="596"/></figure>
 </div>
 <p class="caption"><span>Figure.</span> <strong>Creation and control of qubit-analogue elastic states.</strong> Equal-phase, equal-amplitude drive (\(\mathcal{E}=1\)) yields the pure in-phase state \(\ket{E_1}\); equal-amplitude, \(\pi\)-out-of-phase drive (\(\mathcal{E}=0\)) yields the pure out-of-phase state \(\ket{E_2}\). Intermediate \(\mathcal{E}\) and phase \(\xi\) produce coherent superpositions. Bloch-sphere visualization of the elastic state (<a class="xref" href="#eq-bloch">121</a>): poles correspond to pure modes, while the equator represents equal-weight superpositions; arrows illustrate how \((\mathcal{E},\xi)\) move the state on the sphere and how detuning sets the rotation rate.</p>
 </div>
@@ -4525,7 +4651,7 @@ Therefore, <em>Criterion 3 is satisfied</em>.</p>
 </section>
 </section>
 </div></section>
-<section aria-labelledby="concluding-remarks-label" class="dissertation-section reveal" id="concluding-remarks"><div class="section-label" id="concluding-remarks-label">Concluding Remarks</div><div class="article-body">
+<section aria-labelledby="concluding-remarks-label" class="dissertation-section" id="concluding-remarks"><div class="section-label" id="concluding-remarks-label">Concluding Remarks</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="concluding-remarks">
 <h1>CONCLUDING REMARKS</h1>
 <p>This dissertation has presented a comprehensive exploration of how nonlinear elastic networks, specifically granular and conical-spring systems, can serve as robust, classical analogues to quantum and topological phenomena. By bridging nonlinear dynamics, topological mechanics, and quantum information concepts, this work establishes a new paradigm: the <em>elastic bit</em>, a macroscopic, decoherence-free analogue of the quantum bit (qubit). The elastic bit embodies quantum-like superposition, phase evolution, and topological phase accumulation within a purely classical mechanical platform that is realizable under ambient laboratory conditions.</p>
@@ -4547,7 +4673,7 @@ Therefore, <em>Criterion 3 is satisfied</em>.</p>
 <p>In summary, this dissertation establishes a unified theoretical and experimental foundation for quantum-analogous and topological computation using nonlinear elastic systems. It demonstrates that the fundamental features of quantum mechanics, superposition, gate operations, entanglement, and geometric phase accumulation, can emerge from deterministic, nonlinear classical dynamics. The elastic bit thereby redefines the conceptual boundary between classical and quantum physics, offering a tangible, room-temperature realization of quantum-like information processing. Beyond its immediate impact on materials physics and nonlinear dynamics, this work lays the groundwork for a new generation of mechanically based information technologies that merge the precision of quantum theory with the robustness and accessibility of classical matter.</p>
 </section>
 </div></section>
-<section aria-labelledby="references-label" class="dissertation-section reveal" id="references"><div class="section-label" id="references-label">References</div><div class="article-body">
+<section aria-labelledby="references-label" class="dissertation-section" id="references"><div class="section-label" id="references-label">References</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="references">
 <h1>References</h1>
 <div class="docutils container" id="id1">
@@ -4913,7 +5039,7 @@ Therefore, <em>Criterion 3 is satisfied</em>.</p>
 </div>
 </div>
 </section></div></section>
-<section aria-labelledby="autobio-label" class="dissertation-section reveal" id="autobio"><div class="section-label" id="autobio-label">Autobiographical Statement</div><div class="article-body">
+<section aria-labelledby="autobio-label" class="dissertation-section" id="autobio"><div class="section-label" id="autobio-label">Autobiographical Statement</div><div class="article-body">
 <section class="tex2jax_ignore mathjax_ignore" id="autobiographical-statement">
 <h1>Autobiographical Statement</h1>
 <p>In the field of mechanical engineering at Wayne State University, my pursuit of the Doctor of Philosophy degree has been driven by a desire to explore the intersection of nonlinear dynamics, quantum analogues, and topological mechanics. My doctoral research, conducted under the supervision of <strong>Professor M. Arif Hasan</strong> in the <strong>Acoustic Pseudospin and Metamaterials Laboratory</strong>, has centered on developing a unified framework that bridges classical and quantum-inspired mechanical systems.</p>

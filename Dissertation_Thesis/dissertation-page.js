@@ -3,6 +3,7 @@
   const sections = Array.from(document.querySelectorAll(".dissertation-section"));
   const navLinks = Array.from(document.querySelectorAll(".chapter-nav a[href^='#']"));
   const revealEls = Array.from(document.querySelectorAll(".reveal"));
+  const lazyVideos = Array.from(document.querySelectorAll("video.lazy-video[data-src]"));
 
   function updateProgress() {
     if (!progress) return;
@@ -22,6 +23,30 @@
     });
   }
 
+  function scrollToHash(hash, behavior = "smooth") {
+    if (!hash || hash === "#") return;
+    const target = document.getElementById(hash.slice(1));
+    if (!target) return;
+    target.scrollIntoView({ block: "start", behavior });
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href^='#']");
+    if (!link) return;
+    const hash = link.getAttribute("href");
+    if (!hash || hash === "#") return;
+    const target = document.getElementById(hash.slice(1));
+    if (!target) return;
+    event.preventDefault();
+    history.pushState(null, "", hash);
+    scrollToHash(hash);
+    window.setTimeout(() => scrollToHash(hash, "auto"), 350);
+  });
+
+  window.addEventListener("hashchange", () => {
+    scrollToHash(window.location.hash, "auto");
+  });
+
   if ("IntersectionObserver" in window) {
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -35,8 +60,33 @@
       { threshold: 0.08 }
     );
     revealEls.forEach((el) => revealObserver.observe(el));
+
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const video = entry.target;
+          if (video.dataset.src) {
+            video.src = video.dataset.src;
+            video.removeAttribute("data-src");
+            video.load();
+            if (video.hasAttribute("autoplay")) {
+              video.play().catch(() => {});
+            }
+          }
+          videoObserver.unobserve(video);
+        });
+      },
+      { rootMargin: "480px 0px" }
+    );
+    lazyVideos.forEach((video) => videoObserver.observe(video));
   } else {
     revealEls.forEach((el) => el.classList.add("is-visible"));
+    lazyVideos.forEach((video) => {
+      video.src = video.dataset.src;
+      video.removeAttribute("data-src");
+      video.load();
+    });
   }
 
   window.addEventListener(
@@ -50,4 +100,9 @@
   window.addEventListener("resize", updateProgress);
   updateProgress();
   updateActiveNav();
+  if (window.location.hash) {
+    [0, 150, 500, 1200, 2400].forEach((delay) => {
+      window.setTimeout(() => scrollToHash(window.location.hash, "auto"), delay);
+    });
+  }
 }());
