@@ -84,11 +84,11 @@
     }
     const shapeOrder = ['wave', 'curve', 'slant', 'peaks']
     const shapeOverrides = {
-        'education>research': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
+        'education>teaching': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
+        'teaching>research': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
         'research>research-experience': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
         'publications>conferences': { type: 'wave', flip: false },
         'conferences>posters': { type: 'wave', flip: false },
-        'posters>teaching': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
         'skills>projects': { type: 'wave', flip: false, className: 'sdiv--echo-wave' },
         'measurement-showcase>blogs': { type: 'wave', flip: false },
         'journeys>contact': { type: 'wave', flip: false, className: 'sdiv--contact-wave' }
