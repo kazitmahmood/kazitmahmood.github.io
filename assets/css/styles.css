@@ -1585,6 +1585,273 @@ html.intro-complete .hero__scroll {
     height: 1.15rem;
 }
 
+/*===== CV PREVIEW =====*/
+html.cv-preview-open,
+html.cv-preview-open body {
+    overflow: hidden;
+}
+
+.cv-preview {
+    width: min(920px, calc(100% - 3rem));
+    height: calc(100vh - 3rem);
+    height: calc(100dvh - 3rem);
+    max-width: none;
+    max-height: none;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    overflow: hidden;
+    transform-origin: 50% 35%;
+}
+
+.cv-preview[open] {
+    display: flex;
+    flex-direction: column;
+    animation: cv-preview-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cv-preview::backdrop {
+    background: rgba(12, 22, 40, 0.76);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    cursor: auto;
+    animation: cv-backdrop-in 360ms ease both;
+}
+
+.cv-preview.is-closing {
+    pointer-events: none;
+    animation: cv-preview-out 240ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.cv-preview.is-closing::backdrop {
+    animation: cv-backdrop-out 240ms ease both;
+}
+
+@keyframes cv-preview-in {
+    from { opacity: 0; transform: translateY(32px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes cv-preview-out {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(20px) scale(0.97); }
+}
+
+@keyframes cv-backdrop-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes cv-backdrop-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* The site's custom cursor sits below the native dialog's top layer. */
+.cv-preview,
+.cv-preview * {
+    cursor: auto !important;
+}
+
+.cv-preview a,
+.cv-preview button,
+.cv-preview a *,
+.cv-preview button * {
+    cursor: pointer !important;
+}
+
+.cv-preview__actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.65rem;
+    padding: 4px 4px 0.8rem;
+}
+
+.cv-preview__download,
+.cv-preview__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.cv-preview__download:hover,
+.cv-preview__close:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.cv-preview__download svg,
+.cv-preview__close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.profile__cv:focus-visible,
+.cv-preview a:focus-visible,
+.cv-preview button:focus-visible,
+.cv-preview__document:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.cv-preview__document {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    border-radius: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+}
+
+.cv-preview__pages {
+    display: grid;
+    gap: 14px;
+}
+
+.cv-preview__page {
+    position: relative;
+    background: var(--white);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+    --scale-round-x: 1px;
+    --scale-round-y: 1px;
+}
+
+.cv-preview__page canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Text-layer positioning from PDF.js (Apache-2.0; see vendor/pdfjs/LICENSE). */
+.cv-preview__text {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    line-height: 1;
+    text-align: initial;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    forced-color-adjust: none;
+    transform-origin: 0 0;
+    --min-font-size: 1;
+    --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));
+    --min-font-size-inv: calc(1 / var(--min-font-size));
+}
+
+.cv-preview__text :is(span, br) {
+    position: absolute;
+    color: transparent;
+    white-space: pre;
+    transform-origin: 0 0;
+    cursor: text !important;
+    user-select: text;
+    -webkit-user-select: text;
+}
+
+.cv-preview__text > :not(.markedContent),
+.cv-preview__text .markedContent span:not(.markedContent) {
+    --font-height: 0;
+    --scale-x: 1;
+    --rotate: 0deg;
+    font-size: calc(var(--text-scale-factor) * var(--font-height));
+    transform: rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv));
+}
+
+.cv-preview__text .markedContent {
+    display: contents;
+}
+
+.cv-preview__text ::selection {
+    background: rgba(40, 85, 160, 0.25);
+}
+
+.cv-preview__link {
+    position: absolute;
+}
+
+.cv-preview__status {
+    display: flex;
+    min-height: 240px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.cv-preview__status[hidden],
+.cv-preview__status--error .cv-preview__spinner {
+    display: none;
+}
+
+.cv-preview__status a {
+    text-decoration: underline;
+}
+
+.cv-preview__spinner {
+    width: 28px;
+    height: 28px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-top-color: var(--white);
+    border-radius: 50%;
+    animation: cv-loading 800ms linear infinite;
+}
+
+@keyframes cv-loading {
+    to { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 600px) {
+    .cv-preview {
+        width: calc(100% - 1rem);
+        height: calc(100vh - 1rem);
+        height: calc(100dvh - 1rem);
+    }
+
+    .cv-preview__actions {
+        padding-bottom: 0.6rem;
+    }
+
+    .cv-preview__pages {
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cv-preview[open],
+    .cv-preview::backdrop,
+    .cv-preview.is-closing,
+    .cv-preview.is-closing::backdrop,
+    .cv-preview__spinner {
+        animation: none;
+    }
+
+    .cv-preview__download,
+    .cv-preview__close {
+        transition: none;
+    }
+}
+
 /*===== EDUCATION (alt bg) =====*/
 .education {
     background-color: var(--bg-alt);

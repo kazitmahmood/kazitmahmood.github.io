@@ -221,7 +221,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <a href="assets/pdf/Kazi_Tahsin_Mahmood.pdf" target="_blank" rel="noopener" class="profile__cv" download>
+                        <a href="assets/pdf/Kazi_Tahsin_Mahmood.pdf" target="_blank" rel="noopener" class="profile__cv" id="cv-preview-trigger" aria-haspopup="dialog" aria-controls="cv-preview">
                             <svg class="profile__icon profile__icon--cv" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M6 2h8l4 4v16H6V2zm8 1.5V7h3.5L14 3.5zM8.5 11h7v1.5h-7V11zm0 3h7v1.5h-7V14zm0 3h5v1.5h-5V17z"/>
                             </svg>
@@ -2044,6 +2044,31 @@
 
     </main>
 
+    <!-- CV Preview -->
+    <dialog class="cv-preview" id="cv-preview" aria-labelledby="cv-preview-title">
+        <h2 class="sr-only" id="cv-preview-title">Curriculum Vitae</h2>
+        <div class="cv-preview__actions">
+            <a class="cv-preview__download" href="assets/pdf/Kazi_Tahsin_Mahmood.pdf" aria-label="Download CV" download>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/>
+                </svg>
+            </a>
+            <button class="cv-preview__close" type="button" aria-label="Close CV preview" autofocus>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                    <path d="m6 6 12 12M6 18 18 6"/>
+                </svg>
+            </button>
+        </div>
+        <div class="cv-preview__document" tabindex="0" role="region" aria-label="Curriculum Vitae document">
+            <div class="cv-preview__status" role="status">
+                <span class="cv-preview__spinner" aria-hidden="true"></span>
+                <span class="cv-preview__message">Loading CV&hellip;</span>
+                <a href="assets/pdf/Kazi_Tahsin_Mahmood.pdf" target="_blank" rel="noopener" hidden>Open the CV</a>
+            </div>
+            <div class="cv-preview__pages"></div>
+        </div>
+    </dialog>
+
     <!-- Poster Lightbox Modal -->
     <div class="poster-modal" id="posterModal" role="dialog" aria-modal="true" aria-label="Poster preview" aria-hidden="true">
         <button class="poster-modal__close" type="button" aria-label="Close poster preview" data-poster-close>
@@ -2113,6 +2138,7 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="assets/js/journeys-data.js"></script>
     <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/cv-preview.js"></script>
     <script src="assets/js/enhancements.js"></script>
 </body>
 </html>
