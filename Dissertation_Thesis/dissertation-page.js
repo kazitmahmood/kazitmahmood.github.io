@@ -1,4 +1,5 @@
 (function () {
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const progress = document.querySelector(".read-progress span");
   const sections = Array.from(document.querySelectorAll(".dissertation-section"));
   const navLinks = Array.from(document.querySelectorAll(".chapter-nav a[href^='#']"));
@@ -27,7 +28,7 @@
     if (!hash || hash === "#") return;
     const target = document.getElementById(hash.slice(1));
     if (!target) return;
-    target.scrollIntoView({ block: "start", behavior });
+    target.scrollIntoView({ block: "start", behavior: reducedMotion.matches ? "auto" : behavior });
   }
 
   document.addEventListener("click", (event) => {
@@ -53,13 +54,20 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
+            entry.target.classList.remove("reveal-pending");
             revealObserver.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.08 }
     );
-    revealEls.forEach((el) => revealObserver.observe(el));
+    revealEls.forEach((el) => {
+      if (!reducedMotion.matches && !location.hash && el.getBoundingClientRect().top > innerHeight) el.classList.add('reveal-pending');
+      revealObserver.observe(el);
+    });
+    reducedMotion.addEventListener('change', () => {
+      if (reducedMotion.matches) revealEls.forEach(el => el.classList.remove('reveal-pending'));
+    });
 
     const videoObserver = new IntersectionObserver(
       (entries) => {
@@ -70,7 +78,7 @@
             video.src = video.dataset.src;
             video.removeAttribute("data-src");
             video.load();
-            if (video.hasAttribute("autoplay")) {
+            if (video.hasAttribute("autoplay") && !reducedMotion.matches) {
               video.play().catch(() => {});
             }
           }

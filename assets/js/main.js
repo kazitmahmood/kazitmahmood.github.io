@@ -1,87 +1,3 @@
-history.scrollRestoration = 'manual'
-window.scrollTo(0, 0)
-
-/*===== NAV MENU TOGGLE =====*/
-const introLoader = document.getElementById('intro-loader')
-
-if (introLoader) {
-    let introFinished = false
-    const progressWrapper = introLoader.querySelector('.intro-loader__bar-wrap')
-    document.documentElement.classList.add('intro-is-running')
-
-    const finishIntro = () => {
-        if (introFinished) return
-        introFinished = true
-
-        const ktmGroup = introLoader.querySelector('.intro-loader__ktm-group')
-        const mark     = introLoader.querySelector('.intro-loader__mark')
-
-        // Fade bar, rings, grid immediately
-        introLoader.querySelectorAll(
-            '.intro-loader__bar-wrap, .intro-loader__field, .intro-loader__grid, .intro-loader__scan'
-        ).forEach(el => { el.style.cssText = 'transition:opacity 0.2s ease;opacity:0' })
-
-        if (mark) mark.style.animation = 'none'
-
-        // Freeze each letter in its current visible state
-        introLoader.querySelectorAll('.intro-loader__mark span').forEach(s => {
-            s.style.cssText = 'animation:none;opacity:1;transform:translateY(0)'
-        })
-
-        if (ktmGroup) {
-            // Set overflow visible so zoomed KTM isn't clipped
-            introLoader.style.overflow = 'visible'
-            ktmGroup.style.transformOrigin = 'center center'
-
-            // Force reflow so transition picks up the initial state
-            void ktmGroup.offsetWidth
-
-            ktmGroup.style.transition = 'transform 3.5s cubic-bezier(0.2,0,0.8,1), opacity 1.2s ease 2.5s'
-            ktmGroup.style.transform  = 'scale(22)'
-            ktmGroup.style.opacity    = '0'
-        }
-
-        // Fade the dark background out after KTM has grown large
-        introLoader.style.transition = 'background-color 1.4s ease 2.2s'
-        introLoader.style.backgroundColor = 'transparent'
-
-        document.documentElement.classList.remove('intro-is-running')
-        document.documentElement.classList.add('intro-complete')
-        window.setTimeout(() => introLoader.remove(), 4200)
-    }
-
-    const pctEl = document.getElementById('intro-loader-pct')
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        if (pctEl) pctEl.textContent = '100%'
-        progressWrapper?.classList.add('progress-hidden')
-        window.setTimeout(finishIntro, 200)
-    } else {
-        if (pctEl) {
-            const barDelay = 600
-            const barDuration = 2200
-            let startTs = null
-            function tickPct(ts) {
-                if (!startTs) startTs = ts
-                const elapsed = ts - startTs
-                if (elapsed < barDelay) { requestAnimationFrame(tickPct); return }
-                const pct = Math.min(Math.round((elapsed - barDelay) / barDuration * 100), 100)
-                pctEl.textContent = pct + '%'
-                if (pct < 100) requestAnimationFrame(tickPct)
-                else progressWrapper?.classList.add('progress-hidden')
-            }
-            requestAnimationFrame(tickPct)
-        }
-        window.addEventListener('load', () => {
-            // Bar finishes at 2800ms from nav start (delay 600 + duration 2200).
-            // Wait until at least 3200ms so 100% is visible for ~400ms before exit.
-            const minWait = Math.max(600, 3200 - Math.round(performance.now()))
-            window.setTimeout(finishIntro, minWait)
-        }, { once: true })
-        window.setTimeout(finishIntro, 4800)
-    }
-}
-
 const navMenu   = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose  = document.getElementById('nav-close'),
@@ -97,16 +13,23 @@ function setNavMoreOpen(isOpen) {
 function closeNavMore() {
     const hadFocus = navMoreItem?.contains(document.activeElement)
     setNavMoreOpen(false)
-    if (hadFocus) document.activeElement.blur()
+    if (hadFocus) navMoreToggle.focus()
 }
 
+function setMobileNav(open, restoreFocus = false) {
+    navMenu.classList.toggle('show-menu', open)
+    navToggle.setAttribute('aria-expanded', String(open))
+    document.body.classList.toggle('nav-open', open)
+    if (open) navMenu.querySelector('a').focus()
+    else if (restoreFocus) navToggle.focus()
+}
 if (navToggle) {
-    navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'))
+    navToggle.addEventListener('click', () => setMobileNav(!navMenu.classList.contains('show-menu')))
 }
 if (navClose) {
     navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu')
         closeNavMore()
+        setMobileNav(false, true)
     })
 }
 if (navMoreToggle) {
@@ -118,7 +41,7 @@ if (navMoreToggle) {
 
 document.querySelectorAll('.nav__link').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu')
+        setMobileNav(false)
         closeNavMore()
     })
 })
@@ -127,7 +50,7 @@ const navLogo = document.querySelector('.nav__logo')
 if (navLogo) {
     navLogo.addEventListener('click', event => {
         event.preventDefault()
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
     })
 }
 
@@ -136,38 +59,11 @@ document.addEventListener('click', event => {
 })
 
 window.addEventListener('keydown', event => {
-    if (event.key === 'Escape') closeNavMore()
+    if (event.key === 'Escape') {
+        closeNavMore()
+        if (navMenu.classList.contains('show-menu')) setMobileNav(false, true)
+    }
 })
-
-/*===== SECTION ORDER =====*/
-const mainContent = document.querySelector('main')
-
-if (mainContent) {
-    const orderedSectionIds = [
-        'home',
-        'about',
-        'education',
-        'teaching',
-        'research',
-        'research-experience',
-        'publications',
-        'conferences',
-        'posters',
-        'experience',
-        'skills',
-        'projects',
-        'measurement-showcase',
-        'blogs',
-        'awards',
-        'journeys',
-        'contact'
-    ]
-
-    orderedSectionIds.forEach(id => {
-        const section = document.getElementById(id)
-        if (section) mainContent.appendChild(section)
-    })
-}
 
 /*===== ACTIVE NAV LINK ON SCROLL =====*/
 const sections = document.querySelectorAll('section[id]')
@@ -184,6 +80,8 @@ function updateActiveLink() {
         if (!link) return
         const isActive = scrollY >= top && scrollY < top + height
         link.classList.toggle('active-link', isActive)
+        if (isActive) link.setAttribute('aria-current', 'location')
+        else link.removeAttribute('aria-current')
         if (isActive && link.closest('.nav__dropdown')) hasActiveDropdownLink = true
     })
 
@@ -255,78 +153,53 @@ window.addEventListener('resize', () => {
     })
 })
 
-/*===== BLOG POPUP VIEWER =====*/
+/*===== INLINE RESEARCH ARTICLES =====*/
 const blogCards = document.querySelectorAll('[data-blog-target]')
 const blogPanels = document.querySelectorAll('[data-blog-panel]')
 const blogsViewer = document.getElementById('blogs-viewer')
-const blogCloseButtons = document.querySelectorAll('[data-blog-close]')
+let activeBlogTrigger = null
 
-if (blogsViewer && blogsViewer.parentElement !== document.body) {
-    document.body.appendChild(blogsViewer)
-}
-
-function openBlogPopup(targetId) {
-    if (!blogsViewer) return
-
-    blogCards.forEach(item => {
-        const isMatch = item.dataset.blogTarget === targetId
-        item.classList.toggle('blog__card--active', isMatch)
-        item.setAttribute('aria-selected', isMatch ? 'true' : 'false')
-    })
-
-    blogPanels.forEach(panel => {
-        const isMatch = panel.id === targetId
-        panel.classList.remove('blog__feature--active')
-        panel.hidden = !isMatch
-    })
-
-    blogsViewer.classList.add('blogs__viewer--open')
-    blogsViewer.setAttribute('aria-hidden', 'false')
-    document.body.classList.add('modal-open')
-
-    const activePanel = document.getElementById(targetId)
-    if (activePanel) {
-        loadLazyMedia(activePanel)
-        playAutoplayVideos(activePanel)
-        activePanel.scrollTop = 0
-        void activePanel.offsetWidth
-        window.requestAnimationFrame(() => {
-            activePanel.classList.add('blog__feature--active')
-        })
-    }
-}
-
-function closeBlogPopup() {
+function closeBlogArticle(restoreFocus = false) {
     if (!blogsViewer) return
     blogsViewer.classList.remove('blogs__viewer--open')
     blogsViewer.setAttribute('aria-hidden', 'true')
-    document.body.classList.remove('modal-open')
-    blogPanels.forEach(panel => {
-        panel.classList.remove('blog__feature--active')
-        pauseVideos(panel)
+    blogCards.forEach(card => {
+        card.classList.remove('blog__card--active')
+        card.setAttribute('aria-expanded', 'false')
     })
+    blogPanels.forEach(panel => {
+        pauseVideos(panel)
+        panel.hidden = true
+        panel.classList.remove('blog__feature--active')
+    })
+    if (restoreFocus) activeBlogTrigger?.focus()
 }
 
 blogCards.forEach(card => {
     card.addEventListener('click', () => {
-        openBlogPopup(card.dataset.blogTarget)
+        const wasOpen = card.getAttribute('aria-expanded') === 'true'
+        closeBlogArticle()
+        if (wasOpen) return
+        const panel = document.getElementById(card.dataset.blogTarget)
+        if (!panel || !blogsViewer) return
+        activeBlogTrigger = card
+        card.setAttribute('aria-expanded', 'true')
+        card.classList.add('blog__card--active')
+        blogsViewer.classList.add('blogs__viewer--open')
+        blogsViewer.setAttribute('aria-hidden', 'false')
+        panel.hidden = false
+        panel.classList.add('blog__feature--active')
+        loadLazyMedia(panel)
+        playAutoplayVideos(panel)
+        panel.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
+        panel.querySelector('[data-blog-close]')?.focus({ preventScroll: true })
     })
 })
-
-blogCloseButtons.forEach(button => {
-    button.addEventListener('click', closeBlogPopup)
+document.querySelectorAll('[data-blog-close]').forEach(button => {
+    button.addEventListener('click', () => closeBlogArticle(true))
 })
-
-if (blogsViewer) {
-    blogsViewer.addEventListener('click', event => {
-        if (event.target === blogsViewer) closeBlogPopup()
-    })
-}
-
-window.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && blogsViewer?.classList.contains('blogs__viewer--open')) {
-        closeBlogPopup()
-    }
+blogsViewer?.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeBlogArticle(true)
 })
 
 /*===== LAZY MEDIA =====*/
@@ -352,6 +225,7 @@ function loadLazyMedia(scope) {
 }
 
 function playAutoplayVideos(scope) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
     ;(scope || document).querySelectorAll('video[autoplay]').forEach(video => {
         loadLazyVideo(video)
         video.play?.().catch?.(() => {})
@@ -493,87 +367,6 @@ window.addEventListener('scroll', toggleScrollUp)
 window.addEventListener('load', toggleScrollUp)
 
 
-/*===== SECTION TITLE UNDERLINE GROW =====*/
-const titleRevealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        e.target.classList.toggle('title-revealed', e.isIntersecting)
-    })
-}, { threshold: 0.6 })
-document.querySelectorAll('.section__title').forEach(t => {
-    t.setAttribute('data-title-anim', '')
-    titleRevealObs.observe(t)
-})
-
-/*===== SCROLL REVEAL (generic blocks) =====*/
-const blockRevealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        e.target.classList.toggle('anim-in', e.isIntersecting)
-    })
-}, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' })
-;[
-    '.about__text', '.about__profile', '.about__stats',
-    '.pub__hint', '.pub__list', '.pub__scholar-btn',
-    '.skills__group',
-    '.contact__info', '.contact__card',
-    '.poster-gallery', '.conf__list', '.projects__cards',
-    '.section__subtitle',
-].forEach(sel => {
-    document.querySelectorAll(sel).forEach(el => {
-        el.classList.add('anim-ready')
-        blockRevealObs.observe(el)
-    })
-})
-
-/*===== LIVELY SCROLL REVEAL =====*/
-const motionRevealMql = window.matchMedia('(prefers-reduced-motion: reduce)')
-const motionRevealObs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        const el = entry.target
-
-        if (!entry.isIntersecting) {
-            window.clearTimeout(el._motionSettleTimer)
-            el.classList.remove('motion-in', 'motion-settled')
-            return
-        }
-
-        el.classList.add('motion-in')
-        const delay = parseFloat(getComputedStyle(el).getPropertyValue('--motion-delay')) || 0
-        window.clearTimeout(el._motionSettleTimer)
-        el._motionSettleTimer = window.setTimeout(() => el.classList.add('motion-settled'), delay + 720)
-    })
-}, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' })
-
-function prepareMotionReveal(elements, options = {}) {
-    const {
-        motion = 'rise',
-        step = 70,
-        maxDelay = 420,
-        offset = 0
-    } = options
-
-    Array.from(elements || []).forEach((el, index) => {
-        if (!el || el.classList.contains('motion-ready')) return
-        el.classList.add('motion-ready')
-        el.dataset.motion = motion
-        el.style.setProperty('--motion-delay', `${Math.min((index + offset) * step, maxDelay)}ms`)
-
-        if (motionRevealMql.matches) {
-            el.classList.add('motion-in')
-            el.classList.add('motion-settled')
-        } else {
-            motionRevealObs.observe(el)
-        }
-    })
-}
-
-prepareMotionReveal(document.querySelectorAll('.research__intro, .research__pill'), { motion: 'from-left', step: 90 })
-prepareMotionReveal(document.querySelectorAll('.research__card'), { motion: 'zoom', step: 120 })
-prepareMotionReveal(document.querySelectorAll('.project__card'), { motion: 'rise', step: 95 })
-prepareMotionReveal(document.querySelectorAll('.mws__copy, .mws__panel'), { motion: 'rise', step: 90 })
-prepareMotionReveal(document.querySelectorAll('.pub__item[data-topic]'), { motion: 'from-right', step: 55, maxDelay: 300 })
-prepareMotionReveal(document.querySelectorAll('.skills__group'), { motion: 'rise', step: 85 })
-prepareMotionReveal(document.querySelectorAll('.journeys__intro, .journeys__map'), { motion: 'rise', step: 90 })
-
 /*===== MEASUREMENT WORKFLOW MASS-SPRING ANIMATION =====*/
 const measurementSpringSvg = document.querySelector('.mws__mass-svg')
 
@@ -632,17 +425,25 @@ if (measurementSpringSvg) {
 
     renderMassSpring(0)
 
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    {
+        const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
         const duration = 2800
-        const startTime = performance.now()
-
+        let frame = 0, visible = false
         function animateMassSpring(now) {
-            const progress = (1 - Math.cos(((now - startTime) / duration) * Math.PI * 2)) / 2
+            frame = 0
+            const progress = (1 - Math.cos((now / duration) * Math.PI * 2)) / 2
             renderMassSpring(progress)
-            window.requestAnimationFrame(animateMassSpring)
+            if (visible && !motionPreference.matches && !document.hidden) frame = requestAnimationFrame(animateMassSpring)
         }
-
-        window.requestAnimationFrame(animateMassSpring)
+        function syncSpringAnimation() {
+            if (frame) cancelAnimationFrame(frame)
+            frame = 0
+            if (visible && !motionPreference.matches && !document.hidden) frame = requestAnimationFrame(animateMassSpring)
+            else if (motionPreference.matches) renderMassSpring(0)
+        }
+        new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; syncSpringAnimation() }).observe(measurementSpringSvg)
+        motionPreference.addEventListener('change', syncSpringAnimation)
+        document.addEventListener('visibilitychange', syncSpringAnimation)
     }
 }
 
@@ -685,346 +486,14 @@ if (Object.values(measurementTelemetry).some(Boolean)) {
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         window.setInterval(() => {
+            if (document.hidden || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+            const bounds = document.getElementById('measurement-showcase').getBoundingClientRect()
+            if (bounds.bottom < 0 || bounds.top > innerHeight) return
             telemetryFrameIndex = (telemetryFrameIndex + 1) % measurementTelemetryFrames.length
             renderMeasurementTelemetry(measurementTelemetryFrames[telemetryFrameIndex])
         }, 1100)
     }
 }
-
-/*===== TIMELINE STAGGER =====*/
-document.querySelectorAll('.timeline').forEach(tl => {
-    tl.classList.add('timeline-anim')
-    const items = tl.querySelectorAll('.timeline__item')
-    const obs = new IntersectionObserver(([e]) => {
-        tl._timelineAnimTimers?.forEach(clearTimeout)
-        tl._timelineAnimTimers = []
-
-        if (e.isIntersecting) {
-            items.forEach((item, i) => {
-                tl._timelineAnimTimers.push(setTimeout(() => item.classList.add('anim-in'), i * 120))
-            })
-        } else {
-            items.forEach(item => item.classList.remove('anim-in'))
-        }
-    }, { threshold: 0.05 })
-    obs.observe(tl)
-})
-
-/*===== TAG STAGGER =====*/
-document.querySelectorAll('.tags').forEach(group => {
-    group.classList.add('tags-anim')
-    const tags = group.querySelectorAll('.tag')
-    const obs = new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) {
-            tags.forEach((t, i) => { t.style.transitionDelay = `${i * 0.05}s` })
-            group.classList.add('tags-in')
-        } else {
-            group.classList.remove('tags-in')
-        }
-    }, { threshold: 0.15 })
-    obs.observe(group)
-})
-
-/*===== CONFERENCE ITEMS STAGGER =====*/
-document.querySelectorAll('.conf__list').forEach(list => {
-    list.classList.add('conf-anim')
-    const items = list.querySelectorAll('.conf__item')
-    const obs = new IntersectionObserver(([e]) => {
-        list._confAnimTimers?.forEach(clearTimeout)
-        list._confAnimTimers = []
-
-        if (e.isIntersecting) {
-            items.forEach((item, i) => {
-                list._confAnimTimers.push(setTimeout(() => item.classList.add('anim-in'), i * 65))
-            })
-        } else {
-            items.forEach(item => item.classList.remove('anim-in'))
-        }
-    }, { threshold: 0.04 })
-    obs.observe(list)
-})
-
-/*===== HERO PARALLAX =====*/
-const heroPoster  = document.querySelector('.hero__poster')
-const heroBgIcons = document.querySelector('.hero__science')
-function heroParallax() {
-    const y = window.scrollY
-    if (y > window.innerHeight * 1.1) return
-    if (heroPoster)  heroPoster.style.transform  = `translateY(${y * 0.18}px)`
-    if (heroBgIcons) heroBgIcons.style.transform = `translateY(${y * 0.42}px)`
-}
-window.addEventListener('scroll', heroParallax, { passive: true })
-
-
-/*===== DOT NAV =====*/
-const dotNavEl   = document.getElementById('dot-nav')
-const dotNavDots = document.querySelectorAll('.dot-nav__dot')
-function updateDotNav() {
-    const scrollY   = window.scrollY
-    const aboutEl   = document.getElementById('about')
-    const threshold = aboutEl ? aboutEl.offsetTop - 120 : window.innerHeight * 0.6
-    dotNavEl && dotNavEl.classList.toggle('dot-nav--hidden', scrollY < threshold)
-    let activeId = null
-    document.querySelectorAll('section[id]').forEach(section => {
-        if (scrollY >= section.offsetTop - 120) activeId = section.id
-    })
-    dotNavDots.forEach(dot => {
-        dot.classList.toggle('dot-active', dot.getAttribute('href') === '#' + activeId)
-    })
-}
-window.addEventListener('scroll', updateDotNav, { passive: true })
-window.addEventListener('load', updateDotNav)
-
-/*===== 3D CARD TILT =====*/
-function attachTiltEffect(cards) {
-    cards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect()
-            const x = (e.clientY - r.top  - r.height / 2) / (r.height / 2)
-            const y = (e.clientX - r.left - r.width  / 2) / (r.width  / 2)
-            card.style.transition = 'transform 0.08s ease, box-shadow 0.08s ease'
-            card.style.transform  = `perspective(900px) rotateX(${-x * 4}deg) rotateY(${y * 4}deg) translateY(-4px) scale(1.01)`
-        })
-        card.addEventListener('mouseleave', () => {
-            card.style.transition = 'transform 0.55s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.55s ease'
-            card.style.transform  = ''
-        })
-    })
-}
-
-attachTiltEffect(document.querySelectorAll('.timeline__card'))
-attachTiltEffect(document.querySelectorAll('.awards__col'))
-
-/*===== TIMELINE FILL LINE =====*/
-const timelineControls = []
-
-document.querySelectorAll('.timeline').forEach(tl => {
-    const fill = document.createElement('div')
-    fill.className = 'timeline__fill'
-    tl.appendChild(fill)
-
-    const runner = document.createElement('div')
-    runner.className = 'timeline__runner'
-    runner.setAttribute('aria-hidden', 'true')
-    runner.innerHTML = '<span class="timeline__runner-core"></span>'
-    tl.appendChild(runner)
-
-    timelineControls.push({
-        tl,
-        fill,
-        runner,
-        items: [],
-        centers: [],
-        targetY: 0,
-        currentY: 0,
-        targetFill: 0,
-        currentFill: 0,
-        active: false,
-        initialized: false,
-        needsMeasure: true
-    })
-})
-
-const timelineRunnerColors = [
-    { rgb: [196, 154, 10], glowAlpha: 0.34 },
-    { rgb: [27, 58, 107], glowAlpha: 0.30 },
-    { rgb: [47, 133, 90], glowAlpha: 0.30 },
-    { rgb: [40, 85, 160], glowAlpha: 0.30 }
-]
-
-const reduceTimelineMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-let timelineFrame = null
-
-function clampNumber(value, min, max) {
-    return Math.max(min, Math.min(max, value))
-}
-
-function mixNumber(a, b, amount) {
-    return a + (b - a) * amount
-}
-
-function runnerPhase(index) {
-    return timelineRunnerColors[((index % timelineRunnerColors.length) + timelineRunnerColors.length) % timelineRunnerColors.length]
-}
-
-function colorString(phase) {
-    return `rgb(${phase.rgb.map(Math.round).join(', ')})`
-}
-
-function glowString(phase) {
-    return `rgba(${phase.rgb.map(Math.round).join(', ')}, ${phase.glowAlpha.toFixed(2)})`
-}
-
-function mixedPhase(fromPhase, toPhase, amount) {
-    const t = clampNumber(amount, 0, 1)
-    return {
-        rgb: fromPhase.rgb.map((channel, i) => mixNumber(channel, toPhase.rgb[i], t)),
-        glowAlpha: mixNumber(fromPhase.glowAlpha, toPhase.glowAlpha, t)
-    }
-}
-
-function findTimelineSegment(centers, y) {
-    if (!centers.length || y <= centers[0]) {
-        return { from: 0, to: 0, amount: 0, current: 0 }
-    }
-
-    const lastIndex = centers.length - 1
-    if (y >= centers[lastIndex]) {
-        return { from: lastIndex, to: lastIndex, amount: 1, current: lastIndex }
-    }
-
-    for (let i = 0; i < lastIndex; i += 1) {
-        if (y >= centers[i] && y <= centers[i + 1]) {
-            const distance = Math.max(1, centers[i + 1] - centers[i])
-            const amount = (y - centers[i]) / distance
-            return { from: i, to: i + 1, amount, current: amount >= 1 ? i + 1 : i }
-        }
-    }
-
-    return { from: 0, to: 0, amount: 0, current: 0 }
-}
-
-function timelineDotCenter(item) {
-    const dot = item.querySelector('.timeline__dot')
-    if (!dot) return item.offsetTop + Math.min(item.offsetHeight * 0.52, 180)
-    return item.offsetTop + dot.offsetTop + dot.offsetHeight / 2
-}
-
-function prepareTimelineState(state) {
-    if (!state.needsMeasure && state.centers.length) return
-
-    state.items = Array.from(state.tl.querySelectorAll('.timeline__item'))
-    state.centers = state.items.map(timelineDotCenter)
-
-    state.items.forEach((item, index) => {
-        const phase = runnerPhase(index)
-        item.style.setProperty('--timeline-point-color', colorString(phase))
-        item.style.setProperty('--timeline-point-glow', glowString(phase))
-    })
-
-    state.needsMeasure = false
-}
-
-function paintTimelineState(state) {
-    const segment = findTimelineSegment(state.centers, state.currentY)
-    const phase = mixedPhase(runnerPhase(segment.from), runnerPhase(segment.to), segment.amount)
-    const color = colorString(phase)
-    const glow = glowString(phase)
-
-    state.fill.style.height = `${Math.max(0, state.currentFill)}px`
-    state.runner.style.transform = `translate3d(0, ${state.currentY}px, 0) translate(-50%, -50%)`
-    state.runner.classList.toggle('timeline__runner--active', state.active)
-    state.tl.style.setProperty('--timeline-runner-color', color)
-    state.tl.style.setProperty('--timeline-runner-glow', glow)
-    state.tl.style.setProperty('--timeline-fill-end', color)
-
-    state.items.forEach((item, index) => {
-        const isLit = state.currentY + 1 >= state.centers[index]
-        item.classList.toggle('timeline__item--lit', isLit)
-        item.classList.toggle('timeline__item--current', state.active && isLit && index === segment.current)
-    })
-}
-
-function animateTimelineFills() {
-    let keepAnimating = false
-
-    timelineControls.forEach(state => {
-        const yDelta = state.targetY - state.currentY
-        const fillDelta = state.targetFill - state.currentFill
-
-        if (reduceTimelineMotion) {
-            state.currentY = state.targetY
-            state.currentFill = state.targetFill
-        } else {
-            state.currentY += yDelta * 0.18
-            state.currentFill += fillDelta * 0.18
-        }
-
-        if (Math.abs(yDelta) < 0.25) state.currentY = state.targetY
-        if (Math.abs(fillDelta) < 0.25) state.currentFill = state.targetFill
-
-        paintTimelineState(state)
-
-        if (Math.abs(state.targetY - state.currentY) > 0.25 || Math.abs(state.targetFill - state.currentFill) > 0.25) {
-            keepAnimating = true
-        }
-    })
-
-    timelineFrame = keepAnimating ? requestAnimationFrame(animateTimelineFills) : null
-}
-
-function requestTimelineFrame() {
-    if (timelineFrame === null) {
-        timelineFrame = requestAnimationFrame(animateTimelineFills)
-    }
-}
-
-function updateTimelineFills() {
-    timelineControls.forEach(state => {
-        prepareTimelineState(state)
-
-        const rect = state.tl.getBoundingClientRect()
-        const scrollGuide = window.innerHeight * 0.62
-        const progressEdge = scrollGuide - rect.top
-        const firstCenter = state.centers[0] ?? 8
-        const lastCenter = state.centers[state.centers.length - 1] ?? Math.max(8, rect.height - 8)
-        const maxFill = Math.max(0, lastCenter)
-
-        state.targetY = clampNumber(progressEdge, firstCenter, lastCenter)
-        state.targetFill = clampNumber(progressEdge, 0, maxFill)
-        state.active = rect.top < window.innerHeight * 0.82 && rect.bottom > window.innerHeight * 0.18
-
-        if (!state.initialized || reduceTimelineMotion) {
-            state.currentY = state.targetY
-            state.currentFill = state.targetFill
-            state.initialized = true
-        }
-    })
-
-    requestTimelineFrame()
-}
-
-function refreshTimelineMeasurements() {
-    timelineControls.forEach(state => {
-        state.needsMeasure = true
-    })
-    updateTimelineFills()
-}
-
-window.addEventListener('scroll', updateTimelineFills, { passive: true })
-window.addEventListener('load', refreshTimelineMeasurements)
-window.addEventListener('resize', refreshTimelineMeasurements)
-updateTimelineFills()
-
-/*===== AWARDS DIRECTIONAL ENTRANCE =====*/
-const awardsCols = document.querySelectorAll('.awards__col')
-if (awardsCols.length) {
-    awardsCols.forEach((col, i) => {
-        col.classList.add('anim-ready')
-        col.style.transitionDelay = `${i * 0.13}s`
-    })
-    const awardsObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            e.target.classList.toggle('anim-in', e.isIntersecting)
-        })
-    }, { threshold: 0.15 })
-    awardsCols.forEach(col => awardsObs.observe(col))
-}
-
-/*===== MAGNETIC BUTTONS =====*/
-document.querySelectorAll('.btn--primary, .btn--outline, .btn--outline-navy').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-        const r = btn.getBoundingClientRect()
-        const x = (e.clientX - r.left - r.width  / 2) * 0.22
-        const y = (e.clientY - r.top  - r.height / 2) * 0.22
-        btn.style.transition = 'transform 0.12s ease'
-        btn.style.transform  = `translate(${x}px, ${y}px) translateY(-2px)`
-    })
-    btn.addEventListener('mouseleave', () => {
-        btn.style.transition = 'transform 0.45s cubic-bezier(0.23, 1, 0.32, 1)'
-        btn.style.transform  = ''
-    })
-})
 
 /*===== POSTER GALLERY SCROLL CONTROLS =====*/
 ;(function () {
@@ -1099,8 +568,10 @@ function closePosterModal() {
     modal.classList.remove('anim-in')
     modal.setAttribute('aria-hidden', 'true')
     document.body.classList.remove('modal-open')
+    let completed = false
     const handleTransitionEnd = event => {
-        if (event.target !== modal) return
+        if (completed || (event && event.target !== modal)) return
+        completed = true
         modal.removeEventListener('transitionend', handleTransitionEnd)
         modal.classList.remove('active')
         if (img) img.removeAttribute('src')
@@ -1108,6 +579,8 @@ function closePosterModal() {
         lastPosterTrigger = null
     }
     modal.addEventListener('transitionend', handleTransitionEnd)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) handleTransitionEnd()
+    else window.setTimeout(handleTransitionEnd, 400)
 }
 
 document.querySelectorAll('[data-poster-src]').forEach(button => {
@@ -1123,131 +596,6 @@ document.getElementById('posterModal')?.addEventListener('click', event => {
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closePosterModal()
 })
-
-/*===== HERO PARTICLES =====*/
-;(function () {
-    const canvas = document.getElementById('hero-canvas')
-    const hero   = canvas && canvas.closest('.hero')
-    if (!canvas || !hero) return
-    const ctx = canvas.getContext('2d')
-    let W, H, particles = []
-    let mx = -999, my = -999
-
-    function resize() {
-        W = canvas.width  = canvas.offsetWidth
-        H = canvas.height = canvas.offsetHeight
-    }
-    resize()
-    window.addEventListener('resize', resize)
-
-    hero.addEventListener('mousemove', e => {
-        const r = hero.getBoundingClientRect()
-        mx = e.clientX - r.left
-        my = e.clientY - r.top
-    })
-    hero.addEventListener('mouseleave', () => { mx = -999; my = -999 })
-
-    function rand(a, b) { return a + Math.random() * (b - a) }
-    for (let i = 0; i < 55; i++) {
-        particles.push({
-            x: rand(0, 1), y: rand(0, 1),
-            vx: rand(-0.06, 0.06), vy: rand(-0.06, 0.06),
-            r: rand(1, 2.5),
-            baseA: rand(0.15, 0.45),
-            phase: rand(0, Math.PI * 2),
-            twinkleSpeed: rand(0.0008, 0.0018)
-        })
-    }
-
-    function draw() {
-        const now = Date.now()
-        ctx.clearRect(0, 0, W, H)
-        const pts = particles.map(p => {
-            p.x += p.vx / W; p.y += p.vy / H
-            if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0
-            if (p.y < 0) p.y = 1; if (p.y > 1) p.y = 0
-            const a = p.baseA * (0.5 + 0.5 * Math.sin(now * p.twinkleSpeed + p.phase))
-            return { px: p.x * W, py: p.y * H, a, r: p.r }
-        })
-
-        // particle-to-particle connections
-        for (let i = 0; i < pts.length; i++) {
-            for (let j = i + 1; j < pts.length; j++) {
-                const dx = pts[i].px - pts[j].px, dy = pts[i].py - pts[j].py
-                const d = Math.sqrt(dx*dx + dy*dy)
-                if (d < 110) {
-                    ctx.beginPath()
-                    ctx.moveTo(pts[i].px, pts[i].py)
-                    ctx.lineTo(pts[j].px, pts[j].py)
-                    ctx.strokeStyle = `rgba(240,192,64,${0.1 * (1 - d/110)})`
-                    ctx.lineWidth = 0.6
-                    ctx.stroke()
-                }
-            }
-        }
-
-        // cursor-to-particle connections
-        pts.forEach(p => {
-            const dx = p.px - mx, dy = p.py - my
-            const d = Math.sqrt(dx*dx + dy*dy)
-            if (d < 140) {
-                ctx.beginPath()
-                ctx.moveTo(p.px, p.py)
-                ctx.lineTo(mx, my)
-                ctx.strokeStyle = `rgba(240,192,64,${0.35 * (1 - d/140)})`
-                ctx.lineWidth = 1
-                ctx.stroke()
-            }
-        })
-
-        // draw dots
-        pts.forEach(p => {
-            ctx.beginPath()
-            ctx.arc(p.px, p.py, p.r, 0, Math.PI * 2)
-            ctx.fillStyle = `rgba(240,192,64,${p.a})`
-            ctx.fill()
-        })
-        requestAnimationFrame(draw)
-    }
-    draw()
-})()
-
-/*===== HERO MOUSE-FOLLOW GLOW =====*/
-;(function () {
-    const hero = document.querySelector('.hero')
-    const glow = document.querySelector('.hero__mouse-glow')
-    if (!hero || !glow) return
-    hero.addEventListener('mousemove', e => {
-        const rect = hero.getBoundingClientRect()
-        glow.style.left = (e.clientX - rect.left) + 'px'
-        glow.style.top  = (e.clientY - rect.top)  + 'px'
-        hero.classList.add('hero--mouse-active')
-    })
-    hero.addEventListener('mouseleave', () => hero.classList.remove('hero--mouse-active'))
-})()
-
-/*===== TYPEWRITER =====*/
-;(function () {
-    const el = document.getElementById('typewriter-text')
-    if (!el) return
-    const roles = [
-        'Assistant Teaching Professor',
-        'Bowling Green State University',
-        'PhD in Mechanical Engineering',
-        'Topological Metamaterials',
-        'Nonlinear Dynamics',
-        'Quantum Analogous Computing'
-    ]
-    let ri = 0, ci = 0, del = false
-    function tick() {
-        const word = roles[ri]
-        el.textContent = del ? word.slice(0, --ci) : word.slice(0, ++ci)
-        if (!del && ci === word.length) { del = true; setTimeout(tick, 1600); return }
-        if ( del && ci === 0)           { del = false; ri = (ri + 1) % roles.length }
-        setTimeout(tick, del ? 45 : 75)
-    }
-    tick()
-})()
 
 /*===== ANIMATED COUNTERS =====*/
 function animateCounter(el, target) {
@@ -1279,79 +627,6 @@ function animateCounter(el, target) {
         obs.disconnect()
     }, { threshold: 0.4 })
     obs.observe(statsBox)
-})()
-
-/*===== BUTTON RIPPLE =====*/
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-        const r = document.createElement('span')
-        r.className = 'btn__ripple'
-        r.style.left = e.offsetX + 'px'
-        r.style.top  = e.offsetY + 'px'
-        this.appendChild(r)
-        r.addEventListener('animationend', () => r.remove())
-    })
-})
-
-/*===== TIMELINE DOT PULSE =====*/
-document.querySelectorAll('.timeline').forEach(tl => {
-    const firstDot = tl.querySelector('.timeline__dot')
-    if (firstDot) firstDot.classList.add('timeline__dot--pulse')
-})
-
-/*===== CUSTOM CURSOR =====*/
-;(function () {
-    const dot  = document.getElementById('cursor-dot')
-    const ring = document.getElementById('cursor-ring')
-    if (!dot || !ring) return
-    let mx = -100, my = -100, rx = -100, ry = -100
-    let rafId = 0
-
-    function render() {
-        rafId = 0
-        rx += (mx - rx) * 0.13
-        ry += (my - ry) * 0.13
-        dot.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%)`
-        ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`
-
-        if (Math.abs(mx - rx) > 0.2 || Math.abs(my - ry) > 0.2) {
-            rafId = requestAnimationFrame(render)
-        }
-    }
-
-    function requestRender() {
-        if (!rafId) rafId = requestAnimationFrame(render)
-    }
-
-    document.addEventListener('mousemove', e => {
-        mx = e.clientX
-        my = e.clientY
-        requestRender()
-    }, { passive: true })
-
-    document.addEventListener('mouseleave', () => {
-        mx = -100
-        my = -100
-        requestRender()
-    })
-
-    const targets = 'a, button, [role="button"], input, textarea, select, label, .pub__item, .project__card-toggle, .research__card-toggle, .poster-gallery__item'
-    document.querySelectorAll(targets).forEach(el => {
-        el.addEventListener('mouseenter', () => { dot.classList.add('cursor--hover');  ring.classList.add('cursor--hover') })
-        el.addEventListener('mouseleave', () => { dot.classList.remove('cursor--hover'); ring.classList.remove('cursor--hover') })
-    })
-})()
-
-/*===== SECTION TITLE UNDERLINE GROW =====*/
-;(function () {
-    const titles = document.querySelectorAll('.section__title')
-    if (!titles.length) return
-    const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            e.target.classList.toggle('title--in', e.isIntersecting)
-        })
-    }, { threshold: 0.6 })
-    titles.forEach(t => obs.observe(t))
 })()
 
 /*===== RESEARCH CARD EXPAND/COLLAPSE =====*/
@@ -1453,69 +728,6 @@ document.querySelectorAll('.timeline').forEach(tl => {
             if (body) body.style.maxHeight = `${body.scrollHeight}px`
         })
     })
-})()
-
-/*===== SECTION TRACKER =====*/
-;(function () {
-    const numEl  = document.getElementById('tracker-num')
-    const nameEl = document.getElementById('tracker-name')
-    const tracker = document.getElementById('section-tracker')
-    if (!tracker || !numEl || !nameEl) return
-
-    const sections = [
-        { id: 'home',         label: 'Home',         num: '01' },
-        { id: 'about',        label: 'About',        num: '02' },
-        { id: 'education',    label: 'Education',    num: '03' },
-        { id: 'teaching',     label: 'Professional Teaching Experience', num: '04' },
-        { id: 'research',     label: 'Research',     num: '05' },
-        { id: 'research-experience', label: 'Research Experience', num: '06' },
-        { id: 'publications', label: 'Publications', num: '07' },
-        { id: 'conferences',  label: 'Conferences',  num: '08' },
-        { id: 'posters',      label: 'Posters',      num: '09' },
-        { id: 'experience',   label: 'Experience',   num: '10' },
-        { id: 'skills',       label: 'Skills',       num: '11' },
-        { id: 'projects',     label: 'Projects',     num: '12' },
-        { id: 'measurement-showcase', label: 'Development Tools', num: '13' },
-        { id: 'blogs',        label: 'Blogs',        num: '14' },
-        { id: 'awards',       label: 'Awards',       num: '15' },
-        { id: 'journeys',     label: 'Journeys',     num: '16' },
-        { id: 'contact',      label: 'Contact',      num: '17' },
-    ]
-
-    function update(id) {
-        if (id === 'home') { tracker.classList.remove('tracker--visible'); return }
-        const s = sections.find(x => x.id === id)
-        if (!s) return
-        numEl.textContent  = s.num
-        nameEl.textContent = s.label
-        tracker.classList.add('tracker--visible')
-    }
-
-    const trackedSections = sections
-        .map(section => ({ ...section, el: document.getElementById(section.id) }))
-        .filter(section => section.el)
-
-    let trackerRaf = 0
-    function updateFromScroll() {
-        trackerRaf = 0
-        const offset = Math.min(window.innerHeight * 0.34, 260)
-        let active = trackedSections[0]
-
-        trackedSections.forEach(section => {
-            if (window.scrollY >= section.el.offsetTop - offset) active = section
-        })
-
-        if (active) update(active.id)
-    }
-
-    function requestTrackerUpdate() {
-        if (!trackerRaf) trackerRaf = window.requestAnimationFrame(updateFromScroll)
-    }
-
-    window.addEventListener('scroll', requestTrackerUpdate, { passive: true })
-    window.addEventListener('resize', requestTrackerUpdate)
-    window.addEventListener('load', updateFromScroll)
-    updateFromScroll()
 })()
 
 /*===== SCHOLAR CITATION COUNT =====*/
@@ -2211,8 +1423,6 @@ document.querySelectorAll('.timeline').forEach(tl => {
     journeyPlaces = Array.from(placesContainer.querySelectorAll('[data-journey-target]'))
     journeyMapPins = Array.from(mapContainer?.querySelectorAll('[data-journey-target]') || [])
     journeyPanels = Array.from(journeysViewer.querySelectorAll('[data-journey-panel]'))
-    prepareMotionReveal(mapContainer?.querySelectorAll('.journey-map') || [], { motion: 'zoom', step: 80 })
-    prepareMotionReveal(journeyPlaces, { motion: 'rise', step: 70 })
 
     if (journeysViewer.parentElement !== document.body) {
         document.body.appendChild(journeysViewer)
@@ -2239,13 +1449,23 @@ document.querySelectorAll('.timeline').forEach(tl => {
     })
 })()
 
-/*===== PHOTO FAN =====*/
+/*===== PORTRAIT GALLERY =====*/
 ;(function () {
-    const fan = document.getElementById('photoFan')
-    if (!fan) return
-    fan.addEventListener('click', e => {
-        e.stopPropagation()
-        fan.classList.toggle('is-open')
+    const gallery = document.getElementById('photoFan')
+    if (!gallery) return
+    const portraits = [...gallery.querySelectorAll('.photo-fan__card')].reverse()
+    let index = 0
+    function nextPortrait() {
+        index = (index + 1) % portraits.length
+        portraits.forEach((portrait, i) => portrait.classList.toggle('portrait-active', i === index))
+        gallery.setAttribute('aria-label', `Portrait ${index + 1} of ${portraits.length}. Show next portrait`)
+    }
+    portraits[0].classList.add('portrait-active')
+    gallery.addEventListener('click', nextPortrait)
+    gallery.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault()
+            nextPortrait()
+        }
     })
-    document.addEventListener('click', () => fan.classList.remove('is-open'))
 })()

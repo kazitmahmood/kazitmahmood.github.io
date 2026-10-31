@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kazi Tahsin Mahmood is an Assistant Teaching Professor at Bowling Green State University specializing in engineering education, nonlinear dynamics, topological metamaterials, and quantum-analogous mechanical systems.">
-    <meta name="theme-color" content="#112347">
+    <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://kazitmahmood.github.io/">
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Kazi Tahsin Mahmood">
@@ -19,61 +19,37 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/enhancements.css">
+    <link rel="stylesheet" href="assets/css/experience.css">
     <link rel="icon" href="assets/img/logo_ico.ico">
     <title>Kazi Tahsin Mahmood</title>
 </head>
 <body>
 
-    <div class="intro-loader" id="intro-loader" aria-hidden="true">
-        <span class="intro-loader__grid"></span>
-        <span class="intro-loader__scan intro-loader__scan--top"></span>
-        <span class="intro-loader__scan intro-loader__scan--bottom"></span>
-        <div class="intro-loader__content">
-            <div class="intro-loader__ktm-group">
-                <div class="intro-loader__mark" aria-label="KTM">
-                    <span>K</span>
-                    <span>T</span>
-                    <span>M</span>
-                </div>
-                <div class="intro-loader__bar-wrap">
-                    <div class="intro-loader__bar-track">
-                        <div class="intro-loader__bar-fill"></div>
-                    </div>
-                    <span class="intro-loader__bar-pct" id="intro-loader-pct">0%</span>
-                </div>
-            </div>
-            <div class="intro-loader__field">
-                <span class="intro-loader__ring intro-loader__ring--one"></span>
-                <span class="intro-loader__ring intro-loader__ring--two"></span>
-                <span class="intro-loader__axis intro-loader__axis--x"></span>
-                <span class="intro-loader__axis intro-loader__axis--y"></span>
-            </div>
-        </div>
-    </div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
 <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#home" class="nav__logo">KTM</a>
+        <nav class="nav container" aria-label="Main navigation">
+            <a href="#home" class="nav__logo" aria-label="Kazi Tahsin Mahmood — home">ktm<span>.</span></a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li><a href="#about"        class="nav__link">About</a></li>
-                    <li><a href="#education"    class="nav__link">Education</a></li>
+
                     <li><a href="#teaching"     class="nav__link">Teaching</a></li>
                     <li><a href="#research"     class="nav__link">Research</a></li>
-                    <li><a href="#research-experience" class="nav__link" aria-label="Research Experience">Research Exp.</a></li>
+                    <li><a href="#projects" class="nav__link">Projects</a></li>
                     <li><a href="#publications" class="nav__link">Publications</a></li>
                     <li class="nav__item nav__item--more">
                         <button class="nav__more-toggle" type="button" aria-expanded="false" aria-controls="nav-more-menu">
                             More <i class="uil uil-angle-down"></i>
                         </button>
                         <ul class="nav__dropdown" id="nav-more-menu">
+                            <li><a href="#education" class="nav__link nav__dropdown-link">Education</a></li>
+                            <li><a href="#research-experience" class="nav__link nav__dropdown-link">Research Experience</a></li>
                             <li><a href="#conferences"  class="nav__link nav__dropdown-link">Conferences</a></li>
                             <li><a href="#posters"      class="nav__link nav__dropdown-link">Posters</a></li>
                             <li><a href="#experience"   class="nav__link nav__dropdown-link">Experience</a></li>
                             <li><a href="#skills"       class="nav__link nav__dropdown-link">Skills</a></li>
-                            <li><a href="#projects"     class="nav__link nav__dropdown-link">Projects</a></li>
                             <li><a href="#measurement-showcase" class="nav__link nav__dropdown-link">Development Tools</a></li>
                             <li><a href="#blogs"        class="nav__link nav__dropdown-link">Blogs</a></li>
                             <li><a href="#awards"       class="nav__link nav__dropdown-link">Awards</a></li>
@@ -82,64 +58,135 @@
                     </li>
                     <li><a href="#contact"      class="nav__link">Contact</a></li>
                 </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
+                <button class="nav__close" id="nav-close" type="button" aria-label="Close navigation"><span aria-hidden="true">×</span></button>
             </div>
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="uil uil-bars"></i>
-            </div>
+            <button class="nav__toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span></button>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
 
-        <!--==================== HERO ====================-->
-        <section class="hero" id="home">
-            <h1 class="sr-only">Kazi Tahsin Mahmood</h1>
-            <canvas id="hero-canvas" aria-hidden="true"></canvas>
-            <div class="hero__mouse-glow" aria-hidden="true"></div>
-            <div class="hero__container container">
-                <div class="hero__science" aria-hidden="true">
-                    <span class="hero__science-orbit hero__science-orbit--lg"></span>
-                    <span class="hero__science-orbit hero__science-orbit--sm"></span>
-                    <span class="hero__science-wave hero__science-wave--top"></span>
-                    <span class="hero__science-wave hero__science-wave--bottom"></span>
-                    <span class="hero__science-node hero__science-node--left"></span>
-                    <span class="hero__science-node hero__science-node--right"></span>
-                    <span class="hero__science-grid"></span>
-                </div>
-                <div class="hero__poster">
-                    <div class="hero__nameboard" aria-label="Kazi Tahsin Mahmood">
-                        <div class="hero__name-row hero__name-row--top">
-                            <span class="hero__letter" style="animation-delay:0.00s">K</span><span class="hero__letter" style="animation-delay:0.07s">A</span><span class="hero__letter" style="animation-delay:0.14s">Z</span><span class="hero__letter" style="animation-delay:0.21s">I</span>
-                        </div>
-                        <div class="hero__name-pill">
-                            <span class="hero__name-pill-text"><span class="hero__letter" style="animation-delay:0.28s">T</span><span class="hero__letter" style="animation-delay:0.35s">A</span><span class="hero__letter" style="animation-delay:0.42s">H</span><span class="hero__letter" style="animation-delay:0.49s">S</span><span class="hero__letter" style="animation-delay:0.56s">I</span><span class="hero__letter" style="animation-delay:0.63s">N</span></span>
-                        </div>
-                        <div class="hero__name-row hero__name-row--bottom">
-                            <span class="hero__letter" style="animation-delay:0.70s">M</span><span class="hero__letter" style="animation-delay:0.77s">A</span><span class="hero__letter" style="animation-delay:0.84s">H</span><span class="hero__letter" style="animation-delay:0.91s">M</span><span class="hero__letter" style="animation-delay:0.98s">O</span><span class="hero__letter" style="animation-delay:1.05s">O</span><span class="hero__letter" style="animation-delay:1.12s">D</span>
-                        </div>
-                    </div>
-                    <div class="hero__typewriter" aria-live="polite">
-                        <span id="typewriter-text"></span><span class="hero__cursor" aria-hidden="true">|</span>
-                    </div>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+          <div class="hero__scene">
+            <div class="hero__intro container">
+                <p class="hero__eyebrow">Kazi Tahsin Mahmood, Ph.D.</p>
+                <h1 id="hero-title">Classical mechanics.<br><span>Quantum possibilities.</span></h1>
+                <p class="hero__description">Engineering educator. Nonlinear dynamics researcher.</p>
+            </div>
+            <div class="wave-stage" aria-label="Illustrative visualization inspired by mechanical waves">
+                <canvas id="wave-canvas" aria-hidden="true"></canvas>
+            </div>
+            <div class="hero__story container" aria-hidden="true">
+                <span class="chapter-label">Mechanics in motion</span>
+                <p>A different way<br>to see a wave.</p>
+                <span>Elastic systems. Geometric phase. New possibilities.</span>
+            </div>
+            <div class="hero__bottom container">
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href="#research">Explore my research <span aria-hidden="true">&#8599;</span></a>
+                    <a class="hero__text-link" href="#about">Meet Kazi <span aria-hidden="true">&#8250;</span></a>
                 </div>
             </div>
-            <a href="#about" class="hero__scroll" aria-label="Scroll to About section">
-                <span>Scroll Down</span>
-                <i class="uil uil-arrow-down" aria-hidden="true"></i>
-            </a>
+          </div>
+          <div class="hero__affiliation container"><span>Assistant Teaching Professor</span><span>School of Engineering &middot; Bowling Green State University</span><a href="#teaching">Teaching &amp; mentoring <span aria-hidden="true">&#8599;</span></a></div>
         </section>
 
-        <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-star section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-atom section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-flask section__bg-icon section__bg-icon--br"></i>
+        <section class="highlights section" id="highlights" aria-labelledby="highlights-title">
+            <div class="highlights__heading container">
+                <h2 class="section__title" id="highlights-title">A closer look at my work.</h2>
+                <a class="text-link" href="#projects">Explore the projects <span aria-hidden="true">&#8599;</span></a>
             </div>
+            <div class="highlights__track" id="highlights-track" tabindex="0" role="region" aria-label="Work highlights. Scroll horizontally or use the navigation buttons.">
+                <article class="highlight highlight--elastic" id="highlight-elastic" aria-labelledby="highlight-elastic-title">
+                    <div class="highlight__copy">
+                        <span class="chapter-label">Quantum-analogous mechanics</span>
+                        <h3 id="highlight-elastic-title">Classical systems.<br>Unexpected possibilities.</h3>
+                        <p>Exploring information-inspired behavior through the measurable motion of coupled elastic systems.</p>
+                        <a class="text-link" href="#research">Discover elastic bits <span aria-hidden="true">&#8250;</span></a>
+                    </div>
+                    <svg class="highlight__art" viewBox="0 0 640 520" fill="none" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="bead-blue" cx=".32" cy=".24" r=".78"><stop stop-color="#eefaff"/><stop offset=".24" stop-color="#8dceff"/><stop offset=".55" stop-color="#247bda"/><stop offset=".83" stop-color="#09234e"/><stop offset="1" stop-color="#02050d"/></radialGradient>
+                            <radialGradient id="bead-silver" cx=".32" cy=".24" r=".8"><stop stop-color="#fff"/><stop offset=".2" stop-color="#d4ddf2"/><stop offset=".52" stop-color="#647fae"/><stop offset=".78" stop-color="#172443"/><stop offset="1" stop-color="#03050b"/></radialGradient>
+                            <linearGradient id="spring-blue"><stop stop-color="#162e4c"/><stop offset=".5" stop-color="#9cdcff"/><stop offset="1" stop-color="#315884"/></linearGradient>
+                            <radialGradient id="bead-floor"><stop stop-color="#1359ad" stop-opacity=".45"/><stop offset="1" stop-color="#1359ad" stop-opacity="0"/></radialGradient>
+                        </defs>
+                        <ellipse cx="337" cy="410" rx="280" ry="65" fill="url(#bead-floor)"/>
+                        <path data-elastic-springs d="M0 282H90L103 258L119 306L135 258L151 306L167 258L183 306L196 282H225 M303 282H340L353 258L369 306L385 258L401 306L417 258L433 306L446 282H492 M549 282H640" stroke="url(#spring-blue)" stroke-width="3"/>
+                        <circle data-elastic-bead cx="247" cy="282" r="84" fill="url(#bead-blue)" stroke="#79bbff" stroke-opacity=".28"/>
+                        <circle data-elastic-bead cx="503" cy="282" r="84" fill="url(#bead-silver)" stroke="#b3ccff" stroke-opacity=".2"/>
+                        <path data-elastic-trail d="M110 156C180 115 247 120 308 160M370 392C430 428 493 428 550 390" stroke="#527cae" stroke-dasharray="3 8"/>
+                    </svg>
+                    <span class="highlight__caption">Coupled oscillators &middot; Concept illustration</span>
+                </article>
+                <article class="highlight highlight--phase" id="highlight-phase" aria-labelledby="highlight-phase-title">
+                    <div class="highlight__copy">
+                        <span class="chapter-label">Topology &amp; geometric phase</span>
+                        <h3 id="highlight-phase-title">There is more<br>to the motion.</h3>
+                        <p>Using phase evolution and state-space trajectories to reveal hidden changes in mechanical systems.</p>
+                        <a class="text-link" href="#research">Explore geometric mechanics <span aria-hidden="true">&#8250;</span></a>
+                    </div>
+                    <svg class="highlight__art" viewBox="0 0 640 520" fill="none" aria-hidden="true">
+                        <defs><linearGradient id="phase-spectrum" x1="100" y1="100" x2="530" y2="410" gradientUnits="userSpaceOnUse"><stop stop-color="#a8ecff"/><stop offset=".4" stop-color="#738aff"/><stop offset=".75" stop-color="#bf7dff"/><stop offset="1" stop-color="#f7bbff"/></linearGradient></defs>
+                        <g data-phase-orbit stroke="url(#phase-spectrum)" transform="translate(352 275) rotate(-28)">
+                            <ellipse rx="205" ry="100" opacity=".12" transform="rotate(-45)"/>
+                            <ellipse rx="205" ry="100" opacity=".2" transform="rotate(-30)"/>
+                            <ellipse rx="205" ry="100" opacity=".35" transform="rotate(-15)"/>
+                            <ellipse rx="205" ry="100" opacity=".55"/>
+                            <ellipse rx="205" ry="100" stroke-width="2.5" transform="rotate(15)"/>
+                            <ellipse rx="205" ry="100" opacity=".65" transform="rotate(30)"/>
+                            <ellipse rx="205" ry="100" opacity=".4" transform="rotate(45)"/>
+                            <ellipse rx="205" ry="100" opacity=".25" transform="rotate(60)"/>
+                            <ellipse rx="205" ry="100" opacity=".12" transform="rotate(75)"/>
+                            <circle data-phase-marker cx="205" cy="0" r="15" fill="#c6a2ff" opacity=".16" stroke="none" transform="rotate(15)"/>
+                            <circle data-phase-marker cx="205" cy="0" r="6" fill="#ead8ff" stroke="none" transform="rotate(15)"/>
+                        </g>
+                        <path d="M100 425H576M140 465V100" stroke="#8d87ad" stroke-opacity=".2"/>
+                    </svg>
+                    <span class="highlight__caption">State evolution &middot; Concept illustration</span>
+                </article>
+                <article class="highlight highlight--teaching" id="highlight-teaching" aria-labelledby="highlight-teaching-title">
+                    <div class="highlight__copy">
+                        <span class="chapter-label">Engineering education</span>
+                        <h3 id="highlight-teaching-title">Make complex ideas<br>click.</h3>
+                        <p>Teaching engineering mechanics, mentoring students, and connecting physical principles with practical applications.</p>
+                        <a class="text-link" href="#teaching">Teaching &amp; mentoring <span aria-hidden="true">&#8250;</span></a>
+                    </div>
+                    <svg class="highlight__art" viewBox="0 0 640 520" fill="none" aria-hidden="true">
+                        <defs><linearGradient id="beam-spectrum" x1="100" y1="300" x2="560" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#185c61"/><stop offset=".5" stop-color="#89e5de"/><stop offset="1" stop-color="#e9fff9"/></linearGradient></defs>
+                        <g stroke="#5fada8" stroke-opacity=".15"><path d="M100 330L390 448L610 310M100 280L390 398L610 260M100 230L390 348L610 210M100 180L390 298L610 160M150 350V150M230 382V182M310 415V215M390 448V248M470 398V198M550 348V148"/></g>
+                        <g fill="#132d32" stroke="#5eb6b2" stroke-width="1.5" stroke-linejoin="round">
+                            <path data-beam-support d="M232 370L209 437L264 421Z"/>
+                            <path data-beam-support d="M542 224L519 291L574 275Z"/>
+                        </g>
+                        <path data-beam-end d="M128 302L232 344V370L128 328Z" fill="#0c2027" stroke="url(#beam-spectrum)" stroke-width="2" stroke-linejoin="round"/>
+                        <path data-beam-side d="M232 344L542 198V224L232 370Z" fill="#0d2b33" stroke="url(#beam-spectrum)" stroke-width="2" stroke-linejoin="round"/>
+                        <path data-beam-surface d="M128 302L232 344L542 198L438 156Z" fill="#16363f" stroke="url(#beam-spectrum)" stroke-width="2" stroke-linejoin="round"/>
+                        <path data-beam-trace d="M180 323L490 177" stroke="#dcfff2" stroke-dasharray="5 8"/>
+                        <path data-beam-force d="M335 120V246M325 230L335 248L345 230" stroke="#b8f9e9" stroke-width="3"/>
+                    </svg>
+                    <span class="highlight__caption">Engineering mechanics &middot; Concept illustration</span>
+                </article>
+            </div>
+            <div class="highlights__controls container" hidden>
+                <div class="highlights__dots" aria-label="Choose a highlight">
+                    <button type="button" aria-label="Highlight 1: Elastic bits" aria-controls="highlight-elastic" aria-current="true" data-highlight="0"></button>
+                    <button type="button" aria-label="Highlight 2: Geometric mechanics" aria-controls="highlight-phase" data-highlight="1"></button>
+                    <button type="button" aria-label="Highlight 3: Engineering education" aria-controls="highlight-teaching" data-highlight="2"></button>
+                </div>
+                <div class="highlights__arrows">
+                    <button type="button" data-highlight-step="-1" aria-label="Previous highlight" aria-controls="highlights-track" disabled>&#8249;</button>
+                    <button type="button" data-highlight-step="1" aria-label="Next highlight" aria-controls="highlights-track">&#8250;</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
             <div class="container">
-                <h2 class="section__title">About Me</h2>
-                <span class="section__subtitle">Summary</span>
+                <div class="chapter-heading">
+                <span class="section__subtitle">About me</span>
+                <h2 class="section__title">Curiosity meets mechanics.</h2>
+                </div>
 
                 <div class="about__container">
                     <div class="about__text">
@@ -150,6 +197,9 @@
                             systems &mdash; from elastic bits and Berry phase generation to topological phase transitions
                             in granular networks.
                         </p>
+                        <details class="about__more">
+                            <summary>More about my background <span aria-hidden="true">+</span></summary>
+                            <div>
                         <p>
                             My work sits at the intersection of mechanics, wave physics, and information science. I am particularly interested
                             in how structured classical systems can reproduce key features that are usually associated with quantum platforms,
@@ -172,6 +222,8 @@
                             I am motivated by problems that connect deep physical principles with practical applications, especially where mechanics,
                             topology, sensing, and computation begin to overlap.
                         </p>
+                        </div>
+                        </details>
                         <div class="about__interests">
                             <h4>Research Interests</h4>
                             <div class="tags">
@@ -187,7 +239,7 @@
 
                     <div class="about__profile">
                         <div class="about__photo">
-                            <div class="photo-fan" id="photoFan" title="Click to expand">
+                            <div class="photo-fan" id="photoFan" role="button" tabindex="0" aria-label="Show next portrait" title="Click to see another portrait">
                                 <div class="photo-fan__card photo-fan__card--right">
                                     <img src="assets/img/Jakkas3.jpg" alt="Kazi Tahsin Mahmood">
                                 </div>
@@ -247,186 +299,12 @@
             </div>
         </section>
 
-        <!--==================== EDUCATION ====================-->
-        <section class="education section" id="education">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-book-open section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-graduation-cap section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-file-alt section__bg-icon section__bg-icon--br"></i>
-            </div>
-            <div class="container">
-                <h2 class="section__title">Education</h2>
-                <span class="section__subtitle">Academic Credentials</span>
-
-                <div class="timeline">
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">Ph.D. in Mechanical Engineering</h3>
-                                    <span class="timeline__org">Wayne State University</span>
-                                    <span class="timeline__location">Detroit, Michigan, USA</span>
-                                </div>
-                                <span class="timeline__date">Jan 2022 &ndash; Dec 2025</span>
-                            </div>
-                            <p class="timeline__detail">
-                                <strong>Committee:</strong>
-                                Dr. M. Arif Hasan (Chair) &middot; Dr. Sean Wu &middot; Dr. Chin-An Tan &middot;
-                                Dr. Mohammad Bukhari &middot; Dr. Pierre Deymier
-                            </p>
-                            <div class="timeline__thesis-block">
-                                <span class="timeline__thesis-label">Dissertation</span>
-                                <a href="Dissertation_Thesis/index.html" class="timeline__thesis-link">
-                                    <em>Classical Realization of Quantum and Topological States through Nonlinear Elastic Networks</em>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">M.Sc. in Mechanical Engineering</h3>
-                                    <span class="timeline__org">Wayne State University</span>
-                                    <span class="timeline__location">Detroit, Michigan, USA</span>
-                                </div>
-                                <span class="timeline__date">Jan 2022 &ndash; May 2025</span>
-                            </div>
-                            <p class="timeline__detail">
-                                <strong>Advisor:</strong> Dr. M. Arif Hasan
-                            </p>
-                            <div class="timeline__thesis-block">
-                                <span class="timeline__thesis-label">Thesis</span>
-                                <a href="assets/pdf/Dissertation_MSc.pdf" target="_blank" rel="noopener" class="timeline__thesis-link">
-                                    <em>Nonlinear Dynamics Driven Quantum Analogous in Classical Granular Metamaterial</em>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">B.Sc. (Engg.) in Mechanical Engineering</h3>
-                                    <span class="timeline__org">Bangladesh University of Engineering &amp; Technology (BUET)</span>
-                                    <span class="timeline__location">Dhaka,&nbsp;Bangladesh</span>
-                                </div>
-                                <span class="timeline__date">Feb 2016 &ndash; Mar 2021</span>
-                            </div>
-                            <p class="timeline__detail">
-                                <strong>Advisor:</strong> Dr. Shaikh Reaz Ahmed
-                            </p>
-                            <div class="timeline__thesis-block">
-                                <span class="timeline__thesis-label">Thesis</span>
-                                <a href="assets/pdf/Dissertation_BSc.pdf" target="_blank" rel="noopener" class="timeline__thesis-link">
-                                    <em>Electro-Thermo-Mechanical Response of a Thin Conductive Layer of Metal Matrix Composite Reinforced by Graphite Fibers</em>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!--==================== TEACHING ====================-->
-        <section class="teaching section" id="teaching">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-book-open section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-presentation-play section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-edit section__bg-icon section__bg-icon--br"></i>
-            </div>
-            <div class="container">
-                <h2 class="section__title">Professional Teaching Experience</h2>
-                <span class="section__subtitle">Academic Service &amp; Professional Experience</span>
-
-                <div class="timeline">
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">Assistant Teaching Professor</h3>
-                                    <span class="timeline__org">School of Engineering<br>Bowling Green State University, Bowling Green, OH</span>
-                                </div>
-                                <span class="timeline__date">Aug 2026 &ndash; Present</span>
-                            </div>
-                            <div class="timeline__meta">
-                                <span class="tag tag--sm">MME 1100: Basic Computer-Aided Design</span>
-                                <span class="tag tag--sm">ENGT 2100: Solid Modeling</span>
-                                <span class="tag tag--sm">MME 2400: Statics</span>
-                                <span class="tag tag--sm">ENGT 4250: Manufacturing Design and Operations</span>
-                            </div>
-                            <ul class="timeline__list">
-                                <li>Independently design and deliver four undergraduate engineering courses as the sole instructor of record.</li>
-                                <li>Develop syllabi, lecture materials, laboratory and hands-on activities, assignments, and projects aligned with course learning outcomes and engineering applications.</li>
-                                <li>Integrate engineering analysis and industry-standard CAD tools to develop skills in technical drawing, three-dimensional modeling, mechanics, and design for manufacturing and assembly.</li>
-                                <li>Design and administer quizzes, examinations, and project-based assessments; evaluate performance and provide timely, individualized feedback.</li>
-                                <li>Manage course delivery, grading, student communications, office hours, and academic support in an inclusive and rigorous learning environment.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">Graduate Teaching Assistant</h3>
-                                    <span class="timeline__org">Department of Mechanical Engineering<br>Wayne State University, Detroit, MI</span>
-                                </div>
-                                <span class="timeline__date">Jan 2022 &ndash; May 2024</span>
-                            </div>
-                            <div class="timeline__meta">
-                                <span class="tag tag--sm">ME 3400: Dynamics I</span>
-                                <span class="tag tag--sm">ME 5000: Engineering Analysis</span>
-                            </div>
-                            <ul class="timeline__list">
-                                <li>Served as <strong>Course Instructor</strong>, delivering lectures, designing problem sets, and evaluating student performance for undergraduate and graduate cohorts.</li>
-                                <li>Provided lab section support, grading, feedback, and individualized student mentoring; assisted in exam administration.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">Research Experience Mentor - NSF NewFoS REM Program</h3>
-                                    <span class="timeline__org">New Frontiers of Sound (NewFoS)<br>NSF Project</span>
-                                </div>
-                                <span class="timeline__date">Jan 2023 &ndash; Present</span>
-                            </div>
-                            <ul class="timeline__list">
-                                <li>Mentored and supervised <strong>undergraduate researchers</strong> through the NSF NewFoS Research Experience and Mentoring program in nonlinear and topological acoustics.</li>
-                                <li>Trained students in elastic waveguide systems: mode identification, dispersion characterization, and phase-amplitude mapping for classical analogues of quantum information states.</li>
-                                <li>Guided independent projects culminating in poster presentations at institutional and national conferences.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!--==================== RESEARCH ====================-->
         <section class="research research-focus section" id="research">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-flask section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-atom section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-microscope section__bg-icon section__bg-icon--br"></i>
-            </div>
             <div class="container">
-                <h2 class="section__title">Research</h2>
-                <span class="section__subtitle">Current Focus</span>
+                <div class="chapter-heading">
+                <span class="section__subtitle">Current research</span>
+                <h2 class="section__title">Small vibrations.<br>Big questions.</h2>
+                </div>
 
                 <p class="research__intro">
                     My research focuses on nonlinear dynamics, elastic-bit formation, topological mechanics, and geometric phase in classical mechanical systems. I study how driven elastic structures can produce state-like behavior through modal amplitudes, relative phase, nonlinear response, and spectral evolution.
@@ -439,6 +317,15 @@
                                 <span class="research__card-title">Nonlinear Dynamics and Elastic Bits</span>
                             </div>
                         </div>
+                        <figure class="research__motion">
+                                    <video class="pub__figure-video" controls loop muted playsinline data-inline-motion preload="none" poster="assets/img/Elastic_Bit.png" data-lazy-video>
+                                        <source data-src="assets/img/hertzian_dashboard_animation.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <figcaption style="padding: 0.5rem 0.75rem; font-size: 0.82rem; color: var(--text-light, #8ca0ba);">
+                                        Dashboard animation of a two-mass Hertzian contact oscillator: time response, FFT spectra, and elastic-bit state evolution on a Bloch-sphere representation.
+                                    </figcaption>
+                                </figure>
                         <div class="research__card-preview">
                             <p>
                                 A major part of my research investigates how elastic bits arise in nonlinear mechanical oscillators and why they are important for studying information-inspired mechanical dynamics. In these systems, a mechanical structure is driven periodically, and its vibration response is measured in both amplitude and phase.
@@ -461,17 +348,9 @@
                             <p>
                                 This research shows that elastic bits are not imposed artificially on the system. They arise from the measured dynamics of the oscillator itself: the modal structure provides the basis, the nonlinear response supplies rich spectral content, and the phase relationship between modal components defines the state evolution. The broader significance is that elastic bits offer a room-temperature, experimentally accessible mechanical framework for studying controllable state formation, phase accumulation, and multi-bit behavior using classical elastic systems.
                             </p>
-                            <div class="pub__figures">
-                                <figure class="pub__figure">
-                                    <video class="pub__figure-video" controls autoplay loop muted playsinline preload="none" data-lazy-video>
-                                        <source data-src="assets/img/hertzian_dashboard_animation.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <figcaption style="padding: 0.5rem 0.75rem; font-size: 0.82rem; color: var(--text-light, #8ca0ba);">
-                                        Dashboard animation of a two-mass Hertzian contact oscillator: time response, FFT spectra, and elastic-bit state evolution on a Bloch-sphere representation.
-                                    </figcaption>
-                                </figure>
-                            </div>
+                            <figure class="research__diagram">
+                            <img src="assets/img/Elastic_Bit.png" alt="Coupled nonlinear oscillators forming an elastic-bit system" width="2145" height="605" loading="lazy">
+                        </figure>
                         </div>
                         <button class="research__card-toggle" type="button" aria-expanded="false">
                             <span class="research__card-toggle-text">See More</span>
@@ -485,6 +364,15 @@
                                 <span class="research__card-title">Topological and Geometric Mechanics</span>
                             </div>
                         </div>
+                        <figure class="research__motion">
+                                    <video class="pub__figure-video" controls loop muted playsinline data-inline-motion preload="none" poster="assets/img/Berry_Phase.png" data-lazy-video>
+                                        <source data-src="assets/img/topological_mechanics_slide21_no_footer.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <figcaption style="padding: 0.5rem 0.75rem; font-size: 0.82rem; color: var(--text-light, #8ca0ba);">
+                                        Berry-phase and energy-distribution animation for topological mechanics, showing geometric phase evolution alongside modal amplitude redistribution.
+                                    </figcaption>
+                                </figure>
                         <div class="research__card-preview">
                             <p>
                                 Another major direction of my research focuses on topological and geometric mechanics in elastic and acoustic systems, and why these ideas are useful for understanding vibration beyond conventional resonance analysis. In many mechanical systems, the most important changes are not always visible from amplitude response alone.
@@ -506,17 +394,9 @@
                             <p>
                                 The broader significance of this research is that it provides a phase-based and geometry-based framework for mechanical analysis. Instead of relying only on resonance shifts, amplitude peaks, or mode shapes, this approach uses the full modal state evolution to reveal hidden changes in elastic systems. This can support future designs of mechanical structures with controllable vibration response, robust energy localization, and enhanced sensitivity to small perturbations.
                             </p>
-                            <div class="pub__figures">
-                                <figure class="pub__figure">
-                                    <video class="pub__figure-video" controls autoplay loop muted playsinline preload="none" data-lazy-video>
-                                        <source data-src="assets/img/topological_mechanics_slide21_no_footer.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <figcaption style="padding: 0.5rem 0.75rem; font-size: 0.82rem; color: var(--text-light, #8ca0ba);">
-                                        Berry-phase and energy-distribution animation for topological mechanics, showing geometric phase evolution alongside modal amplitude redistribution.
-                                    </figcaption>
-                                </figure>
-                            </div>
+                            <figure class="research__diagram">
+                            <img src="assets/img/Berry_Phase.png" alt="Berry phase curves in an elastic system" width="457" height="432" loading="lazy">
+                        </figure>
                         </div>
                         <button class="research__card-toggle" type="button" aria-expanded="false">
                             <span class="research__card-toggle-text">See More</span>
@@ -527,228 +407,17 @@
             </div>
         </section>
 
-        <!--==================== PROFESSIONAL RESEARCH EXPERIENCE ====================-->
-        <section class="research research-experience section" id="research-experience">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-flask section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-atom section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-microscope section__bg-icon section__bg-icon--br"></i>
-            </div>
-            <div class="container">
-                <h2 class="section__title">Professional Research Experience</h2>
-                <span class="section__subtitle">Academic &amp; Collaborative Projects</span>
-
-                <div class="research__overview">
-                    <article class="research__pill">
-                        <span class="research__pill-label">Current Direction</span>
-                        <p>Quantum-inspired state control in nonlinear elastic and acoustic networks.</p>
-                    </article>
-                    <article class="research__pill">
-                        <span class="research__pill-label">Core Methods</span>
-                        <p>Asymptotic perturbation, molecular dynamics, Bloch-sphere mapping, and experiment-driven modeling.</p>
-                    </article>
-                    <article class="research__pill">
-                        <span class="research__pill-label">Applications</span>
-                        <p>Wave-based information processing, topological sensing, and scalable classical analogues of qubits.</p>
-                    </article>
-                </div>
-
-                <div class="timeline">
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">Postdoctoral Researcher</h3>
-                                    <span class="timeline__org">Acoustic Pseudospin and Metamaterials Laboratory<br>Wayne State University, Detroit, MI</span>
-                                </div>
-                                <span class="timeline__date">Feb 2026 &ndash; Aug 2026</span>
-                            </div>
-                            <ul class="timeline__list">
-                                <li>Developed reduced-order models for phase-preserving transfer of mechanical quantum-analogue states and defined bridge-fidelity metrics for optical/RF interfaces.</li>
-                                <li>Investigated nonlinear band-edge acoustic thermometry in periodic elastic waveguides using harmonic-ratio and geometric-phase diagnostics for lithium-ion battery safety.</li>
-                                <li>Developed elastic-bit co-processor concepts for low-power edge and IoT sensing, including mechanical filtering, spectral transforms, and feature extraction.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">Graduate Research Assistant</h3>
-                                    <span class="timeline__org">Acoustic Pseudospin and Topological Metamaterials Laboratory<br>Department of Mechanical Engineering<br>Wayne State University, Detroit, MI</span>
-                                </div>
-                                <span class="timeline__date">May 2024 &ndash; Dec 2025</span>
-                            </div>
-                            <ul class="timeline__list">
-                                <li>
-                                    <strong>Elastic Bit:</strong> Developed a classical two-state elastic-bit framework in a nonlinear mechanical oscillator, where experimentally measured harmonic amplitudes and relative phases were used to build a Bloch-sphere-inspired state representation. Combined analytical modeling with experimental validation to demonstrate controllable state evolution, modal superposition-based behavior, and stable room-temperature operation.
-                                    <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2204382&amp;HistoricalAwards=false" target="_blank" rel="noopener noreferrer" class="tag tag--sm tag--nsf" title="View the NSF award abstract for Grant 2204382">NSF Grant 2204382</a>
-                                </li>
-                                <li>
-                                    <strong>Berry Phase:</strong> Developed a theoretical and computational framework to show that classical state representations in both linear and nonlinear mechanical systems can accumulate Berry phase during closed trajectories in parameter space. By tracking Bloch-sphere-inspired state evolution, this work demonstrated how geometric phase emerges from controlled cyclic motion and how it can be linked to state switching, phase manipulation, and the underlying topological structure of the system.
-                                    <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2242925&amp;HistoricalAwards=false" target="_blank" rel="noopener noreferrer" class="tag tag--sm tag--nsf" title="View the NSF award abstract for Grant 2242925">NSF Grant 2242925</a>
-                                </li>
-                                <li>
-                                    <strong>Multi-Bit Elastic States:</strong> Extended the elastic-bit concept to a nonlinear two-mass conical-spring oscillator, where distinct harmonic spectral blocks within a single resonator were used to construct multiple elastic bits. Developed an analytical and computational framework for state initialization, controlled evolution, and mode-based state representation, showing how higher-dimensional elastic states can be generated and scaled from the rich harmonic structure of one mechanical system.
-                                </li>
-                                <li>
-                                    <strong>Topological Transitions:</strong> Investigated symmetry-driven topological transitions in granular and elastic lattice systems using molecular dynamics simulations and band-structure analysis. Examined how changes in lattice symmetry, particularly inversion symmetry, govern Zak-phase evolution and the emergence of topological phase transitions, and showed how these transitions can be used to control edge-state localization and wave behavior in mechanical networks.
-                                </li>
-                                <li>
-                                    <strong>Topological Mass Sensor:</strong> Developed a phase-based mechanical sensing framework by translating elastic-bit state evolution into a mass detection platform. By tracking defect- or mass-induced changes in geometric phase and Bloch-sphere-inspired state trajectories, this work showed how small perturbations can be identified through state-sensitive phase evolution rather than amplitude alone, providing a more robust and physically informative sensing strategy.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">Research Collaborator</h3>
-                                    <span class="timeline__org">New Frontiers of Sound (NewFoS)<br>The University of Arizona, Tucson, AZ</span>
-                                </div>
-                                <span class="timeline__date">Sep 2023 &ndash; Present</span>
-                            </div>
-                            <ul class="timeline__list">
-                                <li>
-                                    <strong>Primary Investigator:</strong> Led a collaborative research effort on multi-state and multi-bit elastic-state analogues in a nonlinear mass-conical spring oscillator, where distinct harmonic spectral blocks within a single mechanical system were used to construct two-bit and three-bit elastic states. Developed the analytical framework for state generation, controlled evolution, and gate-like transformations, including Householder-based state transitions, to demonstrate a scalable room-temperature platform for mechanically realized logic and state manipulation.
-                                </li>
-                                <li>
-                                    <strong>Co-Investigator:</strong> Contributed to the development of the Phi-Bit, a classical acoustic qubit analogue realized in a three-waveguide coupled system. Developed modeling and analysis methods to identify stable and controllable phase-defined states, and helped extend elastic-bit-inspired state concepts from discrete mechanical oscillators to continuous acoustic platforms.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__card">
-                            <div class="timeline__header">
-                                <div>
-                                    <h3 class="timeline__title">Undergraduate Research Assistant</h3>
-                                    <span class="timeline__org">Department of Mechanical Engineering<br>Bangladesh University of Engineering &amp; Technology (BUET), Dhaka,&nbsp;Bangladesh</span>
-                                </div>
-                                <span class="timeline__date">Nov 2019 &ndash; Feb 2021</span>
-                            </div>
-                            <ul class="timeline__list">
-                                <li>
-                                    <strong>Electro-Thermo-Mechanical Analysis of MMC:</strong> Studied Joule-heating-driven thermal stress in graphite-reinforced metal matrix composites under electrical loading. Combined finite element modeling with tensile and compression testing to identify stress limits and failure-prone regimes.
-                                </li>
-                                <li>
-                                    <strong>Heat Pipe Heat Exchanger Modeling:</strong> Developed analytical and numerical models of a heat-pipe heat exchanger for induction-motor cooling. Evaluated geometry, working fluid, and fin design to reduce thermal resistance and improve passive heat removal.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!--==================== SKILLS ====================-->
-        <section class="skills section" id="skills">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-processor section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-bolt-alt section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-layers-alt section__bg-icon section__bg-icon--br"></i>
-            </div>
-            <div class="container">
-                <h2 class="section__title">Technical Skills</h2>
-                <span class="section__subtitle">Tools &amp; Expertise</span>
-
-                <div class="skills__grid">
-
-                    <div class="skills__group">
-                        <div class="skills__group-header">
-                            <i class="uil uil-brackets-curly"></i>
-                            <h3>Programming &amp; Simulation</h3>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">C / C++</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">MATLAB</span>
-                            <span class="tag">COMSOL Multiphysics</span>
-                            <span class="tag">ANSYS</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__group">
-                        <div class="skills__group-header">
-                            <i class="uil uil-sigma"></i>
-                            <h3>Mathematical Modeling</h3>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">Finite Difference Method</span>
-                            <span class="tag">Finite Element Method</span>
-                            <span class="tag">Asymptotic Perturbation</span>
-                            <span class="tag">Fourier Harmonics</span>
-                            <span class="tag">Molecular Dynamics</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__group">
-                        <div class="skills__group-header">
-                            <i class="uil uil-microscope"></i>
-                            <h3>Research Instrumentation</h3>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">Laser Doppler Vibrometer (Polytec)</span>
-                            <span class="tag">Oscilloscope (Tektronix)</span>
-                            <span class="tag">Function Generator (B&amp;K Precision)</span>
-                            <span class="tag">Power Amplifier (Piezodrive)</span>
-                            <span class="tag">Vibration Exciters &amp; Transducers</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__group">
-                        <div class="skills__group-header">
-                            <i class="uil uil-wrench"></i>
-                            <h3>Fabrication &amp; Design</h3>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">AutoCAD</span>
-                            <span class="tag">SolidWorks</span>
-                            <span class="tag">Granular Bead Networks</span>
-                            <span class="tag">Mass-Conical Spring Models</span>
-                            <span class="tag">Coupled Linear Waveguides</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__group">
-                        <div class="skills__group-header">
-                            <i class="uil uil-edit"></i>
-                            <h3>Productivity</h3>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">LaTeX</span>
-                            <span class="tag">Microsoft Office</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!--==================== PROJECTS ====================-->
         <section class="projects section" id="projects">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-rocket section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-bolt-alt section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-cube section__bg-icon section__bg-icon--br"></i>
-            </div>
             <div class="container">
-                <h2 class="section__title">Projects</h2>
+                <div class="chapter-heading">
                 <span class="section__subtitle">Research Stories</span>
+                <h2 class="section__title">Ideas, put into motion.</h2>
+                </div>
 
                 <div class="projects__cards">
                     <article class="project__card" data-project-card>
                         <button class="project__card-toggle" type="button" aria-expanded="false">
+                            <span class="project__cover"><img src="assets/img/Elastic_Bit.png" alt="" loading="lazy"></span>
                             <span class="project__card-index">01</span>
                             <span class="project__card-kicker">Featured Project</span>
                             <h3 class="project__card-title">Elastic Bit and Logical State Control</h3>
@@ -797,6 +466,7 @@
 
                     <article class="project__card" data-project-card>
                         <button class="project__card-toggle" type="button" aria-expanded="false">
+                            <span class="project__cover"><img src="assets/img/Berry_Phase.png" alt="" loading="lazy"></span>
                             <span class="project__card-index">02</span>
                             <span class="project__card-kicker">Topological Mechanics</span>
                             <h3 class="project__card-title">Berry Phase in Elastic Networks</h3>
@@ -845,6 +515,7 @@
 
                     <article class="project__card" data-project-card>
                         <button class="project__card-toggle" type="button" aria-expanded="false">
+                            <span class="project__cover"><img src="assets/img/Mass_Sensor.png" alt="" loading="lazy"></span>
                             <span class="project__card-index">03</span>
                             <span class="project__card-kicker">Applied Design</span>
                             <h3 class="project__card-title">Topological Mass Sensor</h3>
@@ -893,6 +564,7 @@
 
                     <article class="project__card" data-project-card>
                         <button class="project__card-toggle" type="button" aria-expanded="false">
+                            <span class="project__cover"><img src="assets/img/Temperature Distribution_20.jpg" alt="" loading="lazy"></span>
                             <span class="project__card-index">04</span>
                             <span class="project__card-kicker">Earlier Work</span>
                             <h3 class="project__card-title">MMC Thermo-Mechanical Modeling</h3>
@@ -942,227 +614,12 @@
             </div>
         </section>
 
-        <!--==================== MEASUREMENT WORKFLOW SHOWCASE ====================-->
-        <section class="measurement-showcase section" id="measurement-showcase">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-monitor-heart-rate section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-chart-line section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-sliders-v-alt section__bg-icon section__bg-icon--br"></i>
-            </div>
-            <div class="container">
-                <h2 class="section__title">Measurement WorkFlow</h2>
-                <span class="section__subtitle">App developed by Kazi Tahsin Mahmood for experimental vibration workflows</span>
-
-                <div class="mws__hero">
-                    <div class="mws__copy">
-                        <span class="mws__eyebrow">Measurement app case study</span>
-                        <h3>A coordinated app for setup, capture, and analysis.</h3>
-                        <p>
-                            I developed Measurement WorkFlow as an app concept for vibration experiments: coordinate
-                            excitation hardware, capture LDV/SLDV responses, and move from time traces to
-                            frequency-domain analysis in a single repeatable workflow.
-                        </p>
-                        <div class="mws__tags" aria-label="Development tools capabilities">
-                            <span>Signal generator</span>
-                            <span>LDV / SLDV</span>
-                            <span>FFT response</span>
-                            <span>Mass-spring dynamics</span>
-                        </div>
-                    </div>
-
-                    <div class="mws__panel mws__panel--chain" aria-label="Measurement chain animation">
-                        <div class="mws__panel-head">
-                            <span>Measurement chain</span>
-                            <span class="mws__status"><span></span>online</span>
-                        </div>
-                        <svg class="mws__chain-svg" viewBox="0 0 760 330" role="img" aria-labelledby="mws-chain-title">
-                            <title id="mws-chain-title">Signal generator, amplifier, shaker, mechanical system, LDV, and software workflow</title>
-                            <path id="mws-chain-path" class="mws__chain-path" d="M76 88 C148 54 216 120 290 88 C370 52 448 124 528 90 C608 58 674 82 712 88" />
-                            <circle class="mws__chain-dot" r="7">
-                                <animateMotion dur="4.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.42 0 0.58 1">
-                                    <mpath href="#mws-chain-path" />
-                                </animateMotion>
-                            </circle>
-                            <g class="mws__chain-bus">
-                                <path d="M91 200 V214 M207 200 V214 M323 200 V214 M439 200 V214 M555 200 V214 M671 200 V214"></path>
-                                <path d="M91 214 H671"></path>
-                            </g>
-                            <g class="mws__chain-nodes">
-                                <g transform="translate(42 116)">
-                                    <rect width="98" height="84" rx="10"></rect>
-                                    <path class="mws__node-icon" d="M30 31 H41 L47 18 L55 49 L62 35 H70"></path>
-                                    <text x="49" y="74">Signal</text>
-                                </g>
-                                <g transform="translate(158 116)">
-                                    <rect width="98" height="84" rx="10"></rect>
-                                    <path class="mws__node-icon" d="M32 39 C32 25 42 18 49 18 C56 18 66 25 66 39 M49 39 L57 29"></path>
-                                    <text x="49" y="74">Amplifier</text>
-                                </g>
-                                <g transform="translate(274 116)">
-                                    <rect width="98" height="84" rx="10"></rect>
-                                    <path class="mws__node-icon" d="M52 18 L37 42 H49 L45 54 L63 31 H51 Z"></path>
-                                    <text x="49" y="74">Shaker</text>
-                                </g>
-                                <g transform="translate(390 116)">
-                                    <rect width="98" height="84" rx="10"></rect>
-                                    <path class="mws__node-icon" d="M32 23 L49 16 L66 23 L49 30 Z M32 35 L49 42 L66 35 M32 47 L49 54 L66 47"></path>
-                                    <text x="49" y="74">Mech. sys</text>
-                                </g>
-                                <g transform="translate(506 116)">
-                                    <rect width="98" height="84" rx="10"></rect>
-                                    <path class="mws__node-icon" d="M27 27 C34 34 41 20 48 27 S62 34 69 27 M27 40 C34 47 41 33 48 40 S62 47 69 40"></path>
-                                    <text x="49" y="74">LDV / SLDV</text>
-                                </g>
-                                <g class="mws__chain-node--active" transform="translate(622 116)">
-                                    <rect width="98" height="84" rx="10"></rect>
-                                    <path class="mws__node-icon" d="M34 22 H64 V45 H34 Z M43 55 H55 M49 45 V55"></path>
-                                    <text x="49" y="74">Software</text>
-                                </g>
-                            </g>
-                            <g class="mws__app-preview">
-                                <rect class="mws__app-frame" x="54" y="226" width="652" height="78" rx="14"></rect>
-                                <rect class="mws__app-topbar" x="54" y="226" width="652" height="26" rx="14"></rect>
-                                <text class="mws__app-title" x="78" y="244">Measurement WorkFlow app</text>
-                                <circle cx="654" cy="239" r="4"></circle>
-                                <text class="mws__app-online" x="668" y="243">live</text>
-                                <rect class="mws__app-tile" x="76" y="263" width="128" height="24" rx="7"></rect>
-                                <text x="92" y="280">experiment setup</text>
-                                <rect class="mws__app-plot" x="224" y="263" width="210" height="24" rx="7"></rect>
-                                <path class="mws__mini-wave" d="M240 277 C258 264 276 288 294 274 S330 262 348 275 S386 289 410 268"></path>
-                                <rect class="mws__app-tile" x="454" y="263" width="92" height="24" rx="7"></rect>
-                                <text x="472" y="280">FFT</text>
-                                <rect class="mws__app-tile" x="566" y="263" width="112" height="24" rx="7"></rect>
-                                <text x="584" y="280">export ready</text>
-                            </g>
-                        </svg>
-                        <div class="mws__chain-detail">
-                            <span><strong>01</strong> excitation command</span>
-                            <span><strong>02</strong> LDV response capture</span>
-                            <span><strong>03</strong> FFT and phase export</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mws__grid">
-                    <div class="mws__panel mws__panel--control">
-                        <div class="mws__panel-head">
-                            <span>Run sequence</span>
-                            <span class="mws__pill mws__run-percent">68%</span>
-                        </div>
-                        <div class="mws__progress" aria-hidden="true"><span class="mws__run-progress"></span></div>
-                        <div class="mws__steps">
-                            <span><i class="uil uil-folder-open"></i> Experiment folder</span>
-                            <span><i class="uil uil-signal-alt-3"></i> <span class="mws__sweep-range">30-120 Hz</span> sweep</span>
-                            <span><i class="uil uil-pulse"></i> Response capture</span>
-                        </div>
-                    </div>
-
-                    <div class="mws__panel mws__panel--response" aria-label="Horizontally coupled mass-spring response animation">
-                        <div class="mws__panel-head">
-                            <span>Response points</span>
-                            <span class="mws__pill">M1-M4</span>
-                        </div>
-                        <svg class="mws__mass-svg" viewBox="0 0 620 270" role="img" aria-labelledby="mws-mass-title">
-                            <title id="mws-mass-title">Horizontally coupled masses with coiled springs compressing and extending between response points</title>
-                            <line class="mws__ldv-line" x1="62" y1="54" x2="562" y2="54"></line>
-                            <text class="mws__ldv-label" x="34" y="42">LDV</text>
-                            <line class="mws__track mws__track--top" x1="82" y1="96" x2="558" y2="96"></line>
-                            <line class="mws__track" x1="48" y1="190" x2="590" y2="190"></line>
-
-                            <g class="mws__wall" transform="translate(50 92)">
-                                <line x1="0" y1="0" x2="0" y2="104"></line>
-                                <path d="M0 8 L-12 20 M0 28 L-12 40 M0 48 L-12 60 M0 68 L-12 80 M0 88 L-12 100"></path>
-                            </g>
-                            <g class="mws__wall" transform="translate(585 92)">
-                                <line x1="0" y1="0" x2="0" y2="104"></line>
-                                <path d="M0 8 L12 20 M0 28 L12 40 M0 48 L12 60 M0 68 L12 80 M0 88 L12 100"></path>
-                            </g>
-
-                            <path class="mws__spring-coil" d="M 50 138 L 56 138 C 59.1 120 61.7 120 64.8 138 S 70.6 156 73.7 138 S 79.4 120 82.5 138 S 88.2 156 91.3 138 S 97.1 120 100.2 138 S 105.9 156 109 138 L 115 138">
-                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 50 138 L 56 138 C 59.1 120 61.7 120 64.8 138 S 70.6 156 73.7 138 S 79.4 120 82.5 138 S 88.2 156 91.3 138 S 97.1 120 100.2 138 S 105.9 156 109 138 L 115 138;M 50 138 L 55.1 138 C 57.5 120 59.5 120 61.9 138 S 66.3 156 68.7 138 S 73.1 120 75.5 138 S 79.9 156 82.3 138 S 86.7 120 89.1 138 S 93.5 156 95.9 138 L 101 138;M 50 138 L 56 138 C 59.1 120 61.7 120 64.8 138 S 70.6 156 73.7 138 S 79.4 120 82.5 138 S 88.2 156 91.3 138 S 97.1 120 100.2 138 S 105.9 156 109 138 L 115 138"></animate>
-                            </path>
-                            <path class="mws__spring-coil" d="M 177 138 L 182.8 138 C 185.5 120 187.8 120 190.5 138 S 195.6 156 198.3 138 S 203.3 120 206 138 S 211 156 213.7 138 S 218.8 120 221.5 138 S 226.5 156 229.2 138 L 235 138">
-                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 177 138 L 182.8 138 C 185.5 120 187.8 120 190.5 138 S 195.6 156 198.3 138 S 203.3 120 206 138 S 211 156 213.7 138 S 218.8 120 221.5 138 S 226.5 156 229.2 138 L 235 138;M 163 138 L 169 138 C 173.2 120 176.8 120 181 138 S 188.8 156 193 138 S 200.8 120 205 138 S 212.8 156 217 138 S 224.8 120 229 138 S 236.8 156 241 138 L 247 138;M 177 138 L 182.8 138 C 185.5 120 187.8 120 190.5 138 S 195.6 156 198.3 138 S 203.3 120 206 138 S 211 156 213.7 138 S 218.8 120 221.5 138 S 226.5 156 229.2 138 L 235 138"></animate>
-                            </path>
-                            <path class="mws__spring-coil" d="M 297 138 L 302.8 138 C 305.5 120 307.8 120 310.5 138 S 315.6 156 318.3 138 S 323.3 120 326 138 S 331 156 333.7 138 S 338.8 120 341.5 138 S 346.5 156 349.2 138 L 355 138">
-                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 297 138 L 302.8 138 C 305.5 120 307.8 120 310.5 138 S 315.6 156 318.3 138 S 323.3 120 326 138 S 331 156 333.7 138 S 338.8 120 341.5 138 S 346.5 156 349.2 138 L 355 138;M 309 138 L 312.6 138 C 314.3 120 315.7 120 317.4 138 S 320.5 156 322.2 138 S 325.3 120 327 138 S 330.1 156 331.8 138 S 334.9 120 336.6 138 S 339.7 156 341.4 138 L 345 138;M 297 138 L 302.8 138 C 305.5 120 307.8 120 310.5 138 S 315.6 156 318.3 138 S 323.3 120 326 138 S 331 156 333.7 138 S 338.8 120 341.5 138 S 346.5 156 349.2 138 L 355 138"></animate>
-                            </path>
-                            <path class="mws__spring-coil" d="M 417 138 L 422.8 138 C 425.5 120 427.8 120 430.5 138 S 435.6 156 438.3 138 S 443.3 120 446 138 S 451 156 453.7 138 S 458.8 120 461.5 138 S 466.5 156 469.2 138 L 475 138">
-                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 417 138 L 422.8 138 C 425.5 120 427.8 120 430.5 138 S 435.6 156 438.3 138 S 443.3 120 446 138 S 451 156 453.7 138 S 458.8 120 461.5 138 S 466.5 156 469.2 138 L 475 138;M 407 138 L 413 138 C 417 120 420.5 120 424.5 138 S 432 156 436 138 S 443.5 120 447.5 138 S 455 156 459 138 S 466.5 120 470.5 138 S 478 156 482 138 L 488 138;M 417 138 L 422.8 138 C 425.5 120 427.8 120 430.5 138 S 435.6 156 438.3 138 S 443.3 120 446 138 S 451 156 453.7 138 S 458.8 120 461.5 138 S 466.5 156 469.2 138 L 475 138"></animate>
-                            </path>
-                            <path class="mws__spring-coil" d="M 537 138 L 541.8 138 C 544 120 546 120 548.2 138 S 552.4 156 554.6 138 S 558.8 120 561 138 S 565.2 156 567.4 138 S 571.6 120 573.8 138 S 578 156 580.2 138 L 585 138">
-                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 537 138 L 541.8 138 C 544 120 546 120 548.2 138 S 552.4 156 554.6 138 S 558.8 120 561 138 S 565.2 156 567.4 138 S 571.6 120 573.8 138 S 578 156 580.2 138 L 585 138;M 550 138 L 553.5 138 C 555.1 120 556.5 120 558.2 138 S 561.2 156 562.8 138 S 565.9 120 567.5 138 S 570.5 156 572.2 138 S 575.2 120 576.8 138 S 579.9 156 581.5 138 L 585 138;M 537 138 L 541.8 138 C 544 120 546 120 548.2 138 S 552.4 156 554.6 138 S 558.8 120 561 138 S 565.2 156 567.4 138 S 571.6 120 573.8 138 S 578 156 580.2 138 L 585 138"></animate>
-                            </path>
-
-                            <g class="mws__mass mws__mass--one">
-                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;-14 0;0 0"></animateTransform>
-                                <circle cx="146" cy="54" r="6"></circle>
-                                <rect x="115" y="106" width="62" height="64" rx="8"></rect>
-                                <path class="mws__mass-wave" d="M128 138 H137 L142 124 L150 153 L156 137 H164"></path>
-                                <line x1="124" y1="204" x2="168" y2="204"></line>
-                            </g>
-                            <g class="mws__mass mws__mass--two">
-                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;12 0;0 0"></animateTransform>
-                                <circle cx="266" cy="54" r="6"></circle>
-                                <rect x="235" y="106" width="62" height="64" rx="8"></rect>
-                                <path class="mws__mass-wave" d="M248 138 H257 L262 124 L270 153 L276 137 H284"></path>
-                                <line x1="244" y1="204" x2="288" y2="204"></line>
-                            </g>
-                            <g class="mws__mass mws__mass--three">
-                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;-10 0;0 0"></animateTransform>
-                                <circle cx="386" cy="54" r="6"></circle>
-                                <rect x="355" y="106" width="62" height="64" rx="8"></rect>
-                                <path class="mws__mass-wave" d="M368 138 H377 L382 124 L390 153 L396 137 H404"></path>
-                                <line x1="364" y1="204" x2="408" y2="204"></line>
-                            </g>
-                            <g class="mws__mass mws__mass--four">
-                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;13 0;0 0"></animateTransform>
-                                <circle cx="506" cy="54" r="6"></circle>
-                                <rect x="475" y="106" width="62" height="64" rx="8"></rect>
-                                <path class="mws__mass-wave" d="M488 138 H497 L502 124 L510 153 L516 137 H524"></path>
-                                <line x1="484" y1="204" x2="528" y2="204"></line>
-                            </g>
-                            <g class="mws__mass-labels">
-                                <text x="146" y="230">Mass 1</text>
-                                <text x="266" y="230">Mass 2</text>
-                                <text x="386" y="230">Mass 3</text>
-                                <text x="506" y="230">Mass 4</text>
-                            </g>
-                        </svg>
-                    </div>
-
-                    <div class="mws__panel mws__panel--plots">
-                        <div class="mws__panel-head">
-                            <span>Signal analysis</span>
-                            <span class="mws__pill">FFT + phase</span>
-                        </div>
-                        <div class="mws__plots">
-                            <svg viewBox="0 0 260 112" aria-label="Frequency response plot">
-                                <path class="mws__plot-grid" d="M0 28 H260 M0 56 H260 M0 84 H260 M52 0 V112 M104 0 V112 M156 0 V112 M208 0 V112"></path>
-                                <path class="mws__plot-line mws__plot-line--blue" d="M0 82 C28 70 42 28 70 36 C98 44 110 86 136 66 C164 42 186 50 208 34 C232 18 246 54 260 28"></path>
-                                <path class="mws__plot-line mws__plot-line--teal" d="M0 94 C32 84 46 58 76 62 C104 66 120 72 148 50 C178 26 196 74 226 58 C242 48 252 76 260 66"></path>
-                            </svg>
-                            <div class="mws__metrics">
-                                <span><strong class="mws__peak-frequency">60 Hz</strong> peak frequency</span>
-                                <span><strong class="mws__active-points">4</strong> active response points</span>
-                                <span><strong>ready</strong> export state</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== PUBLICATIONS ====================-->
         <section class="publications section" id="publications">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-book-open section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-file-alt section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-pen section__bg-icon section__bg-icon--br"></i>
-            </div>
             <div class="container">
-                <h2 class="section__title">Publications</h2>
-                <span class="section__subtitle">Peer-Reviewed Journals</span>
+                <header class="section-heading"><div class="chapter-heading">
+                <span class="section__subtitle">Publications &middot; Peer-reviewed journals</span>
+                <h2 class="section__title">Knowledge, shared.</h2>
+                </div></header>
 
                 <div class="pub__topbar">
                     <div class="pub__filters" role="group" aria-label="Filter publications">
@@ -1396,16 +853,596 @@
             </div>
         </section>
 
-        <!--==================== CONFERENCES ====================-->
-        <section class="conferences section" id="conferences">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-presentation-line section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-microphone section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-users-alt section__bg-icon section__bg-icon--br"></i>
-            </div>
+        <section class="teaching section" id="teaching">
             <div class="container">
-                <h2 class="section__title">Conference Presentations</h2>
-                <span class="section__subtitle">Proceedings &amp; Talks</span>
+                <header class="section-heading">
+                <div class="chapter-heading">
+                <span class="section__subtitle">Teaching &amp; mentoring</span>
+                <h2 class="section__title">Teaching the next generation.</h2>
+                </div>
+                </header>
+
+                <div class="timeline">
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">Assistant Teaching Professor</h3>
+                                    <span class="timeline__org">School of Engineering<br>Bowling Green State University, Bowling Green, OH</span>
+                                </div>
+                                <span class="timeline__date">Aug 2026 &ndash; Present</span>
+                            </div>
+                            <div class="teaching-courses" aria-labelledby="bgsu-courses-title">
+                                <div class="teaching-courses__heading">
+                                    <h4 id="bgsu-courses-title">Courses taught</h4>
+                                </div>
+                                <!-- Course titles and instructor assignments verified in BGSU Class Search, 2026-10-30. -->
+                                <ul class="teaching-courses__list">
+                                    <li><span class="teaching-courses__code">MME 1100</span><span>Basic Computer-Aided Design</span></li>
+                                    <li><span class="teaching-courses__code">MME 1700</span><span>Engineering Design and Skill</span></li>
+                                    <li><span class="teaching-courses__code">ENGT 2100</span><span>Solid Modeling</span></li>
+                                    <li><span class="teaching-courses__code">MME 2400</span><span>Statics</span></li>
+                                    <li><span class="teaching-courses__code">MME 2500</span><span>Metrology and GD &amp; T</span></li>
+                                    <li><span class="teaching-courses__code">MME 3350</span><span>Machine Design</span></li>
+                                    <li><span class="teaching-courses__code">ENGT 4250</span><span>Manufacturing Design and Operations</span></li>
+                                </ul>
+                            </div>
+                            <ul class="timeline__list">
+                                <li>Independently design and deliver undergraduate engineering courses as the sole instructor of record.</li>
+                                <li>Develop syllabi, lecture materials, laboratory and hands-on activities, assignments, and projects aligned with course learning outcomes and engineering applications.</li>
+                                <li>Integrate engineering analysis and industry-standard CAD tools to develop skills in technical drawing, three-dimensional modeling, mechanics, and design for manufacturing and assembly.</li>
+                                <li>Design and administer quizzes, examinations, and project-based assessments; evaluate performance and provide timely, individualized feedback.</li>
+                                <li>Manage course delivery, grading, student communications, office hours, and academic support in an inclusive and rigorous learning environment.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">Graduate Teaching Assistant</h3>
+                                    <span class="timeline__org">Department of Mechanical Engineering<br>Wayne State University, Detroit, MI</span>
+                                </div>
+                                <span class="timeline__date">Jan 2022 &ndash; May 2024</span>
+                            </div>
+                            <div class="timeline__meta">
+                                <span class="tag tag--sm">ME 3400: Dynamics I</span>
+                                <span class="tag tag--sm">ME 5000: Engineering Analysis</span>
+                            </div>
+                            <ul class="timeline__list">
+                                <li>Served as <strong>Course Instructor</strong>, delivering lectures, designing problem sets, and evaluating student performance for undergraduate and graduate cohorts.</li>
+                                <li>Provided lab section support, grading, feedback, and individualized student mentoring; assisted in exam administration.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">Research Experience Mentor - NSF NewFoS REM Program</h3>
+                                    <span class="timeline__org">New Frontiers of Sound (NewFoS)<br>NSF Project</span>
+                                </div>
+                                <span class="timeline__date">Jan 2023 &ndash; Present</span>
+                            </div>
+                            <ul class="timeline__list">
+                                <li>Mentored and supervised <strong>undergraduate researchers</strong> through the NSF NewFoS Research Experience and Mentoring program in nonlinear and topological acoustics.</li>
+                                <li>Trained students in elastic waveguide systems: mode identification, dispersion characterization, and phase-amplitude mapping for classical analogues of quantum information states.</li>
+                                <li>Guided independent projects culminating in poster presentations at institutional and national conferences.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="education section" id="education">
+            <div class="container">
+                <header class="section-heading">
+                <div class="chapter-heading">
+                <span class="section__subtitle">Education</span>
+                <h2 class="section__title">A foundation in mechanics.</h2>
+                </div>
+                </header>
+
+                <div class="timeline">
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">Ph.D. in Mechanical Engineering</h3>
+                                    <span class="timeline__org">Wayne State University</span>
+                                    <span class="timeline__location">Detroit, Michigan, USA</span>
+                                </div>
+                                <span class="timeline__date">Jan 2022 &ndash; Dec 2025</span>
+                            </div>
+                            <p class="timeline__detail">
+                                <strong>Committee:</strong>
+                                Dr. M. Arif Hasan (Chair) &middot; Dr. Sean Wu &middot; Dr. Chin-An Tan &middot;
+                                Dr. Mohammad Bukhari &middot; Dr. Pierre Deymier
+                            </p>
+                            <div class="timeline__thesis-block">
+                                <span class="timeline__thesis-label">Dissertation</span>
+                                <a href="Dissertation_Thesis/index.html" class="timeline__thesis-link">
+                                    <em>Classical Realization of Quantum and Topological States through Nonlinear Elastic Networks</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">M.Sc. in Mechanical Engineering</h3>
+                                    <span class="timeline__org">Wayne State University</span>
+                                    <span class="timeline__location">Detroit, Michigan, USA</span>
+                                </div>
+                                <span class="timeline__date">Jan 2022 &ndash; May 2025</span>
+                            </div>
+                            <p class="timeline__detail">
+                                <strong>Advisor:</strong> Dr. M. Arif Hasan
+                            </p>
+                            <div class="timeline__thesis-block">
+                                <span class="timeline__thesis-label">Thesis</span>
+                                <a href="assets/pdf/Dissertation_MSc.pdf" target="_blank" rel="noopener" class="timeline__thesis-link">
+                                    <em>Nonlinear Dynamics Driven Quantum Analogous in Classical Granular Metamaterial</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">B.Sc. (Engg.) in Mechanical Engineering</h3>
+                                    <span class="timeline__org">Bangladesh University of Engineering &amp; Technology (BUET)</span>
+                                    <span class="timeline__location">Dhaka,&nbsp;Bangladesh</span>
+                                </div>
+                                <span class="timeline__date">Feb 2016 &ndash; Mar 2021</span>
+                            </div>
+                            <p class="timeline__detail">
+                                <strong>Advisor:</strong> Dr. Shaikh Reaz Ahmed
+                            </p>
+                            <div class="timeline__thesis-block">
+                                <span class="timeline__thesis-label">Thesis</span>
+                                <a href="assets/pdf/Dissertation_BSc.pdf" target="_blank" rel="noopener" class="timeline__thesis-link">
+                                    <em>Electro-Thermo-Mechanical Response of a Thin Conductive Layer of Metal Matrix Composite Reinforced by Graphite Fibers</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="research research-experience section" id="research-experience">
+            <div class="container">
+                <header class="section-heading">
+                <div class="chapter-heading">
+                <span class="section__subtitle">Research experience</span>
+                <h2 class="section__title">From theory to experiment.</h2>
+                </div>
+
+                <div class="research__overview">
+                    <article class="research__pill">
+                        <span class="research__pill-label">Current Direction</span>
+                        <p>Quantum-inspired state control in nonlinear elastic and acoustic networks.</p>
+                    </article>
+                    <article class="research__pill">
+                        <span class="research__pill-label">Core Methods</span>
+                        <p>Asymptotic perturbation, molecular dynamics, Bloch-sphere mapping, and experiment-driven modeling.</p>
+                    </article>
+                    <article class="research__pill">
+                        <span class="research__pill-label">Applications</span>
+                        <p>Wave-based information processing, topological sensing, and scalable classical analogues of qubits.</p>
+                    </article>
+                </div>
+                </header>
+
+                <div class="timeline">
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">Postdoctoral Researcher</h3>
+                                    <span class="timeline__org">Acoustic Pseudospin and Metamaterials Laboratory<br>Wayne State University, Detroit, MI</span>
+                                </div>
+                                <span class="timeline__date">Feb 2026 &ndash; Aug 2026</span>
+                            </div>
+                            <ul class="timeline__list">
+                                <li>Developed reduced-order models for phase-preserving transfer of mechanical quantum-analogue states and defined bridge-fidelity metrics for optical/RF interfaces.</li>
+                                <li>Investigated nonlinear band-edge acoustic thermometry in periodic elastic waveguides using harmonic-ratio and geometric-phase diagnostics for lithium-ion battery safety.</li>
+                                <li>Developed elastic-bit co-processor concepts for low-power edge and IoT sensing, including mechanical filtering, spectral transforms, and feature extraction.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">Graduate Research Assistant</h3>
+                                    <span class="timeline__org">Acoustic Pseudospin and Topological Metamaterials Laboratory<br>Department of Mechanical Engineering<br>Wayne State University, Detroit, MI</span>
+                                </div>
+                                <span class="timeline__date">May 2024 &ndash; Dec 2025</span>
+                            </div>
+                            <ul class="timeline__list">
+                                <li>
+                                    <strong>Elastic Bit:</strong> Developed a classical two-state elastic-bit framework in a nonlinear mechanical oscillator, where experimentally measured harmonic amplitudes and relative phases were used to build a Bloch-sphere-inspired state representation. Combined analytical modeling with experimental validation to demonstrate controllable state evolution, modal superposition-based behavior, and stable room-temperature operation.
+                                    <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2204382&amp;HistoricalAwards=false" target="_blank" rel="noopener noreferrer" class="tag tag--sm tag--nsf" title="View the NSF award abstract for Grant 2204382">NSF Grant 2204382</a>
+                                </li>
+                                <li>
+                                    <strong>Berry Phase:</strong> Developed a theoretical and computational framework to show that classical state representations in both linear and nonlinear mechanical systems can accumulate Berry phase during closed trajectories in parameter space. By tracking Bloch-sphere-inspired state evolution, this work demonstrated how geometric phase emerges from controlled cyclic motion and how it can be linked to state switching, phase manipulation, and the underlying topological structure of the system.
+                                    <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2242925&amp;HistoricalAwards=false" target="_blank" rel="noopener noreferrer" class="tag tag--sm tag--nsf" title="View the NSF award abstract for Grant 2242925">NSF Grant 2242925</a>
+                                </li>
+                                <li>
+                                    <strong>Multi-Bit Elastic States:</strong> Extended the elastic-bit concept to a nonlinear two-mass conical-spring oscillator, where distinct harmonic spectral blocks within a single resonator were used to construct multiple elastic bits. Developed an analytical and computational framework for state initialization, controlled evolution, and mode-based state representation, showing how higher-dimensional elastic states can be generated and scaled from the rich harmonic structure of one mechanical system.
+                                </li>
+                                <li>
+                                    <strong>Topological Transitions:</strong> Investigated symmetry-driven topological transitions in granular and elastic lattice systems using molecular dynamics simulations and band-structure analysis. Examined how changes in lattice symmetry, particularly inversion symmetry, govern Zak-phase evolution and the emergence of topological phase transitions, and showed how these transitions can be used to control edge-state localization and wave behavior in mechanical networks.
+                                </li>
+                                <li>
+                                    <strong>Topological Mass Sensor:</strong> Developed a phase-based mechanical sensing framework by translating elastic-bit state evolution into a mass detection platform. By tracking defect- or mass-induced changes in geometric phase and Bloch-sphere-inspired state trajectories, this work showed how small perturbations can be identified through state-sensitive phase evolution rather than amplitude alone, providing a more robust and physically informative sensing strategy.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">Research Collaborator</h3>
+                                    <span class="timeline__org">New Frontiers of Sound (NewFoS)<br>The University of Arizona, Tucson, AZ</span>
+                                </div>
+                                <span class="timeline__date">Sep 2023 &ndash; Present</span>
+                            </div>
+                            <ul class="timeline__list">
+                                <li>
+                                    <strong>Primary Investigator:</strong> Led a collaborative research effort on multi-state and multi-bit elastic-state analogues in a nonlinear mass-conical spring oscillator, where distinct harmonic spectral blocks within a single mechanical system were used to construct two-bit and three-bit elastic states. Developed the analytical framework for state generation, controlled evolution, and gate-like transformations, including Householder-based state transitions, to demonstrate a scalable room-temperature platform for mechanically realized logic and state manipulation.
+                                </li>
+                                <li>
+                                    <strong>Co-Investigator:</strong> Contributed to the development of the Phi-Bit, a classical acoustic qubit analogue realized in a three-waveguide coupled system. Developed modeling and analysis methods to identify stable and controllable phase-defined states, and helped extend elastic-bit-inspired state concepts from discrete mechanical oscillators to continuous acoustic platforms.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__card">
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__title">Undergraduate Research Assistant</h3>
+                                    <span class="timeline__org">Department of Mechanical Engineering<br>Bangladesh University of Engineering &amp; Technology (BUET), Dhaka,&nbsp;Bangladesh</span>
+                                </div>
+                                <span class="timeline__date">Nov 2019 &ndash; Feb 2021</span>
+                            </div>
+                            <ul class="timeline__list">
+                                <li>
+                                    <strong>Electro-Thermo-Mechanical Analysis of MMC:</strong> Studied Joule-heating-driven thermal stress in graphite-reinforced metal matrix composites under electrical loading. Combined finite element modeling with tensile and compression testing to identify stress limits and failure-prone regimes.
+                                </li>
+                                <li>
+                                    <strong>Heat Pipe Heat Exchanger Modeling:</strong> Developed analytical and numerical models of a heat-pipe heat exchanger for induction-motor cooling. Evaluated geometry, working fluid, and fin design to reduce thermal resistance and improve passive heat removal.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="measurement-showcase section" id="measurement-showcase">
+            <div class="container">
+                <div class="chapter-heading">
+                <span class="section__subtitle">Measurement WorkFlow &middot; An app by Kazi Tahsin Mahmood</span>
+                <h2 class="section__title">Build. Measure. Understand.</h2>
+                </div>
+
+                <div class="mws__hero">
+                    <div class="mws__copy">
+                        <span class="mws__eyebrow">Measurement app case study</span>
+                        <h3>A coordinated app for setup, capture, and analysis.</h3>
+                        <p>
+                            I developed Measurement WorkFlow as an app concept for vibration experiments: coordinate
+                            excitation hardware, capture LDV/SLDV responses, and move from time traces to
+                            frequency-domain analysis in a single repeatable workflow.
+                        </p>
+                        <div class="mws__tags" aria-label="Development tools capabilities">
+                            <span>Signal generator</span>
+                            <span>LDV / SLDV</span>
+                            <span>FFT response</span>
+                            <span>Mass-spring dynamics</span>
+                        </div>
+                    </div>
+
+                    <div class="mws__panel mws__panel--chain" aria-label="Measurement chain animation">
+                        <div class="mws__panel-head">
+                            <span>Measurement chain</span>
+                            <span class="mws__status"><span></span>online</span>
+                        </div>
+                        <svg class="mws__chain-svg" viewBox="0 0 760 330" role="img" aria-labelledby="mws-chain-title">
+                            <title id="mws-chain-title">Signal generator, amplifier, shaker, mechanical system, LDV, and software workflow</title>
+                            <path id="mws-chain-path" class="mws__chain-path" d="M76 88 C148 54 216 120 290 88 C370 52 448 124 528 90 C608 58 674 82 712 88" />
+                            <circle class="mws__chain-dot" r="7">
+                                <animateMotion dur="4.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.42 0 0.58 1">
+                                    <mpath href="#mws-chain-path" />
+                                </animateMotion>
+                            </circle>
+                            <g class="mws__chain-bus">
+                                <path d="M91 200 V214 M207 200 V214 M323 200 V214 M439 200 V214 M555 200 V214 M671 200 V214"></path>
+                                <path d="M91 214 H671"></path>
+                            </g>
+                            <g class="mws__chain-nodes">
+                                <g transform="translate(42 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M30 31 H41 L47 18 L55 49 L62 35 H70"></path>
+                                    <text x="49" y="74">Signal</text>
+                                </g>
+                                <g transform="translate(158 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M32 39 C32 25 42 18 49 18 C56 18 66 25 66 39 M49 39 L57 29"></path>
+                                    <text x="49" y="74">Amplifier</text>
+                                </g>
+                                <g transform="translate(274 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M52 18 L37 42 H49 L45 54 L63 31 H51 Z"></path>
+                                    <text x="49" y="74">Shaker</text>
+                                </g>
+                                <g transform="translate(390 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M32 23 L49 16 L66 23 L49 30 Z M32 35 L49 42 L66 35 M32 47 L49 54 L66 47"></path>
+                                    <text x="49" y="74">Mech. sys</text>
+                                </g>
+                                <g transform="translate(506 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M27 27 C34 34 41 20 48 27 S62 34 69 27 M27 40 C34 47 41 33 48 40 S62 47 69 40"></path>
+                                    <text x="49" y="74">LDV / SLDV</text>
+                                </g>
+                                <g class="mws__chain-node--active" transform="translate(622 116)">
+                                    <rect width="98" height="84" rx="10"></rect>
+                                    <path class="mws__node-icon" d="M34 22 H64 V45 H34 Z M43 55 H55 M49 45 V55"></path>
+                                    <text x="49" y="74">Software</text>
+                                </g>
+                            </g>
+                            <g class="mws__app-preview">
+                                <rect class="mws__app-frame" x="54" y="226" width="652" height="78" rx="14"></rect>
+                                <rect class="mws__app-topbar" x="54" y="226" width="652" height="26" rx="14"></rect>
+                                <text class="mws__app-title" x="78" y="244">Measurement WorkFlow app</text>
+                                <circle cx="654" cy="239" r="4"></circle>
+                                <text class="mws__app-online" x="668" y="243">live</text>
+                                <rect class="mws__app-tile" x="76" y="263" width="128" height="24" rx="7"></rect>
+                                <text x="92" y="280">experiment setup</text>
+                                <rect class="mws__app-plot" x="224" y="263" width="210" height="24" rx="7"></rect>
+                                <path class="mws__mini-wave" d="M240 277 C258 264 276 288 294 274 S330 262 348 275 S386 289 410 268"></path>
+                                <rect class="mws__app-tile" x="454" y="263" width="92" height="24" rx="7"></rect>
+                                <text x="472" y="280">FFT</text>
+                                <rect class="mws__app-tile" x="566" y="263" width="112" height="24" rx="7"></rect>
+                                <text x="584" y="280">export ready</text>
+                            </g>
+                        </svg>
+                        <div class="mws__chain-detail">
+                            <span><strong>01</strong> excitation command</span>
+                            <span><strong>02</strong> LDV response capture</span>
+                            <span><strong>03</strong> FFT and phase export</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mws__grid">
+                    <div class="mws__panel mws__panel--control">
+                        <div class="mws__panel-head">
+                            <span>Run sequence</span>
+                            <span class="mws__pill mws__run-percent">68%</span>
+                        </div>
+                        <div class="mws__progress" aria-hidden="true"><span class="mws__run-progress"></span></div>
+                        <div class="mws__steps">
+                            <span><i class="uil uil-folder-open"></i> Experiment folder</span>
+                            <span><i class="uil uil-signal-alt-3"></i> <span class="mws__sweep-range">30-120 Hz</span> sweep</span>
+                            <span><i class="uil uil-pulse"></i> Response capture</span>
+                        </div>
+                    </div>
+
+                    <div class="mws__panel mws__panel--response" aria-label="Horizontally coupled mass-spring response animation">
+                        <div class="mws__panel-head">
+                            <span>Response points</span>
+                            <span class="mws__pill">M1-M4</span>
+                        </div>
+                        <svg class="mws__mass-svg" viewBox="0 0 620 270" role="img" aria-labelledby="mws-mass-title">
+                            <title id="mws-mass-title">Horizontally coupled masses with coiled springs compressing and extending between response points</title>
+                            <line class="mws__ldv-line" x1="62" y1="54" x2="562" y2="54"></line>
+                            <text class="mws__ldv-label" x="34" y="42">LDV</text>
+                            <line class="mws__track mws__track--top" x1="82" y1="96" x2="558" y2="96"></line>
+                            <line class="mws__track" x1="48" y1="190" x2="590" y2="190"></line>
+
+                            <g class="mws__wall" transform="translate(50 92)">
+                                <line x1="0" y1="0" x2="0" y2="104"></line>
+                                <path d="M0 8 L-12 20 M0 28 L-12 40 M0 48 L-12 60 M0 68 L-12 80 M0 88 L-12 100"></path>
+                            </g>
+                            <g class="mws__wall" transform="translate(585 92)">
+                                <line x1="0" y1="0" x2="0" y2="104"></line>
+                                <path d="M0 8 L12 20 M0 28 L12 40 M0 48 L12 60 M0 68 L12 80 M0 88 L12 100"></path>
+                            </g>
+
+                            <path class="mws__spring-coil" d="M 50 138 L 56 138 C 59.1 120 61.7 120 64.8 138 S 70.6 156 73.7 138 S 79.4 120 82.5 138 S 88.2 156 91.3 138 S 97.1 120 100.2 138 S 105.9 156 109 138 L 115 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 50 138 L 56 138 C 59.1 120 61.7 120 64.8 138 S 70.6 156 73.7 138 S 79.4 120 82.5 138 S 88.2 156 91.3 138 S 97.1 120 100.2 138 S 105.9 156 109 138 L 115 138;M 50 138 L 55.1 138 C 57.5 120 59.5 120 61.9 138 S 66.3 156 68.7 138 S 73.1 120 75.5 138 S 79.9 156 82.3 138 S 86.7 120 89.1 138 S 93.5 156 95.9 138 L 101 138;M 50 138 L 56 138 C 59.1 120 61.7 120 64.8 138 S 70.6 156 73.7 138 S 79.4 120 82.5 138 S 88.2 156 91.3 138 S 97.1 120 100.2 138 S 105.9 156 109 138 L 115 138"></animate>
+                            </path>
+                            <path class="mws__spring-coil" d="M 177 138 L 182.8 138 C 185.5 120 187.8 120 190.5 138 S 195.6 156 198.3 138 S 203.3 120 206 138 S 211 156 213.7 138 S 218.8 120 221.5 138 S 226.5 156 229.2 138 L 235 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 177 138 L 182.8 138 C 185.5 120 187.8 120 190.5 138 S 195.6 156 198.3 138 S 203.3 120 206 138 S 211 156 213.7 138 S 218.8 120 221.5 138 S 226.5 156 229.2 138 L 235 138;M 163 138 L 169 138 C 173.2 120 176.8 120 181 138 S 188.8 156 193 138 S 200.8 120 205 138 S 212.8 156 217 138 S 224.8 120 229 138 S 236.8 156 241 138 L 247 138;M 177 138 L 182.8 138 C 185.5 120 187.8 120 190.5 138 S 195.6 156 198.3 138 S 203.3 120 206 138 S 211 156 213.7 138 S 218.8 120 221.5 138 S 226.5 156 229.2 138 L 235 138"></animate>
+                            </path>
+                            <path class="mws__spring-coil" d="M 297 138 L 302.8 138 C 305.5 120 307.8 120 310.5 138 S 315.6 156 318.3 138 S 323.3 120 326 138 S 331 156 333.7 138 S 338.8 120 341.5 138 S 346.5 156 349.2 138 L 355 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 297 138 L 302.8 138 C 305.5 120 307.8 120 310.5 138 S 315.6 156 318.3 138 S 323.3 120 326 138 S 331 156 333.7 138 S 338.8 120 341.5 138 S 346.5 156 349.2 138 L 355 138;M 309 138 L 312.6 138 C 314.3 120 315.7 120 317.4 138 S 320.5 156 322.2 138 S 325.3 120 327 138 S 330.1 156 331.8 138 S 334.9 120 336.6 138 S 339.7 156 341.4 138 L 345 138;M 297 138 L 302.8 138 C 305.5 120 307.8 120 310.5 138 S 315.6 156 318.3 138 S 323.3 120 326 138 S 331 156 333.7 138 S 338.8 120 341.5 138 S 346.5 156 349.2 138 L 355 138"></animate>
+                            </path>
+                            <path class="mws__spring-coil" d="M 417 138 L 422.8 138 C 425.5 120 427.8 120 430.5 138 S 435.6 156 438.3 138 S 443.3 120 446 138 S 451 156 453.7 138 S 458.8 120 461.5 138 S 466.5 156 469.2 138 L 475 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 417 138 L 422.8 138 C 425.5 120 427.8 120 430.5 138 S 435.6 156 438.3 138 S 443.3 120 446 138 S 451 156 453.7 138 S 458.8 120 461.5 138 S 466.5 156 469.2 138 L 475 138;M 407 138 L 413 138 C 417 120 420.5 120 424.5 138 S 432 156 436 138 S 443.5 120 447.5 138 S 455 156 459 138 S 466.5 120 470.5 138 S 478 156 482 138 L 488 138;M 417 138 L 422.8 138 C 425.5 120 427.8 120 430.5 138 S 435.6 156 438.3 138 S 443.3 120 446 138 S 451 156 453.7 138 S 458.8 120 461.5 138 S 466.5 156 469.2 138 L 475 138"></animate>
+                            </path>
+                            <path class="mws__spring-coil" d="M 537 138 L 541.8 138 C 544 120 546 120 548.2 138 S 552.4 156 554.6 138 S 558.8 120 561 138 S 565.2 156 567.4 138 S 571.6 120 573.8 138 S 578 156 580.2 138 L 585 138">
+                                <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="M 537 138 L 541.8 138 C 544 120 546 120 548.2 138 S 552.4 156 554.6 138 S 558.8 120 561 138 S 565.2 156 567.4 138 S 571.6 120 573.8 138 S 578 156 580.2 138 L 585 138;M 550 138 L 553.5 138 C 555.1 120 556.5 120 558.2 138 S 561.2 156 562.8 138 S 565.9 120 567.5 138 S 570.5 156 572.2 138 S 575.2 120 576.8 138 S 579.9 156 581.5 138 L 585 138;M 537 138 L 541.8 138 C 544 120 546 120 548.2 138 S 552.4 156 554.6 138 S 558.8 120 561 138 S 565.2 156 567.4 138 S 571.6 120 573.8 138 S 578 156 580.2 138 L 585 138"></animate>
+                            </path>
+
+                            <g class="mws__mass mws__mass--one">
+                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;-14 0;0 0"></animateTransform>
+                                <circle cx="146" cy="54" r="6"></circle>
+                                <rect x="115" y="106" width="62" height="64" rx="8"></rect>
+                                <path class="mws__mass-wave" d="M128 138 H137 L142 124 L150 153 L156 137 H164"></path>
+                                <line x1="124" y1="204" x2="168" y2="204"></line>
+                            </g>
+                            <g class="mws__mass mws__mass--two">
+                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;12 0;0 0"></animateTransform>
+                                <circle cx="266" cy="54" r="6"></circle>
+                                <rect x="235" y="106" width="62" height="64" rx="8"></rect>
+                                <path class="mws__mass-wave" d="M248 138 H257 L262 124 L270 153 L276 137 H284"></path>
+                                <line x1="244" y1="204" x2="288" y2="204"></line>
+                            </g>
+                            <g class="mws__mass mws__mass--three">
+                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;-10 0;0 0"></animateTransform>
+                                <circle cx="386" cy="54" r="6"></circle>
+                                <rect x="355" y="106" width="62" height="64" rx="8"></rect>
+                                <path class="mws__mass-wave" d="M368 138 H377 L382 124 L390 153 L396 137 H404"></path>
+                                <line x1="364" y1="204" x2="408" y2="204"></line>
+                            </g>
+                            <g class="mws__mass mws__mass--four">
+                                <animateTransform attributeName="transform" type="translate" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" values="0 0;13 0;0 0"></animateTransform>
+                                <circle cx="506" cy="54" r="6"></circle>
+                                <rect x="475" y="106" width="62" height="64" rx="8"></rect>
+                                <path class="mws__mass-wave" d="M488 138 H497 L502 124 L510 153 L516 137 H524"></path>
+                                <line x1="484" y1="204" x2="528" y2="204"></line>
+                            </g>
+                            <g class="mws__mass-labels">
+                                <text x="146" y="230">Mass 1</text>
+                                <text x="266" y="230">Mass 2</text>
+                                <text x="386" y="230">Mass 3</text>
+                                <text x="506" y="230">Mass 4</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="mws__panel mws__panel--plots">
+                        <div class="mws__panel-head">
+                            <span>Signal analysis</span>
+                            <span class="mws__pill">FFT + phase</span>
+                        </div>
+                        <div class="mws__plots">
+                            <svg viewBox="0 0 260 112" aria-label="Frequency response plot">
+                                <path class="mws__plot-grid" d="M0 28 H260 M0 56 H260 M0 84 H260 M52 0 V112 M104 0 V112 M156 0 V112 M208 0 V112"></path>
+                                <path class="mws__plot-line mws__plot-line--blue" d="M0 82 C28 70 42 28 70 36 C98 44 110 86 136 66 C164 42 186 50 208 34 C232 18 246 54 260 28"></path>
+                                <path class="mws__plot-line mws__plot-line--teal" d="M0 94 C32 84 46 58 76 62 C104 66 120 72 148 50 C178 26 196 74 226 58 C242 48 252 76 260 66"></path>
+                            </svg>
+                            <div class="mws__metrics">
+                                <span><strong class="mws__peak-frequency">60 Hz</strong> peak frequency</span>
+                                <span><strong class="mws__active-points">4</strong> active response points</span>
+                                <span><strong>ready</strong> export state</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="chapter-heading">
+                <span class="section__subtitle">Technical expertise</span>
+                <h2 class="section__title">The tools behind the work.</h2>
+                </div>
+
+                <div class="skills__grid">
+
+                    <div class="skills__group">
+                        <div class="skills__group-header">
+                            <i class="uil uil-brackets-curly"></i>
+                            <h3>Programming &amp; Simulation</h3>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">C / C++</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">MATLAB</span>
+                            <span class="tag">COMSOL Multiphysics</span>
+                            <span class="tag">ANSYS</span>
+                        </div>
+                    </div>
+
+                    <div class="skills__group">
+                        <div class="skills__group-header">
+                            <i class="uil uil-sigma"></i>
+                            <h3>Mathematical Modeling</h3>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Finite Difference Method</span>
+                            <span class="tag">Finite Element Method</span>
+                            <span class="tag">Asymptotic Perturbation</span>
+                            <span class="tag">Fourier Harmonics</span>
+                            <span class="tag">Molecular Dynamics</span>
+                        </div>
+                    </div>
+
+                    <div class="skills__group">
+                        <div class="skills__group-header">
+                            <i class="uil uil-microscope"></i>
+                            <h3>Research Instrumentation</h3>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Laser Doppler Vibrometer (Polytec)</span>
+                            <span class="tag">Oscilloscope (Tektronix)</span>
+                            <span class="tag">Function Generator (B&amp;K Precision)</span>
+                            <span class="tag">Power Amplifier (Piezodrive)</span>
+                            <span class="tag">Vibration Exciters &amp; Transducers</span>
+                        </div>
+                    </div>
+
+                    <div class="skills__group">
+                        <div class="skills__group-header">
+                            <i class="uil uil-wrench"></i>
+                            <h3>Fabrication &amp; Design</h3>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">AutoCAD</span>
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">Granular Bead Networks</span>
+                            <span class="tag">Mass-Conical Spring Models</span>
+                            <span class="tag">Coupled Linear Waveguides</span>
+                        </div>
+                    </div>
+
+                    <div class="skills__group">
+                        <div class="skills__group-header">
+                            <i class="uil uil-edit"></i>
+                            <h3>Productivity</h3>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">LaTeX</span>
+                            <span class="tag">Microsoft Office</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="conferences section" id="conferences">
+            <div class="container">
+                <div class="chapter-heading">
+                <span class="section__subtitle">Conferences &amp; talks</span>
+                <h2 class="section__title">Ideas beyond the lab.</h2>
+                </div>
 
                 <div class="conf__list">
 
@@ -1615,16 +1652,12 @@
             </div>
         </section>
 
-        <!--==================== POSTERS ====================-->
         <section class="posters section" id="posters">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-image-v section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-window-grid section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-presentation-play section__bg-icon section__bg-icon--br"></i>
-            </div>
             <div class="container">
-                <h2 class="section__title">Poster Presentations</h2>
-                <span class="section__subtitle">Research Posters &amp; Showcases</span>
+                <div class="chapter-heading">
+                <span class="section__subtitle">Poster presentations</span>
+                <h2 class="section__title">Research, on display.</h2>
+                </div>
 
                 <div class="poster-gallery-wrap">
                     <button class="poster-gallery__nav poster-gallery__nav--prev" type="button" data-poster-scroll="prev" aria-label="Scroll posters left">
@@ -1713,16 +1746,14 @@
             </div>
         </section>
 
-        <!--==================== PROFESSIONAL EXPERIENCE ====================-->
         <section class="experience section" id="experience">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-briefcase-alt section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-cog section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-chart-line section__bg-icon section__bg-icon--br"></i>
-            </div>
             <div class="container">
-                <h2 class="section__title">Professional Experience</h2>
-                <span class="section__subtitle">Industry & Internship</span>
+                <header class="section-heading">
+                <div class="chapter-heading">
+                <span class="section__subtitle">Professional experience</span>
+                <h2 class="section__title">Engineering in practice.</h2>
+                </div>
+                </header>
 
                 <div class="timeline">
 
@@ -1747,25 +1778,21 @@
             </div>
         </section>
 
-        <!--==================== BLOGS ====================-->
         <section class="blogs section" id="blogs">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-pen section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-notes section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-comment-alt-dots section__bg-icon section__bg-icon--br"></i>
-            </div>
             <div class="container">
-                <h2 class="section__title">Blogs</h2>
-                <span class="section__subtitle">Writing, Ideas &amp; Research Notes</span>
+                <div class="chapter-heading">
+                <span class="section__subtitle">Writing &amp; ideas</span>
+                <h2 class="section__title">Notes from the lab.</h2>
+                </div>
 
-                <div class="blogs__grid" role="tablist" aria-label="Blog posts">
-                    <button class="blog__card" type="button" data-blog-target="blog-1" aria-selected="false">
+                <div class="blogs__grid" aria-label="Blog posts">
+                    <button class="blog__card" type="button" data-blog-target="blog-1" aria-expanded="false" aria-controls="blog-1">
                         <span class="blog__card-type">Divincenzo's Criteria</span>
                         <h3 class="blog__card-title">What Does It Take to Build a Quantum Inspired Computer? A 1990s Idea Is Guiding New Research Today</h3>
                         <p class="blog__card-excerpt">Revisiting DiVincenzo's criteria through the lens of nonlinear mechanical vibrations offers intriguing insights. The interplay of elastic bits and topology highlights a robust classical pathway for qubit-like information processing. This exploration not only deepens our understanding of information theory but also paves the way for innovative applications in quantum computing.</p>
                     </button>
 
-                    <button class="blog__card" type="button" data-blog-target="blog-2" aria-selected="false">
+                    <button class="blog__card" type="button" data-blog-target="blog-2" aria-expanded="false" aria-controls="blog-2">
                         <span class="blog__card-type">Topological Computing</span>
                         <h3 class="blog__card-title">How Vibrations Reveal Topological Physics in Classical Mechanical Systems?</h3>
                         <p class="blog__card-excerpt">Exploring topology through classical mechanical vibrations reveals how Berry phase, symmetry, and structured state evolution can emerge in accessible macroscopic systems. This perspective shows that robust topological physics is not confined to quantum materials, but can also guide new ideas in classical information processing and wave-based engineering.</p>
@@ -1776,7 +1803,7 @@
                 <div class="blogs__viewer" id="blogs-viewer" aria-hidden="true">
                     <article class="blog__feature" id="blog-1" data-blog-panel hidden>
                         <header class="blog__feature-header">
-                            <button class="blog__close" type="button" data-blog-close aria-label="Close blog preview">
+                            <button class="blog__close" type="button" data-blog-close aria-label="Close article">
                                 <i class="uil uil-times"></i>
                             </button>
                         </header>
@@ -1832,7 +1859,7 @@
 
                     <article class="blog__feature" id="blog-2" data-blog-panel hidden>
                         <header class="blog__feature-header">
-                            <button class="blog__close" type="button" data-blog-close aria-label="Close blog preview">
+                            <button class="blog__close" type="button" data-blog-close aria-label="Close article">
                                 <i class="uil uil-times"></i>
                             </button>
                         </header>
@@ -1885,42 +1912,12 @@
             </div>
         </section>
 
-        <!--==================== JOURNEYS ====================-->
-        <section class="journeys section" id="journeys">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-map-marker section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-camera section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-compass section__bg-icon section__bg-icon--br"></i>
-            </div>
-            <div class="container">
-                <h2 class="section__title">Journeys</h2>
-                <span class="section__subtitle">Places, People &amp; Small Discoveries</span>
-
-                <div class="journeys__intro">
-                    <p>
-                        A visual notebook from the places I have crossed through: conference cities, quiet walks,
-                        mountain air, waterfront evenings, and the small pauses that make travel memorable.
-                    </p>
-                </div>
-
-                <div class="journeys__map" aria-label="USA journey map"></div>
-
-                <div class="journeys__places" aria-label="Journey places" aria-hidden="true" hidden></div>
-
-                <div class="journeys__viewer" id="journeys-viewer" aria-hidden="true"></div>
-            </div>
-        </section>
-
-        <!--==================== AWARDS & SERVICES ====================-->
         <section class="awards section" id="awards">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-award section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-star section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-trophy section__bg-icon section__bg-icon--br"></i>
-            </div>
             <div class="container">
-                <h2 class="section__title">Awards &amp; Academic Service</h2>
-                <span class="section__subtitle">Recognition &amp; Contributions</span>
+                <div class="chapter-heading">
+                <span class="section__subtitle">Awards &amp; academic service</span>
+                <h2 class="section__title">Recognition &amp; service.</h2>
+                </div>
 
                 <div class="awards__grid">
 
@@ -1983,16 +1980,34 @@
             </div>
         </section>
 
-        <!--==================== CONTACT ====================-->
-        <section class="contact section" id="contact">
-            <div class="section__bg-icons" aria-hidden="true">
-                <i class="uil uil-envelope section__bg-icon section__bg-icon--tl"></i>
-                <i class="uil uil-location-point section__bg-icon section__bg-icon--tr"></i>
-                <i class="uil uil-comment-alt-dots section__bg-icon section__bg-icon--br"></i>
-            </div>
+        <section class="journeys section" id="journeys">
             <div class="container">
-                <h2 class="section__title">Contact</h2>
-                <span class="section__subtitle">Get in Touch</span>
+                <div class="chapter-heading">
+                <span class="section__subtitle">Journeys</span>
+                <h2 class="section__title">Beyond the desk.</h2>
+                </div>
+
+                <div class="journeys__intro">
+                    <p>
+                        A visual notebook from the places I have crossed through: conference cities, quiet walks,
+                        mountain air, waterfront evenings, and the small pauses that make travel memorable.
+                    </p>
+                </div>
+
+                <div class="journeys__map" aria-label="USA journey map"></div>
+
+                <div class="journeys__places" aria-label="Journey places" aria-hidden="true" hidden></div>
+
+                <div class="journeys__viewer" id="journeys-viewer" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="chapter-heading">
+                <span class="section__subtitle">Contact</span>
+                <h2 class="section__title">Let&rsquo;s connect.</h2>
+                </div>
 
                 <div class="contact__container">
                     <div class="contact__info">
@@ -2002,7 +2017,7 @@
                         <div class="contact__details">
                             <div class="contact__detail">
                                 <i class="uil uil-envelope"></i>
-                                <a href="mailto:kazi.mahmood@wayne.edu">kazi.mahmood@wayne.edu</a>
+                                <a href="mailto:kazim@bgsu.edu">kazim@bgsu.edu</a>
                             </div>
                             <div class="contact__detail">
                                 <i class="uil uil-phone"></i>
@@ -2030,17 +2045,14 @@
                         <p>
                             Click below to open an email draft and send me a message.
                         </p>
-                        <a href="mailto:kazi.mahmood@wayne.edu?subject=Inquiry%20from%20your%20website" class="btn btn--primary contact__cta">
+                        <a href="mailto:kazim@bgsu.edu?subject=Inquiry%20from%20your%20website" class="btn btn--primary contact__cta">
                             Contact by Email <i class="uil uil-message"></i>
                         </a>
-                        <p class="contact__note">
-                            If your email application does not open automatically, you may contact me directly at
-                            <a href="mailto:kazi.mahmood@wayne.edu">kazi.mahmood@wayne.edu</a>.
-                        </p>
                     </div>
                 </div>
             </div>
         </section>
+
 
     </main>
 
@@ -2098,47 +2110,15 @@
     </footer>
 
     <!--==================== SCROLL TOP ====================-->
-    <a href="#" class="scrollup" id="scroll-up">
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Back to top">
         <i class="uil uil-arrow-up"></i>
     </a>
-
-    <!--==================== DOT NAV ====================-->
-    <nav class="dot-nav" aria-label="Page sections" id="dot-nav">
-        <a class="dot-nav__dot" href="#about"        data-label="About"         title="About"></a>
-        <a class="dot-nav__dot" href="#education"    data-label="Education"     title="Education"></a>
-        <a class="dot-nav__dot" href="#teaching"     data-label="Professional Teaching Experience" title="Professional Teaching Experience"></a>
-        <a class="dot-nav__dot" href="#research"     data-label="Research"      title="Research"></a>
-        <a class="dot-nav__dot" href="#research-experience" data-label="Research Experience" title="Research Experience"></a>
-        <a class="dot-nav__dot" href="#publications" data-label="Publications"  title="Publications"></a>
-        <a class="dot-nav__dot" href="#conferences"  data-label="Conferences"   title="Conferences"></a>
-        <a class="dot-nav__dot" href="#posters"      data-label="Posters"       title="Posters"></a>
-        <a class="dot-nav__dot" href="#experience" data-label="Experience"  title="Experience"></a>
-        <a class="dot-nav__dot" href="#skills"      data-label="Skills"      title="Skills"></a>
-        <a class="dot-nav__dot" href="#projects"     data-label="Projects"      title="Projects"></a>
-        <a class="dot-nav__dot" href="#measurement-showcase" data-label="Development Tools" title="Measurement WorkFlow"></a>
-        <a class="dot-nav__dot" href="#blogs"        data-label="Blogs"         title="Blogs"></a>
-        <a class="dot-nav__dot" href="#awards"       data-label="Awards"        title="Awards"></a>
-        <a class="dot-nav__dot" href="#journeys"     data-label="Journeys"      title="Journeys"></a>
-        <a class="dot-nav__dot" href="#contact"      data-label="Contact"       title="Contact"></a>
-    </nav>
-
-
-    <!--==================== CUSTOM CURSOR ====================-->
-    <div id="cursor-dot"  aria-hidden="true"></div>
-    <div id="cursor-ring" aria-hidden="true"></div>
-
-    <!--==================== SECTION TRACKER ====================-->
-    <div id="section-tracker" aria-hidden="true">
-        <span id="tracker-num">01</span>
-        <span class="tracker-line"></span>
-        <span id="tracker-name">Home</span>
-    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="assets/js/journeys-data.js"></script>
     <script src="assets/js/main.js"></script>
     <script type="module" src="assets/js/cv-preview.js"></script>
-    <script src="assets/js/enhancements.js"></script>
+    <script src="assets/js/experience.js"></script>
 </body>
 </html>

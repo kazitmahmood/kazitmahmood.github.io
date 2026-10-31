@@ -1,5 +1,5 @@
-﻿/*===== GOOGLE FONTS =====*/
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,700;1,400&display=swap');
+﻿/*===== TYPOGRAPHY =====*/
+/* System typography is supplied by experience.css; no font download required. */
 
 /*===== CSS VARIABLES =====*/
 :root {
@@ -1649,7 +1649,7 @@ html.cv-preview-open body {
     to { opacity: 0; }
 }
 
-/* The site's custom cursor sits below the native dialog's top layer. */
+/* Use native cursors throughout the document viewer. */
 .cv-preview,
 .cv-preview * {
     cursor: auto !important;
@@ -7327,45 +7327,6 @@ html.intro-complete .hero__poster {
 }
 @keyframes tagShimmer {
     to { left: 140%; }
-}
-
-/*===== CUSTOM CURSOR =====*/
-@media (hover: hover) and (pointer: fine) {
-    *, *::before, *::after { cursor: none !important; }
-}
-#cursor-dot,
-#cursor-ring {
-    display: none;
-    position: fixed;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
-    top: 0;
-    left: 0;
-    will-change: transform;
-}
-@media (hover: hover) and (pointer: fine) {
-    #cursor-dot {
-        display: block;
-        width: 8px; height: 8px;
-        background: var(--gold);
-        transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
-    }
-    #cursor-ring {
-        display: block;
-        width: 34px; height: 34px;
-        border: 2px solid rgba(240, 192, 64, 0.5);
-        transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
-    }
-    #cursor-dot.cursor--hover {
-        width: 12px; height: 12px;
-        background: rgba(240, 192, 64, 0.75);
-    }
-    #cursor-ring.cursor--hover {
-        width: 46px; height: 46px;
-        border-color: rgba(240, 192, 64, 0.7);
-    }
 }
 
 /*===== SECTION TRACKER =====*/
